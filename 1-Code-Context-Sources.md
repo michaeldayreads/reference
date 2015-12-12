@@ -1,1 +1,1 @@
-## Exegesis & Commentary on Sources Motivating Coding
+## Sources Motivating Coding
