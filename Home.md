@@ -4,9 +4,9 @@ _Compassionate comments and feedback welcome at_ <a href="mailto:&#109;&#100;&#6
 Revised December 2015
 
 Thanks for visiting. Several paths may have brought you here:
-- Interest in [**Code**](https://github.com/michaeldayreads/0_autodidact/wiki/#code) -- _other technologists, prospective employers and collaborators_
+- Interest in [**code**](https://github.com/michaeldayreads/0_autodidact/wiki/#code) -- _other technologists, prospective employers and collaborators_
 - Interest in [**books**](https://github.com/michaeldayreads/0_autodidact/wiki/#bibliophile) -- _book club folks and other bibliophiles_
-- Interest in Original [**writing**](https://github.com/michaeldayreads/0_autodidact/wiki/#writing) -- _if you have an interest in non code writing I've done_
+- Interest in [**writing**](https://github.com/michaeldayreads/0_autodidact/wiki/#writing) -- _those seeking my non code compositions_
 
 ## Code
 Is how I make my living and is something I am passionate about. As a teen I programmed basic on a commodore 128 and Tandy Pocket Computer 6, only to find a myriad of other interests in college and beyond. It took a few years for those interests to deepen enough to connect back to technology and its place in and impact on society. 
