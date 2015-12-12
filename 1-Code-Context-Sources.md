@@ -1,1 +1,1 @@
-# Notes and comments from the sources worked with while exploring code.
+## Exegesis & Commentary on Sources Motivating Coding
