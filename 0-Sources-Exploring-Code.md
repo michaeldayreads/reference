@@ -1,2 +1,2 @@
-- Python Epiphanies
-- Python For Informatics
+- Python Epiphanies (_in progress_)
+- Python For Informatics (_in progress_)
