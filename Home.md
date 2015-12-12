@@ -1,0 +1,1 @@
+Attempting to keep the notes and the code distinct.
