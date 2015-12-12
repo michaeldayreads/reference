@@ -1,4 +1,4 @@
-# A place for the words, distinct from the code. 
+## A place for the words, distinct from the code. 
 Four flavors of words here. _Comments and feedback on all of it is welcome._ 
 * Notes from the sources worked with while exploring code.
 * Exegesis and commentary on sources that support or motivate my interest in code.
