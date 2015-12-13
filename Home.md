@@ -4,7 +4,8 @@ _Compassionate comments and feedback welcome at_ <a href="mailto:&#109;&#100;&#6
 Revised December 2015
 
 Thanks for visiting. Several paths may have brought you here:
-- Interest in [**code**](https://github.com/michaeldayreads/0_autodidact/wiki/#code) -- _other technologists, prospective employers and collaborators_
+- Interest in [**code**](https://github.com/michaeldayreads/0_autodidact/wiki/#code) -- _other technologists, prospective employers and collaborators_  
+    [You may find my resume here](https://github.com/michaeldayreads/resume/blob/master/Michael_Day.md)
 - Interest in [**books**](https://github.com/michaeldayreads/0_autodidact/wiki/#bibliophile) -- _book club folks and other bibliophiles_
 - Interest in [**writing**](https://github.com/michaeldayreads/0_autodidact/wiki/#writing) -- _those seeking my non code compositions_
 
