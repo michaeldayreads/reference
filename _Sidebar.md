@@ -1,1 +1,6 @@
-Not sure why it did not show up as a sidebar?
+-[Home](https://github.com/michaeldayreads/0_autodidact/wiki)
+-[Exploring Code](https://github.com/michaeldayreads/0_autodidact/wiki/0-Sources-Exploring-Code)
+-[Motivating Code](https://github.com/michaeldayreads/0_autodidact/wiki/1-Code-Context-Sources)
+-[Broader Context](https://github.com/michaeldayreads/0_autodidact/wiki/a.-Broader-Context)
+-[Compositions](https://github.com/michaeldayreads/0_autodidact/wiki/b.-Original-Composition)
+-[Terms](https://github.com/michaeldayreads/0_autodidact/wiki/i.-Terms)
