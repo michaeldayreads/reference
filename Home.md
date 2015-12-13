@@ -9,7 +9,9 @@ Thanks for visiting. Several paths may have brought you here:
 - Interest in [**writing**](https://github.com/michaeldayreads/0_autodidact/wiki/#writing) -- _those seeking my non code compositions_
 
 ## Code
-Is how I make my living and is something I am passionate about. As a teen I programmed basic on a commodore 128 and Tandy Pocket Computer 6, only to find a myriad of other interests in college and beyond. It took a few years for those interests to deepen enough to connect back to technology and its place in and impact on society. 
+I am very grateful I am able to make a living as a technologist. 
+
+As a teen I programmed basic on a commodore 128 and Tandy Pocket Computer 6, only to find a myriad of other interests in college and beyond. It took a few years for those interests to deepen enough to connect back to technology and its place in and impact on society. 
 
 Professionally I work as a member of the web marketing team for a small SaaS company in Boulder, Co. We are a LAMP (PHP) stack and I have worked in the core application in addition to my current duties on the web properties where we use a highly modified WordPress install.
 
