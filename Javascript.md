@@ -9,8 +9,7 @@ window.onload = function() {
 ```
 $(document).ready(function() {
 // all the things
-}); 
-
+});
 ```
 
 #### scope  
