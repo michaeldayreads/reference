@@ -1,9 +1,10 @@
 ## bash  
 
-**Output to file**  
-`ls > text.txt 2>&1` both std and err
+#### redirect  
+`ls -al > directory_list.txt` file listing directory contents  
+`ls > text.txt 2>&1` both std and err as `2>&1` redirects stderr to stdout
 
-##git  
+
 
 ##svn  
 
