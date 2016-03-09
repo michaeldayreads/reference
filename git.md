@@ -8,3 +8,16 @@ _All working directories are full repositories_
 `add` Add contents (files) to the index (snapshot of the working tree) staging them for the next commit. Only changes to the time of the add will be part of a commit. Further changes have to be added again.
 
 `status` Displays path differences between index and HEAD commit.
+
+`log` to see history
+
+`log --pretty=oneline` for concise history
+
+Further examples:  
+
+```
+git log --pretty=oneline --max-count=2  
+git log --pretty=oneline --since='5 minutes ago'
+git log --pretty=oneline --until='5 minutes ago'
+git log --pretty=oneline --author='Michael Day'
+```
