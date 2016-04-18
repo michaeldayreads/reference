@@ -1,3 +1,9 @@
+### confluence
+
+#### hipchat
+
+`/code` to have chats code formatted
+
 ### svn  
 
 **Check out an earlier revision than head**  
