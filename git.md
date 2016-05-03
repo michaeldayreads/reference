@@ -22,11 +22,12 @@ git log --pretty=oneline --author='Michael Day'
 _stash_
 
 `git stash` To stash things for later  
-`git stash list` to see the stash "stack"
+`git stash list` to see the stash "stack"  
+`git stash show -p [stash@{n}]` essentially a diff  
 `git stash apply`  to apply the last set of stashed changes  
-`git stash apply stash@{n}` to apply the nth set of stashed changes  
+`git stash apply stash@{n}` to apply the nth set  
 `git stash apply [stash@{n}] --index` apply and stage as staged at stash   
-`git stash drop [stash@{n}]` remove nth set (or last if omitted) set of stashed changes  
+`git stash drop [stash@{n}]` remove nth set (or last if omitted)  
 `git stash pop [stash@{n}]` apply and remove nth set (or last if omitted)  
 `git stash save "a more useful name"` stash with the useful name showing in `git stash list`  
 `git stash clear` to remove all items from the stash **caution**  
