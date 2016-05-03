@@ -33,6 +33,6 @@ _stash_
 
 ***
 bibliography  
-https://git-scm.com/book/en/v2
-https://git-scm.com/docs
-http://ndpsoftware.com/git-cheatsheet.html
+https://git-scm.com/book/en/v2  
+https://git-scm.com/docs  
+http://ndpsoftware.com/git-cheatsheet.html  
