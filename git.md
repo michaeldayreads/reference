@@ -32,6 +32,11 @@ _stash_
 `git stash save "a more useful name"` stash with the useful name showing in `git stash list`  
 `git stash clear` to remove all items from the stash **caution**  
 
+#### branching
+
+`git branch` list branches
+
+
 ***
 bibliography  
 https://git-scm.com/book/en/v2  
