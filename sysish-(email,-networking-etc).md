@@ -4,4 +4,4 @@ nslookup -type=txt domain.com
 whois domain.com  
 then, using the NS  
 nslookup domain.com NS-server and  
-hose domain.com NS-server  
+host domain.com NS-server  
