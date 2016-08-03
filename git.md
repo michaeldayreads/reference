@@ -36,6 +36,26 @@ _stash_
 
 `git branch` list branches
 
+#### rebase  
+
+##### master
+```
+git checkout master
+git pull
+git checkout my-branch
+git rebase master
+git push origin -f my-branch
+```
+
+##### interactive
+First, start interactive rebase. In this example, we are squashing the last two commits into one.  
+`git rebase -i HEAD~2` 
+  
+This will load the interactive editor in VIM.  
+
+`pick` the first commit in the list and `squash` the others - don't worry about the message. After we save this first "file" using VIM, we will immediately be taken to a second "file" where we can revise the messages for our included commits to be sure there is sufficient notes on the history.  
+
+Once the rebase is complete, `git push origin -f my-branch`.
 
 ***
 bibliography  
