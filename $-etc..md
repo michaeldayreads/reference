@@ -17,6 +17,11 @@ then, using the NS
 #### find
 `find ~/path/to/start/from -name pattern` where pattern is the name or partial name (* / ?) of the file
 
+#### gpg  
+`gpg --list-keys`  to get see what keys are on a system
+`gpg --export > all.gpg` to get all keys on key ring  
+`gpg --import > all.gpg` to import that key set into another system  
+
 #### redirect  
 `ls -al > directory_list.txt` file listing directory contents  
 `ls > text.txt 2>&1` both std and err as `2>&1` redirects stderr to stdout
