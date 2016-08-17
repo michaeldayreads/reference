@@ -18,7 +18,7 @@ then, using the NS
 `find ~/path/to/start/from -name pattern` where pattern is the name or partial name (* / ?) of the file
 
 #### gpg  
-`gpg --list-keys`  to get see what keys are on a system
+`gpg --list-keys`  to get see what keys are on a system  
 `gpg --export > all.gpg` to get all keys on key ring  
 `gpg --import > all.gpg` to import that key set into another system  
 
