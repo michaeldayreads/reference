@@ -26,6 +26,9 @@ then, using the NS
 `ls -al > directory_list.txt` file listing directory contents  
 `ls > text.txt 2>&1` both std and err as `2>&1` redirects stderr to stdout
 
+#### rsync  
+`rsync -a file_to_send.txt username@server:~/path/if/desired`  
+
 #### sftp  
 
 `get filename.txt` transfers the file to the directory you logged into the sftp server from  
