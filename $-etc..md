@@ -41,4 +41,10 @@ Sender Policy Framework.  TXT records published on DNS that list hosts considere
 For example, we may wish to `source ~/.profile`  re-load the profile after adding a new alias to our `.profile`.  
 
 #### tmux  
+`tmux ls` show sessions  
+`tmux new -s session-name` new session  
+`tmux a -t session-name` attach to a session  
+`tmux detach`  detach from the session you are in  
+`tmux kill-session -t session-name` end session entirely  
+`killall tmux` end all sessions  
 
