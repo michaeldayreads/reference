@@ -1,3 +1,9 @@
+#### 0_misc
+
+`$?` Exit status  
+`read` takes user input and assigns it to `$REPLY` by default  
+`read -p "A proper prompt > " myvar` would output the prompt, and store the typed value into `$myvar`
+
 #### DKIM  
 
 Domain Keys Identified Email. A digital signature attached to each email validated against a public key.  
