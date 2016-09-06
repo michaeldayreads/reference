@@ -27,6 +27,7 @@ then, using the NS
 `gpg --list-keys`  to get see what keys are on a system  
 `gpg --export > all.gpg` to get all keys on key ring  
 `gpg --import > all.gpg` to import that key set into another system  
+`gpg -r {key_id} -e {file_name}` encrypt a file (adds .gpg to the end of the file name to name the new file)   
 
 #### redirect  
 `ls -al > directory_list.txt` file listing directory contents  
