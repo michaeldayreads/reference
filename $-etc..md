@@ -50,6 +50,11 @@ Sender Policy Framework.  TXT records published on DNS that list hosts considere
 `source FILENAME [arguments]`  loads functions files  
 For example, we may wish to `source ~/.profile`  re-load the profile after adding a new alias to our `.profile`.  
 
+#### ssh  
+
+`ls -al ~/.ssh` list present keys (if any)  
+
+
 #### tmux  
 `tmux ls` show sessions  
 `tmux new -s session-name` new session  
