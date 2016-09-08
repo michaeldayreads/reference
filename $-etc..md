@@ -63,6 +63,9 @@ For example, we may wish to `source ~/.profile`  re-load the profile after addin
 `tmux kill-session -t session-name` end session entirely  
 `killall tmux` end all sessions  
 
+#### wc
+`wc -l life_the_universe_and_everthing.sh` ideally this would return 42, as would running it :P   
+
 ### The real misc. debris...
 
 #### hipchat
