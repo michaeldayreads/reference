@@ -63,3 +63,12 @@ For example, we may wish to `source ~/.profile`  re-load the profile after addin
 `tmux kill-session -t session-name` end session entirely  
 `killall tmux` end all sessions  
 
+### The real misc. debris...
+
+#### hipchat
+
+`/code import this` an effective way to see if your chat mate is a pythonista  
+`/topic all the things` set room topic to "all the things"  
+`/away coffee` set status to away with message of "coffee" see also `/available caffeinated` & `/dnd shaky`  
+`s/ fucked/borked` look smart and/or cya  
+`/me has left the building, following Elvis` mock announcements  
