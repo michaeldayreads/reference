@@ -29,6 +29,21 @@ then, using the NS
 `gpg --import > all.gpg` to import that key set into another system  
 `gpg -r {key_id} -e {file_name}` encrypt a file (adds .gpg to the end of the file name to name the new file)   
 
+#### ls
+```
+-c # use time when last changed for sorting (-t) or long printing (-l)  
+-F # / directory * exe @ symbolic = socket % whiteout | FIFO  
+-G # colorized  
+-h # unit suffixes  
+-l # long format  
+-R # recursively list sub-directories encountered  
+-r # reverse order  
+-S # sort by size  
+-t # sort by time modified  
+-u # sort by time of last access  
+-U # sort by time of file creation  
+```
+
 #### redirect  
 `ls -al > directory_list.txt` file listing directory contents  
 `ls > text.txt 2>&1` both std and err as `2>&1` redirects stderr to stdout
