@@ -102,3 +102,9 @@ Vertical Bars `||`
 "Vertical bars at the start of a code block are like parentheses in a method definition - they hold a list of parameter names. The `yield` statement is like a method invocation; it is followed by zero or more expressions whose values are assigned to the block parameters." (Flanagan, Matsumoto, 2008)
 
 Iterators to Matz are any method that uses `yield`
+
+#### strings
+
+```
+"one two three".split(" ").last => "three"
+```
