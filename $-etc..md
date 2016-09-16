@@ -2,7 +2,8 @@
 
 `$?` Exit status  
 `read` takes user input and assigns it to `$REPLY` by default  
-`read -p "A proper prompt > " myvar` would output the prompt, and store the typed value into `$myvar`
+`read -p "A proper prompt > " myvar` would output the prompt, and store the typed value into `$myvar`  
+`clear && ls -lG` demo of multiple commands on one line using `&&`  
 
 #### DKIM  
 
