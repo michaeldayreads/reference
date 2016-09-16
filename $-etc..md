@@ -87,6 +87,9 @@ For example, we may wish to `source ~/.profile`  re-load the profile after addin
 `tmux kill-session -t session-name` end session entirely  
 `killall tmux` end all sessions  
 
+#### uptime  
+`uptime` to see how long server has been running, users, load averages for 1,5 and 15 minutes  
+
 #### wc
 `wc -l life_the_universe_and_everthing.sh` ideally this would return 42, as would running it :P   
 
