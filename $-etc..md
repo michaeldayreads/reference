@@ -6,6 +6,8 @@
 ###### reverse-i-search
 `CTRL-R` to search for a command in the history - e.g. `CTRL-R` `ssh` `CTRL-R` `CTRL-R` to find the third match then `CTRL-Shift-R` to go back to the second.  
 
+Add a comment to tag things: `command #tag` allows `CTRL-R` `#tag` to find those commands so tagged.  
+
 ##### programming
 `$?` Exit status  
 `read` takes user input and assigns it to `$REPLY` by default  
