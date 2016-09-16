@@ -1,9 +1,15 @@
-#### 0_misc
+#### 0_misc 
 
+##### interactive
+`clear && ls -lG` demo of multiple commands on one line using `&&`  
+
+###### reverse-i-search
+`CTRL-R` to search for a command in the history - e.g. `CTRL-R` `ssh` `CTRL-R` `CTRL-R` to find the third match then `CTRL-Shift-R` to go back to the second.  
+
+##### programming
 `$?` Exit status  
 `read` takes user input and assigns it to `$REPLY` by default  
 `read -p "A proper prompt > " myvar` would output the prompt, and store the typed value into `$myvar`  
-`clear && ls -lG` demo of multiple commands on one line using `&&`  
 
 #### DKIM  
 
