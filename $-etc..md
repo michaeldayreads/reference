@@ -13,6 +13,13 @@ Add a comment to tag things: `command #tag` allows `CTRL-R` `#tag` to find those
 `read` takes user input and assigns it to `$REPLY` by default  
 `read -p "A proper prompt > " myvar` would output the prompt, and store the typed value into `$myvar`  
 
+#### APT
+`apt-get update`
+> resynchronize the package index files
+
+`apt-get install foo`
+> install foo
+
 #### DKIM  
 
 Domain Keys Identified Email. A digital signature attached to each email validated against a public key.  
