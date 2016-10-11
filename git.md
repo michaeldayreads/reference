@@ -19,19 +19,6 @@ git log --pretty=oneline --until='5 minutes ago'
 git log --pretty=oneline --author='Michael Day'
 ```
 
-_stash_
-
-`git stash` To stash things for later  
-`git stash list` to see the stash "stack"  
-`git stash show -p [stash@{n}]` essentially a diff  
-`git stash apply`  to apply the last set of stashed changes  
-`git stash apply stash@{n}` to apply the nth set  
-`git stash apply [stash@{n}] --index` apply and stage as staged at stash   
-`git stash drop [stash@{n}]` remove nth set (or last if omitted)  
-`git stash pop [stash@{n}]` apply and remove nth set (or last if omitted)  
-`git stash save "a more useful name"` stash with the useful name showing in `git stash list`  
-`git stash clear` to remove all items from the stash **caution**  
-
 #### branching
 
 `git branch` list branches
@@ -56,6 +43,23 @@ This will load the interactive editor in VIM.
 `pick` the first commit in the list and `squash` the others - don't worry about the message. After we save this first "file" using VIM, we will immediately be taken to a second "file" where we can revise the messages for our included commits to be sure there is sufficient notes on the history.  
 
 Once the rebase is complete, `git push origin -f my-branch`.
+
+#### remote
+`git remote -v` to see repositories whose branches are being tracked.
+
+#### stash
+
+`git stash` To stash things for later  
+`git stash list` to see the stash "stack"  
+`git stash show -p [stash@{n}]` essentially a diff  
+`git stash apply`  to apply the last set of stashed changes  
+`git stash apply stash@{n}` to apply the nth set  
+`git stash apply [stash@{n}] --index` apply and stage as staged at stash   
+`git stash drop [stash@{n}]` remove nth set (or last if omitted)  
+`git stash pop [stash@{n}]` apply and remove nth set (or last if omitted)  
+`git stash save "a more useful name"` stash with the useful name showing in `git stash list`  
+`git stash clear` to remove all items from the stash **caution**  
+
 
 ***
 bibliography  
