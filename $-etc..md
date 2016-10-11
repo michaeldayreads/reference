@@ -107,6 +107,9 @@ For example, we may wish to `source ~/.profile`  re-load the profile after addin
 
 ### The real misc. debris...
 
+### vagrant
+`vagrant ssh -- -A -v`
+
 #### hipchat
 
 `/code import this` an effective way to see if your chat mate is a pythonista  
