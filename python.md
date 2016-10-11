@@ -1,6 +1,9 @@
 ## misc
 
-`ternary_esque = a if (data != '') else b`
+`ternary_esque = a if (data != '') else b`  
+
+Web server, oneline
+>`python -m http.server 80`
 
 ## command line
 
