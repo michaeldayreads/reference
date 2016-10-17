@@ -25,6 +25,9 @@
 `apt-get install foo`
 > install foo
 
+#### brctl (bridge control - ethernet bridge admin)
+`brctl show` list network bridges
+
 #### DKIM  
 
 Domain Keys Identified Email. A digital signature attached to each email validated against a public key.  
