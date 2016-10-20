@@ -18,6 +18,12 @@
 >`CTRL-K` to stash it  
 >`CTRL-Y` to yank it  
 
+##### nginx
+> `/etc/init.d/nginx status`  
+> `/etc/init.d/nginx start`  
+> `/etc/init.d/nginx stop`  
+> `/etc/init.d/nginx restart`  
+
 #### APT
 > `apt-get update`
 > resynchronize the package index files
