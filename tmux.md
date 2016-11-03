@@ -26,3 +26,5 @@ Shortcut|result
 `tmux kill-session -t session-name` end session entirely  
 `killall tmux` end all sessions  
 
+##### sources
+https://robots.thoughtbot.com/a-tmux-crash-course
