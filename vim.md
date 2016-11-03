@@ -1,4 +1,10 @@
-#### getting around
+#### delete
+`x` current character  
+`dw` current word  
+`dd` current line  
+`2dd` this and the next line  
+
+#### navigation
 ##### screen
 `ctrl b` back one screen (beware tmux bindings)  
 `ctrl f` forward one screen  
@@ -10,3 +16,4 @@
 
 #### sources
 http://vim.rtorr.com/
+http://alvinalexander.com/linux/vi-vim-delete-line-commands-to-end
