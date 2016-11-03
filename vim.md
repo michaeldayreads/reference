@@ -7,3 +7,6 @@
 
 `ctrl }` next paragraph  
 `ctrl {` last paragraph  
+
+#### sources
+http://vim.rtorr.com/
