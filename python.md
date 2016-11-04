@@ -1,18 +1,4 @@
-## misc
-
-`ternary_esque = a if (data != '') else b`  
-
-Web server, oneline
->`python -m http.server 80`
-
-## command line
-
-__clear the screen__  
-'Ctrl' + 'L' on unix  
-`qc = os.system("clear")` wrapped in a lambda function (or windows equivalent) if 'Ctrl' + 'L' does not work
-
-`vars()` to see what is in local memory when at the command line
-
+# Data types  
 
 ## strings
 
@@ -118,12 +104,27 @@ Readable output sorted by word, then semantic category, then commonality of use 
     code verb 0 write code
     code verb 1 encrypt
 
-## concepts
+# tricks, hacks, misc
 
-### Assignment 
+`ternary_esque = a if (data != '') else b`  
+
+Web server, one-liner
+>`python -m http.server 80`
+
+## command line
+
+__clear the screen__  
+'Ctrl' + 'L' on unix  
+`qc = os.system("clear")` wrapped in a lambda function (or windows equivalent) if 'Ctrl' + 'L' does not work
+
+`vars()` to see what is in local memory when at the command line
+
+# concepts
+
+## Assignment 
 Associates a name to an object. It is a namespace operation. When Python sees `a = 1` it creates an integer object with the value 1 and assigns the name 'a' to it. When we declare `b = a` Python adds another reference to the object '1', but there is only one object.
 
-### Sources, in some cases of examples, in others of inspiration
+# sources  
 
 * [Python Documentation 2.7](https://docs.python.org/2/) and [3.5](https://docs.python.org/3.5/)
 * [Python for Informatics - Severance (2013)](http://www.pythonlearn.com/html-270/index.html)
