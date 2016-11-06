@@ -119,6 +119,11 @@ __clear the screen__
 
 `vars()` to see what is in local memory when at the command line
 
+# style, convention and readability
+
+## doc strings
+_pass_
+
 # concepts
 
 ## Assignment 
@@ -129,3 +134,4 @@ Associates a name to an object. It is a namespace operation. When Python sees `a
 * [Python Documentation 2.7](https://docs.python.org/2/) and [3.5](https://docs.python.org/3.5/)
 * [Python for Informatics - Severance (2013)](http://www.pythonlearn.com/html-270/index.html)
 * [Think Python, 2nd Edition - Downey (2015)](http://www.greenteapress.com/thinkpython/)
+* [pep-0257](https://www.python.org/dev/peps/pep-0257/)
