@@ -68,6 +68,29 @@ then, using the NS
 ## brctl (bridge control - ethernet bridge admin)
 `brctl show` list network bridges
 
+## chmod  
+
+Change file mode bits.
+
+`chmod +x script.sh`  make `script.sh` executable  
+
+### Symbols  
+Multiple can be given, separated by commas.
+
+#### rwxXst
+`r` read  
+`w` write  
+`x` execute  
+`X` execute or search only if file is a directory or already has execute permission for some user [?]    
+`s` set user or group ID on execution [?]  
+`t` restrict deletion flag [?]  
+
+#### ugoa  
+`u` _user_ who owns it  
+`g` file's _group_  
+`o` _other_ users not in the files group  
+`a` _all_ users  
+
 ## find
 `find ~/path/to/start/from -name pattern` where pattern is the name or partial name (* / ?) of the file
 
