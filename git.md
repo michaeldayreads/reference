@@ -25,6 +25,8 @@ git log --pretty=oneline --author='Michael Day'
 #### branching
 
 `git branch` list branches
+`git branch -d <branch to delete>`  
+`git branch -D <branch to delete>` shorthand for `git branch -d --force <branch to delete>`  
 
 #### rebase  
 
