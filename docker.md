@@ -10,6 +10,13 @@
 >on container:  
 > `CTRL + P -> Q`
 
+#### *Volume* option for run command  
+Container destination must always be an absolute path.  
+Host source may be an absolute path or named volume.  
+
+#### User  
+
+
 #### Ports  
 
 Ports on containers must be specified at the time the container is RUN. There is not a way to open ports on the container after the fact.
