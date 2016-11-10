@@ -3,6 +3,8 @@
 ## build
 `docker build -t tag -f /path/to/Dockerfile.special /path/to/context/for/commands/in/Dockerfile`  
 
+> note that `-f` expects a file with a full path, even if `Dockerfile.special` is in the context specified in the build invocation.  
+
 *Attach* to a running container with a shell tty  
 >on host:  
 >`docker exec -it <containerId> bash`  
