@@ -1,3 +1,8 @@
+# cli
+
+## build
+`docker build -t tag -f /path/to/Dockerfile.special /path/to/context/for/commands/in/Dockerfile`  
+
 *Attach* to a running container with a shell tty  
 >on host:  
 >`docker exec -it <containerId> bash`  
