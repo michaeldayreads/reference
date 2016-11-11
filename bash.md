@@ -100,6 +100,20 @@ Multiple can be given, separated by commas.
 `gpg --import > all.gpg` to import that key set into another system  
 `gpg -r {key_id} -e {file_name}` encrypt a file (adds .gpg to the end of the file name to name the new file)   
 
+## history
+
+`history | grep command-of-interest`  
+
+```
+270 blah-blah-blah  
+271 command-of-interest  
+272 blah-blah-blah
+```
+
+Then use the `!n` event designator to target the line you want to repeat...
+
+`!271` 
+
 ## ls
 ```
 -c # use time when last changed for sorting (-t) or long printing (-l)  
