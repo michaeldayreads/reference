@@ -23,10 +23,15 @@
 `ctrl d` forward 1/2  
 `ctrl u` back 1/2  
 
+## paragraph  
 `ctrl }` next paragraph  
 `ctrl {` last paragraph  
 
+## line  
+`:42` takes you to line 42  
+
+
 #### sources
-http://vim.wikia.com
-http://alvinalexander.com/linux/
-http://vim.rtorr.com/
+http://vim.wikia.com  
+http://alvinalexander.com/linux/  
+http://vim.rtorr.com/  
