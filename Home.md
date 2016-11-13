@@ -1,3 +1,5 @@
-### code cribs
+# code cribs
 
-I remember better if I write it down.
+Please check the sources at the bottom of each page. In many instances I am transforming / re-working the examples offered on those pages as an exercise: writing helps me learn.
+
+-- md 
