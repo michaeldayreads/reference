@@ -6,7 +6,7 @@
 `dd` current line  
 `2dd` this and the next line  
 
-## `:s` substitute aka _find and replace_  
+## substitute aka _find and replace_  
 ### without confirmation  
 `:%s/ignorance/understanding/g` find and replace in __all lines__  
 `:s/ignorance/understanding/g` find and replace in __current line only__  
@@ -16,6 +16,19 @@
 
 
 # navigation
+
+## by character
+
+` `|` `|` `
+-----|-----|------
+  |`k`|
+`h`| | `l`
+  |`j`|  
+
+## by word  
+`b` **first** character of _previous_ word  
+`e` **last** character of _current_ word  
+`w` **first** character of _next_ word  
 
 ## screen
 `ctrl b` back one screen (beware tmux bindings)  
