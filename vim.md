@@ -1,5 +1,8 @@
 # text manipulation
 
+## copy  
+`yy` or `Y` will yank (copy) the current line  
+
 ## delete
 `x` current character  
 `dw` current word  
@@ -14,6 +17,11 @@
 `:%s/ignorance/understanding/gc` find and replace in __all lines__  
 `:s/ignorance/understanding/gc` find and replace in __current line only__  
 
+# folding
+`zf3j` creates a fold from the cursor down three lines  
+`zf/text` creates a fold from the cursor to the next instance of `text`  
+`zd` delete the fold  
+`zE` delete **all** folds
 
 # navigation
 
@@ -48,3 +56,4 @@
 http://vim.wikia.com  
 http://alvinalexander.com/linux/  
 http://vim.rtorr.com/  
+https://www.linux.com/learn/
