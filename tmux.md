@@ -1,8 +1,11 @@
-# help 
+# quickstart / quick reference  
+
+## help 
 `tmux list-keys`  
 `tmux list commands`  
 
-# shortcuts (after the `CTRL + b` prefix )
+## shortcuts (after the `CTRL + b` prefix )  
+
 Shortcut|result
 --------|------
  |`tmux "windows"`
@@ -14,6 +17,9 @@ Shortcut|result
 `"` | two vertical panes
 `%` | horizontal panes
 `{` or `}` | swap panes
+
+# panes  
+`^b` `x` kill current pane  
 
 # sessions 
 `tmux ls` show sessions  
@@ -30,3 +36,4 @@ Shortcut|result
 # sources
 `man tmux`  
 https://robots.thoughtbot.com/a-tmux-crash-course
+http://www.dayid.org/comp/tm.html
