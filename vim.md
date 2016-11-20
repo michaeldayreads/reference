@@ -38,6 +38,15 @@
 `e` **last** character of _current_ word  
 `w` **first** character of _next_ word  
 
+combine with numbers...  
+
+`3b` first character of 3rd word back  
+
+# inserting  
+
+`30i-` then `<esc>` will insert a 30 hash line.  
+
+
 ## screen
 `ctrl b` back one screen (beware tmux bindings)  
 `ctrl f` forward one screen  
