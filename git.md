@@ -65,6 +65,18 @@ Once the rebase is complete, `git push origin -f my-branch`.
 `git stash save "a more useful name"` stash with the useful name showing in `git stash list`  
 `git stash clear` to remove all items from the stash **caution**  
 
+# Workflows
+
+## fork, rebase to origin, merge to upstream
+```
+git checkout master  
+git pull upstream master
+git push origin master
+git checkout fix-or-feature-branch
+git rebase -i HEAD~n # squash all of you WIP commits
+git rebase master # and resolve any conflicts
+git push -f origin fix-or-feature-branch:fix-or-feature-branch
+```
 
 ***
 bibliography  
