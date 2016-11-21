@@ -4,16 +4,32 @@
 `yy` or `Y` will yank (copy) the current line  
 
 ## delete
-`x` current character  
+`x` current character to left  
+`X` current character to right  
 `dw` current word  
 `dd` current line  
 `2dd` this and the next line  
 
-## substitute aka _find and replace_  
-### without confirmation  
+Note that `d` also copies the content, and `p` then puts or pastes it.  
+
+# search
+
+## characters
+
+`fq` find next q (use `n` to move to next find)  
+`%5` to look for braces, brackets etc.  
+
+### replace single character under cursor
+`r` then `x` would replace the character under the cursor with "x" without having to enter and navigate `INSERT` mode.
+
+## and replace 
+
+### substitute aka _find and replace_  
+
+#### without confirmation  
 `:%s/ignorance/understanding/g` find and replace in __all lines__  
 `:s/ignorance/understanding/g` find and replace in __current line only__  
-### _with_ confirmation  
+#### _with_ confirmation  
 `:%s/ignorance/understanding/gc` find and replace in __all lines__  
 `:s/ignorance/understanding/gc` find and replace in __current line only__  
 
@@ -42,10 +58,21 @@ combine with numbers...
 
 `3b` first character of 3rd word back  
 
-# inserting  
+`*` next occurrence of the word under the cursor  
+`#` last occurrence of the word under the cursor  
 
-`30i-` then `<esc>` will insert a 30 hash line.  
 
+## by line  
+
+`0` or `^` will take you to the start of the line  
+`$` will take you to the end  
+
+`gg` first line of the file  
+`G` last line of the file  
+
+Goto a line by using the number followed by `G` or using `:` followed by the number. So...
+
+`42` `G` is the same as `:42` `<enter>`  
 
 ## screen
 `ctrl b` back one screen (beware tmux bindings)  
@@ -57,12 +84,29 @@ combine with numbers...
 `ctrl }` next paragraph  
 `ctrl {` last paragraph  
 
-## line  
-`:42` takes you to line 42  
+# inserting  
 
+`30i-` then `<esc>` will insert a 30 hash line.  
+
+`o` inserts a line below current line, and enters `INSERT` mode  
+`O` inserts one *above* and enters `INSERT` mode  
+
+# misc.
+
+`.` repeats!  
+
+## visual mode
+
+use `v` to enter visual mode, then use navigation keys to select text, which you may then `d` or `y`.  
+
+## undo
+
+`u` undo last, aka backward in change history    
+`<ctrl> r` redo last, aka forward in change history  
 
 #### sources
 http://vim.wikia.com  
 http://alvinalexander.com/linux/  
 http://vim.rtorr.com/  
-https://www.linux.com/learn/
+https://www.linux.com/learn/  
+http://www.openvim.com/  
