@@ -39,7 +39,7 @@ Note that `d` also copies the content, and `p` then puts or pastes it.
 `zf3j` creates a fold from the cursor down three lines  
 `zf/text` creates a fold from the cursor to the next instance of `text`  
 `zd` delete the fold  
-`zE` delete **all** folds
+`zE` delete **all** folds  
 
 ## display & fold based navigation  
 
@@ -47,7 +47,7 @@ Note that `d` also copies the content, and `p` then puts or pastes it.
 `zk` previous fold  
 
 `zR` decrease fold level to 0, aka open all  
-`zr` decrease fold level by 1
+`zr` decrease fold level by 1  
 `zm` closes all open folds (increase fold level recursively)  
 
 # navigation
