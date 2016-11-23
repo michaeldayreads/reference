@@ -34,10 +34,21 @@ Note that `d` also copies the content, and `p` then puts or pastes it.
 `:s/ignorance/understanding/gc` find and replace in __current line only__  
 
 # folding
+
+## creating, modifying  
 `zf3j` creates a fold from the cursor down three lines  
 `zf/text` creates a fold from the cursor to the next instance of `text`  
 `zd` delete the fold  
 `zE` delete **all** folds
+
+## display & fold based navigation  
+
+`zj` next fold  
+`zk` previous fold  
+
+`zR` decrease fold level to 0, aka open all  
+`zr` decrease fold level by 1
+`zm` closes all open folds (increase fold level recursively)  
 
 # navigation
 
