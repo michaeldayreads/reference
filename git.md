@@ -13,6 +13,8 @@ _All working directories are full repositories_
 
 `log --pretty=oneline` for concise history
 
+`git log --date=local --author="<person of interest>"` to see what's been done & when (standup log hack)  
+
 Further examples:  
 
 ```
