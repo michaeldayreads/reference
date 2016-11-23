@@ -106,6 +106,10 @@ Goto a line by using the number followed by `G` or using `:` followed by the num
 
 `.` repeats!  
 
+## line numbers  
+`:set nu` to invoke -- `nu` short for `number`   
+`:set nonu` to revoke  
+
 ## visual mode
 
 use `v` to enter visual mode, then use navigation keys to select text, which you may then `d` or `y`.  
