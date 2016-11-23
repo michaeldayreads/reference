@@ -33,6 +33,11 @@ Shortcut|result
 `tmux kill-session -t session-name` end session entirely  
 `killall tmux` end all sessions  
 
+## view, copy and paste  
+`[` enter copy mode to view, find and copy what is of interest  
+`]` paste most recent buffer of text  
+
+
 # sources
 `man tmux`  
 https://robots.thoughtbot.com/a-tmux-crash-course
