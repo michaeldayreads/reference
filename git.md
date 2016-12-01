@@ -29,6 +29,8 @@ git log --pretty=oneline --author='Michael Day'
 `git branch` list branches
 `git branch -d <branch to delete>`  
 `git branch -D <branch to delete>` shorthand for `git branch -d --force <branch to delete>`  
+`git branch -m <old_name> <new_name>` to rename a branch you are not on  
+`git branch -m <new_name>` to rename current branch  
 
 #### rebase  
 
