@@ -102,6 +102,10 @@ Goto a line by using the number followed by `G` or using `:` followed by the num
 `o` inserts a line below current line, and enters `INSERT` mode  
 `O` inserts one *above* and enters `INSERT` mode  
 
+# syntax highlighting and appearance  
+
+`:syntax on` and `:syntax off` for file specific toggling  
+
 # misc.
 
 `.` repeats!  
