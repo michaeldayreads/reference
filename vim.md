@@ -105,6 +105,7 @@ Goto a line by using the number followed by `G` or using `:` followed by the num
 # syntax highlighting and appearance  
 
 `:syntax on` and `:syntax off` for file specific toggling  
+`:set syntax=off` to have that setting persist for that file   
 
 # misc.
 
