@@ -1,4 +1,5 @@
 ### 0_misc 
+`HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S: "`  
 
 #### redirect  
 `ls -al > directory_list.txt` file listing directory contents  
