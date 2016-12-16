@@ -1,5 +1,3 @@
-# Glossary
-
 # C
 
 ## Containers as a Service (CaaS) - Kubernetes, Docker Swarm
