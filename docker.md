@@ -17,6 +17,10 @@
 >on container:  
 > `CTRL + P -> Q`
 
+## host clean up
+Remove dangling images  
+`docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null`
+
 #### *Volume* option for run command  
 Container destination must always be an absolute path.  
 Host source may be an absolute path or named volume.  
