@@ -33,10 +33,13 @@ Shortcut|result
 `tmux kill-session -t session-name` end session entirely  
 `killall tmux` end all sessions  
 
-## view, copy and paste  
+## view, search stdout and copy and paste  
 `[` enter copy mode to view, find and copy what is of interest  
 `]` paste most recent buffer of text  
 
+`:setw -g mode-keys vi` to set bindings to vim  
+`/` to search forward  
+`?` to search backward  
 
 # sources
 `man tmux`  
