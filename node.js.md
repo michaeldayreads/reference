@@ -1,3 +1,7 @@
+# debug hacks
+
+`console.log(__filename);` is a simple way to trace where you are when exploring a new code base.
+
 # Commands
 pass  
 
