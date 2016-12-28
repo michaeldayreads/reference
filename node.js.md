@@ -1,6 +1,13 @@
 # debug hacks
 
-`console.log(__filename);` is a simple way to trace where you are when exploring a new code base.
+`console.log(__filename);` is a simple way to trace where you are when exploring a new code base.  
+
+Drill into an object
+
+```javascript
+const foo = require('util');
+console.log(foo.inspect((object, false, null)):
+```
 
 # Commands
 pass  
