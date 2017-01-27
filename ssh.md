@@ -11,3 +11,4 @@
 
 `ssh-add -l` list keys on current agent  
 `ssh-add ~/.specify_key_file` add specified key, in this case from default file path  
+`ssh-add -D` removes all manually added identities  

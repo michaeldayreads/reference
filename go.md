@@ -1,0 +1,531 @@
+# Syntax and concepts
+
+## control
+
+### for loops
+
+The only loop structure. 
+
+There is an init, a condition, and a post statement.
+
+```go
+package main 
+
+import "fmt"
+
+func main() {
+    sum := 0
+    for i := 0; i < 10; i++ {
+        sum += i
+    } 
+    fmt.Println(sum)
+}
+```
+
+Init and Post are optional
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+        sum := 1
+        for ; sum < 1000; {
+                sum += sum
+                fmt.Printf("Intermitent sum: %v\n", sum)
+        }
+        fmt.Printf("Final total: %d", sum)
+}
+```
+
+Which means that go's `while` is spelled `for` :P :
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+        sum := 1
+        for sum < 1000 {
+                sum += sum
+        }
+        fmt.Printf("Final Value: %d", sum)
+}
+```
+
+Yes. That is the same code, just with the `;` removed. 
+
+So, if you want an infinite loop...
+
+```go
+package main
+
+main() {
+    for {
+    }
+}
+```
+
+This is syntactically correct, just useless. 
+
+### If
+
+```go
+package main
+
+import (
+    "fmt"
+    "math"
+)
+
+func sqrt(x float64) string {
+    if x < 0 {
+        return sqrt(-x) + "i"
+    }
+    return fmt.Sprint(math.Sqrt(x))
+}
+
+func main() {
+    fmt.Println(sqrt(2), sqrt(-4))
+}
+```
+
+The `if` statement itself may start with a short statement:
+
+```go
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func pow(x, n, lim float64) float64 {
+	if v := math.Pow(x, n); v < lim {
+		return v
+	}
+	return lim
+}
+
+func main() {
+	fmt.Println(
+		pow(3, 2, 10),
+		pow(3, 3, 30),
+		pow(3, 4, 30),
+	)
+}
+```
+
+> Note that `v` is only in scope within the `if` statement. Attempting to return  `v` on the second return results in an "undefined" error. 
+
+Using `else`
+
+```go
+package main
+
+import (
+        "fmt"
+        "math"
+)
+
+func pow(x, n, lim float64) float64 {
+        if v := math.Pow(x, n); v < lim {
+                return v
+        } else {
+                fmt.Printf("%g >= %g\n", v, lim)
+        }
+        return lim
+}
+
+func main() {
+        fmt.Println(
+                pow(3, 2, 10),
+                pow(3, 3, 20),
+        )
+}
+```
+
+### Switch
+
+Standard
+
+```go
+package main
+
+import (
+        "fmt"
+        "time"
+)
+
+func main() {
+        fmt.Println("When's Saturday?")
+        today := time.Now().Weekday()
+        switch time.Saturday {
+        case today + 0:
+                fmt.Println("Today!")
+        case today + 1:
+                fmt.Println("Tomorrow!")
+        case today + 2:
+                fmt.Println("Day after tomorrow.")
+        default:
+                fmt.Println("Better not to think about it.")
+        }
+}
+```
+
+Version with no condition, which is a way to write if-else chains:
+
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	t := time.Now()
+	switch {               // note no switch condition
+	case t.Hour() < 12:
+		fmt.Println("Good morning!")
+	case t.Hour() < 17:
+		fmt.Println("Good afternoon.")
+	default:
+		fmt.Println("Good evening.")
+	}
+}
+
+```
+
+### Defer
+
+```go
+package main
+
+import "fmt"
+
+fun main() {
+    defer fmt.Println("world")
+    
+    fmt.Println("hello")
+}
+
+```
+
+#### Stacking defers
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("counting")
+    
+    for i := 0; i < 10; i++ {
+        defer fmt.Println(i)
+    }
+    
+    fmt.Println("done")
+}
+```
+
+Importantly, the output of this code is:
+
+```
+counting
+done
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+```
+
+The stack is last in, first out. 
+
+# Fundamental types
+
+## Pointers
+
+
+A pointer holds a memory address of a value.
+
+The type `*T` is a pointer to a type `T` value, e.g. `*int`.
+
+The `&` operator generates a pointer to its operand.
+
+```go
+answer := 42
+p = &answer
+```
+
+The `*` operator denotes the underlying value, i.e. it "dereferences" it.
+
+Note that Go has no pointer arithmetic.
+
+## Structs
+
+Collections of fields. 
+
+Fields can be accessed using the `.`, both for the struct itself and also for pointers to the struct.
+
+Struct literals are allocated by listing the values.
+
+## Arrays
+
+Length is part of the type.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+        var a [2]string
+        a[0] = "Hello"
+        a[1] = "World"
+        fmt.Println(a[0], a[1])
+        fmt.Println(a)
+
+        primes := [6]int{2, 3, 5, 7, 11, 13}
+        fmt.Println(primes)
+
+        var a1 [2]int
+        b := [3]string{"It", "Seems", "Funky"}
+        var c [2]string
+        c[0] = "It's"
+        c[1] = "not!"
+
+        fmt.Println(a1)
+        fmt.Println(b)
+        fmt.Println(c)
+}
+
+```
+
+### Slices
+
+Are essentially references to Arrays. They do not contain any data, however, they *do* permit modification of the underlying array data:
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+        names := [4]string{
+                "John",
+                "Paul",
+                "George",
+                "Ringo",
+        }
+        fmt.Println(names)
+
+        a := names[0:2]
+        b := names[1:3]
+        fmt.Println(a, b)
+
+        b[0] = "I used to be Paul"
+        fmt.Println(a, b)
+        fmt.Println(names)
+}
+```
+
+#### Slice Literals
+
+Invoking a slice literal generates an underlying array and the slice...
+
+??
+
+#### Slice defaults
+
+Index 0 is the low end, length of the array is the default for high end.
+
+Given:
+
+```go
+var a [10]int
+```
+
+the following are equivalent:
+
+```go
+a[0:10]
+a[:10]
+a[0:]
+a[:]
+```
+
+Making slices (and capacity)
+---
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+        a := make([]int, 5)
+        printSlice("a", a)
+
+        b := make([]int, 0, 5)
+        printSlice("b", b)
+
+        c := b[:2]
+        printSlice("c", c)
+
+        d := c[2:5]
+        printSlice("d", d)
+}
+
+func printSlice(s string, x []int) {
+        fmt.Printf("%s len=%d cap=%d %v\n", s, len(x), cap(x), x)
+}
+```
+
+output:
+
+```
+a len=5 cap=5 [0 0 0 0 0]
+b len=0 cap=5 []
+c len=2 cap=5 [0 0]
+d len=3 cap=3 [0 0 0]
+```
+
+Appending to a slice
+---
+
+## Maps
+
+Map keys to values.
+
+Zero value of a map is `nil`.
+
+```go
+package main
+
+import "fmt"
+
+// declare a new type for the values of your map
+type Vertex struct {
+        Lat, Long float64
+}
+
+// maps may be declared as literals
+var mLit = map[string]Vertex{
+        "Bell Labs": Vertex{
+                40.68433, -74.39967,
+        },
+        "Google": Vertex{
+                37.42202, -122.08408,
+        },
+}
+
+// the second Type reference is a name only
+// it may be safely ommitted
+var mLitSimple = map[string]Vertex{
+        "Bell Labs": {40.68433, -74.39967},
+        "Google":    {37.42202, -122.08408},
+}
+
+// to use the make function, we need a variable
+var m map[string]Vertex
+
+func main() {
+        // m has to be built
+        m = make(map[string]Vertex)
+        m["Bell Labs"] = Vertex{
+                40.68433, -74.39967,
+        }
+        m["Google"] = Vertex{
+                37.42202, -122.08408,
+        }
+        fmt.Println(mLit)
+        fmt.Println(m)
+}
+```
+
+Mutating maps
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+        m := make(map[string]int)
+
+        m["Answer"] = 42
+        fmt.Printf("Value: %v\n", m["Answer"])
+
+        m["Answer"] = 48
+        fmt.Printf("Value: %v\n", m["Answer"])
+
+        delete(m, "Answer")
+        fmt.Printf("Value: %v\n", m["Answer"])
+
+        v, ok := m["Answer"]
+        fmt.Printf("Value: %v Present? %v\n", v, ok)
+}
+```
+## Methods
+_(and using structs like classes)_
+
+```go
+// methods
+// Go does not have classes
+// a method is a special kind of function,
+// which can be defined on types (structs)
+
+// notice the *receiver* argument
+// such that the Abs method has a receiver
+// of type Vertex nameed v
+
+package main
+
+import (
+        "fmt"
+        "math"
+)
+
+type Vertex struct {
+        X, Y float64
+}
+
+func (v Vertex) Abs() float64 {
+        return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+
+// a standard function for comparison
+// notice no receiver
+func plus(a int, b int) int {
+        return a + b
+}
+
+func main() {
+        v := Vertex{3, 4}
+        fmt.Println(v.Abs())
+        fmt.Println(plus(3, 4))
+}
+```
+
+
+
+
+Operators
+---
+
+`<<` 
+
+Left shift operator.  
+If the left operand is a signed integer, an arithmetic shift is performed.  
+If the left operant is an unsigned integer, a logical shift is performed.  
+

@@ -1,5 +1,17 @@
 ### 0_misc 
-`HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S: "`  
+`HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S: "`
+
+other formatting options
+```
+cc      Century (either 19 or 20) prepended to the abbreviated year.
+yy      Year in abbreviated form (e.g., 89 for 1989, 06 for 2006).
+mm      Numeric month, a number from 1 to 12.
+dd      Day, a number from 1 to 31.
+HH      Hour, a number from 0 to 23.
+MM      Minutes, a number from 0 to 59.
+ss      Seconds, a number from 0 to 61 (59 plus a maximum of two leap seconds).
+```
+  
 `ls -d */` list directories  
 
 #### redirect  
@@ -133,6 +145,18 @@ Then use the `!n` event designator to target the line you want to repeat...
 
 ## rsync  
 `rsync -a file_to_send.txt username@server:~/path/if/desired`  
+
+## SCP
+
+Secure copy
+
+`user@host:path/to/file` format to specify target
+
+`-r` recursive
+
+## sleep
+
+`sleep <seconds>`  suspend execution for a minimum of seconds given.  
 
 ## source  
 

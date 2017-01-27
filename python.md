@@ -1,3 +1,14 @@
+# http server
+
+`python -m SimpleHTTPServer 80`  python 2 simple server on port 80  
+`python -m http.server 80` python 3 server on port 80  
+
+
+# basics
+
+`print str(1) + ". To concatenate numbers and strings use the str(n) method."`
+
+
 # Data types  
 
 ## strings

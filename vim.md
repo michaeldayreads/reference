@@ -3,6 +3,8 @@
 ## copy  
 `yy` or `Y` will yank (copy) the current line  
 
+`p` will paste it. If you are not in `INSERT` mode, vim will insert th
+
 ## delete
 `x` current character to left  
 `X` current character to right  

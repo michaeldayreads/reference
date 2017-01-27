@@ -1,5 +1,11 @@
 # cli
 
+## attach
+
+`docker attach <name>`  
+
+
+
 ## build
 `docker build -t tag -f /path/to/Dockerfile.special /path/to/context/for/commands/in/Dockerfile`  
 
@@ -15,7 +21,9 @@
 
 *Detach* from an interactive tty  
 >on container:  
-> `CTRL + P -> Q`
+> `CTRL + P` then `CTRL + Q`
+
+## run
 
 ## host clean up
 Remove dangling images  
