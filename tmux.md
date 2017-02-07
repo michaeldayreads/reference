@@ -29,6 +29,8 @@ Shortcut|result
 `tmux detach`  detach from the session you are in  
 
 `tmux rename-session -t old_name new_name`  
+OR  
+`tmux rename-session new_name` if you are in a session and wish to rename that session.  
 
 `tmux kill-session -t session-name` end session entirely  
 `killall tmux` end all sessions  

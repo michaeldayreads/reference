@@ -1,7 +1,8 @@
-To process:
+# Useful and to be expanded on...
 
 `kubectl delete pod NAME --grace-period=0`
 
+`kubectl get deployments --all-namespaces`
 
 
 # Core Objects / Terms
@@ -218,4 +219,3 @@ set image
 The image may be a standard docker registry image or a path to an image in a private repository may be provided.
 
 > Note: `set` is a broader command presently operating ONLY on `image`.
-

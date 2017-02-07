@@ -73,6 +73,16 @@ git rebase master
 git push origin -f my-branch
 ```
 
+### when there is an upstream
+
+```
+git checkout master
+git pull upstream master
+git checkout my-branch
+git rebase master
+git push origin  
+```
+
 ## interactive rebase to squash commits  
 
 First, start interactive rebase. In this example, we are squashing the last two commits into one.  

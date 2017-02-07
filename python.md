@@ -1,3 +1,7 @@
+# digging about
+
+
+
 # http server
 
 `python -m SimpleHTTPServer 80`  python 2 simple server on port 80  
@@ -121,6 +125,14 @@ Readable output sorted by word, then semantic category, then commonality of use 
 
 Web server, one-liner
 >`python -m http.server 80`
+
+__Enumerate properties of an object__
+
+```python
+for name, value in inspect.getmembers(target_object)
+    print(name)
+```
+
 
 ## command line
 
