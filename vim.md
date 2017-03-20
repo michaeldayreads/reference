@@ -14,6 +14,14 @@
 
 Note that `d` also copies the content, and `p` then puts or pastes it.  
 
+## pasting from other applications
+
+Vim is not always certain how to work with the system clipboard. Before pasting content from a non-terminal input:
+
+`set: paste` lets vim know to not additionally format the incoming text.
+
+`set: nopaste` returns behavior to standard.
+
 # search
 
 ## characters
@@ -107,7 +115,17 @@ Goto a line by using the number followed by `G` or using `:` followed by the num
 # syntax highlighting and appearance  
 
 `:syntax on` and `:syntax off` for file specific toggling  
-`:set syntax=off` to have that setting persist for that file   
+`:set syntax=off` to have that setting persist for that file  
+
+## python settings
+
+```
+set tabstop=8
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+filetype indent on
+```
 
 # misc.
 

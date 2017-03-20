@@ -25,6 +25,8 @@
 
 ## run
 
+`docker run CONTAINER_ID [OPTIONS]`
+
 ## host clean up
 Remove dangling images  
 `docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null`

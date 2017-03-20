@@ -1,4 +1,8 @@
 # digging about
+`dir(obj)`  list of methods on object
+`help(obj)`  A doc string list of methods on the object
+`obj.__dict__` == `vars(obj)`  
+
 
 
 

@@ -38,11 +38,13 @@ git log --pretty=oneline --max-count=2
 git log --pretty=oneline --since='5 minutes ago'
 git log --pretty=oneline --until='5 minutes ago'
 git log --pretty=oneline --author='Michael Day'
+git log --graph --color --oneline --decorate
 ```
 
 ## branch
 
-`git branch` list branches
+`git branch` list branches  
+`git branch -r` list remote branches  
 `git branch -d <branch to delete>`  
 `git branch -D <branch to delete>` shorthand for `git branch -d --force <branch to delete>`  
 `git branch -m <old_name> <new_name>` to rename a branch you are not on  
@@ -62,6 +64,23 @@ git log --pretty=oneline --author='Michael Day'
 `git stash clear` to remove all items from the stash **caution**  
 
 # by concept or use pattern
+
+## cherry-pick
+
+Cherry pick is a method to apply a commit - or set of commits - and create a new commit for each. One example is if your team has release branches in addition to a master branch. As each member of the team works on fixes and features, all of those commits are merged to master. Then, depending on timing and completeness relative to releases, the commits associated with a given feature can be "cherry-picked" into the feature branches. 
+
+This produces a history on the feature branches that tracks the history seen on the master branch.
+
+As always, there are as many ways to implement cherry-pick as there are teams that use it, but here is one example:
+
+`git cherry-pick -x -m 1 <commit-id>`
+
+* The `-x` options instructs git to include a "cherry-picked from ..." bread crumb in the log.
+* the `-m 1` instructs git which parent number to choose as mainline.
+
+## ignore
+
+`vim .git/info/exclude`  to ignore items in a local repo where the ignores themselves are not committed to the repo.  
 
 ## rebase branch changes into updated master  
 
@@ -98,6 +117,10 @@ Once the rebase is complete, `git push origin -f my-branch`.
 
 `git remote -v` to see repositories whose branches are being tracked.
 
+`git remote add upstream <url>` to add an upstream
+
+`git remote set-url origin <new url>` to update an origin (or upstream) following a name change  
+
 ## fork, rebase to origin, merge to upstream
 ```
 git checkout master  
@@ -113,3 +136,12 @@ git push -f origin fix-or-feature-branch:fix-or-feature-branch
 https://git-scm.com/book/en/v2  
 https://git-scm.com/docs  
 http://ndpsoftware.com/git-cheatsheet.html  
+
+
+```
+git checkout master
+git pull upstream master
+git push origin master
+git checkout my-branch
+git rebase master
+```

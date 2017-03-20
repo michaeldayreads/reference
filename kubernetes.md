@@ -4,6 +4,10 @@
 
 `kubectl get deployments --all-namespaces`
 
+you could then target another command by namespace as in:
+
+`kubectl --namespace=foo delete deployment baz`  
+
 
 # Core Objects / Terms
 

@@ -1,4 +1,82 @@
-### 0_misc 
+# scripting
+
+## Variables
+
+To set an environment variable:
+
+`MY_VAR="value"`
+
+The ALL_UPPERCASE is a convention. Lowercase can be used, but following the convention improves readability.
+
+To clear the variable:
+
+`unset MY_VAR`
+
+### Variables and executable scripts
+
+Scripts that have been made executable (`chmod +x foo.sh`) will run in a different process than the one where your invocation of that script takes place. This means that to ensure `BAR` is available to`foo.sh` we have to include the variable declaration in the invocation of the script: `BAR="baz" foo.sh`.
+
+# builtins
+
+`:`  From the documentation -- `Do nothing beyond expanding arguments and performing redirections. The return status is zero.`
+
+Some use cases help: 
+
+* override a nonzero exit code
+
+    ```
+    if [ -f ${file} ]; then
+        grep some_string ${file} >> otherfile || :
+        grep other_string ${file} >> otherfile || :
+    fi
+    ```
+
+* assign default values
+
+    ```
+    : ${FOO:=bar}
+    ``` 
+
+* infinite loops
+
+    ```
+    while :
+    do
+        <shell commands>
+        <exit condition>
+    done
+    ```
+
+* stub out a function
+
+    ```
+    function FleshMeOutLater {
+        :
+    }
+    ```
+
+Examples from [StackExchange][^1]
+
+[^1]: https://unix.stackexchange.com/questions/31673/what-purpose-does-the-colon-builtin-serve
+
+### 0_misc  
+
+#### `$@` or all args
+
+The example:
+
+```
+exec docker run --rm -it \
+  -v $PWD:$PWD --workdir $PWD \
+  ${DOCKER_PORT_ARGS} \
+  -e "LOCAL_USER_ID=$(id -u)" \
+  ${DOC_IMG} "$@"
+```
+
+This snippet is part of a shell script. A script can itself be called with multiple arguments following the script name.
+
+In the context we see here, which is a script that puts us into a docker container anchored to the present working directory with network connections, we are able to include as arguments to our script additional options to invoke once the container is started. For example, we might invoke a `Makefile` recipe in some contexts and call yet another bash script in a different context. Using `"$@"` allows us to pass this later invocation as args in the invocation of the first script.   
+
 `HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S: "`
 
 other formatting options
@@ -28,7 +106,9 @@ Sender Policy Framework.  TXT records published on DNS that list hosts considere
 `nslookup -type=txt domain.com`.  
 
 #### ssh  
-`ls -al ~/.ssh` list present keys (if any)  
+`ls -al ~/.ssh` list present keys (if any) 
+
+`ssh -F path/to/ssh_config_file host_name` 
 
 #### interactive
 >`clear && ls -lG` demo of multiple commands on one line using `&&`  
@@ -105,6 +185,14 @@ Multiple can be given, separated by commas.
 `o` _other_ users not in the files group  
 `a` _all_ users  
 
+## compgen
+
+`compgen -a` list all available aliases
+
+## diff
+
+`diff -i file_one.txt file_two.txt` output different lines, case insensitive
+
 ## find
 `find ~/path/to/start/from -name pattern` where pattern is the name or partial name (* / ?) of the file
 
@@ -153,6 +241,8 @@ Secure copy
 `user@host:path/to/file` format to specify target
 
 `-r` recursive
+
+`scp -F path/to/ssh_config_file path/to/file/to/copy.py host_name:/path/to/copy/file/into`
 
 ## sleep
 
