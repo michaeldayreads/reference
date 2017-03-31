@@ -45,3 +45,7 @@ Ports on containers must be specified at the time the container is RUN. There is
 ###### sources  
 * https://stackoverflow.com/questions/22049212/docker-copy-file-from-container-to-host#22050116
 * https://stackoverflow.com/questions/17903705/is-it-possible-to-start-a-shell-session-in-a-running-container-without-ssh
+
+docker run --rm -it -v $PWD:$PWD docker-registry.pdbld.f5net.com/velcro/attributions-generator:master /usr/local/bin/run-backends.sh $PWD
+
+docker run --rm -it -v $PWD:$PWD docker-registry.pdbld.f5net.com/velcro/attributions-generator:master node /frontEnd/frontEnd.js $PWD

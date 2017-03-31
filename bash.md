@@ -1,4 +1,11 @@
+*notes*
+
+* Other shells will be mentioned as appropriate.
+* Option lists on commands are non-exhaustive. The intention is to explain and highlight command line and scripting usage, not to clone the man pages.
+
 # scripting
+
+`#!/bin/bash` is a convention to let `execve` know what interpreter to load to execute a script. The actual path might vary, and can be determined with `which`.
 
 ## Variables
 
@@ -20,7 +27,7 @@ Scripts that have been made executable (`chmod +x foo.sh`) will run in a differe
 
 `:`  From the documentation -- `Do nothing beyond expanding arguments and performing redirections. The return status is zero.`
 
-Some use cases help: 
+Some use cases help:
 
 * override a nonzero exit code
 
@@ -35,7 +42,7 @@ Some use cases help:
 
     ```
     : ${FOO:=bar}
-    ``` 
+    ```
 
 * infinite loops
 
@@ -89,7 +96,7 @@ HH      Hour, a number from 0 to 23.
 MM      Minutes, a number from 0 to 59.
 ss      Seconds, a number from 0 to 61 (59 plus a maximum of two leap seconds).
 ```
-  
+
 `ls -d */` list directories  
 
 #### redirect  
@@ -106,9 +113,9 @@ Sender Policy Framework.  TXT records published on DNS that list hosts considere
 `nslookup -type=txt domain.com`.  
 
 #### ssh  
-`ls -al ~/.ssh` list present keys (if any) 
+`ls -al ~/.ssh` list present keys (if any)
 
-`ssh -F path/to/ssh_config_file host_name` 
+`ssh -F path/to/ssh_config_file host_name`
 
 #### interactive
 >`clear && ls -lG` demo of multiple commands on one line using `&&`  
@@ -194,7 +201,12 @@ Multiple can be given, separated by commas.
 `diff -i file_one.txt file_two.txt` output different lines, case insensitive
 
 ## find
+
 `find ~/path/to/start/from -name pattern` where pattern is the name or partial name (* / ?) of the file
+
+**note** Be sure to use quotes to prevent filename expansion, aka _globbing on the wild card `*`_
+
+`find . -name '*py' ! -path '*test*'` Find all python files, but exclude directories that have "test" as part of their path, e.g. `/systest/` or `/test/`.
 
 ## gpg  
 `gpg --list-keys`  to get see what keys are on a system  
@@ -214,7 +226,7 @@ Multiple can be given, separated by commas.
 
 Then use the `!n` event designator to target the line you want to repeat...
 
-`!271` 
+`!271`
 
 ## ls
 ```
@@ -252,6 +264,34 @@ Secure copy
 
 `source FILENAME [arguments]`  loads functions files  
 For example, we may wish to `source ~/.profile`  re-load the profile after adding a new alias to our `.profile`.  
+
+## test
+
+Exits with a 0 (true) or 1 (false) based on the evaluation of an expression.
+
+**NOTE** that since we are looking at a *return code* the logic can feel backwards! 0 == TRUE and 1 == FALSE because we want to be able to use the return code in the rest of a script!
+
+`test` returns 1, since there is no expression
+
+`[ ]`  this is an alias for `test`, and so returns exactly the same as above.
+
+`[ "any string on its own evaluates to true."]` useful for debugging.
+
+There are numerous flags that provide the ability to do focused testing or combine expressions in standard logic.
+
+### options
+
+`[ -d .git ]` returns 0 (true) in a directory under git source control.
+
+`[ -f .git ]` would return 1 (false)
+
+`[ -n "string" ]` tests if the length of a string is nonzero, would return 0 (true).
+
+`[ -z "" ]` tests if the length of a string *is* zero, so would return 0 (true).
+
+### useful patterns
+
+`[ -n "$ENV_VAR_WE_NEED" ] || die "error message"`
 
 ## uptime  
 `uptime` to see how long server has been running, users, load averages for 1,5 and 15 minutes  

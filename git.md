@@ -63,11 +63,18 @@ git log --graph --color --oneline --decorate
 `git stash save "a more useful name"` stash with the useful name showing in `git stash list`  
 `git stash clear` to remove all items from the stash **caution**  
 
+## submodule
+
+`git submodule status`
+`git submodule sync`  
+`git submodule update --init` for the first time...  
+`git submodule update` on subsequent ones...
+
 # by concept or use pattern
 
 ## cherry-pick
 
-Cherry pick is a method to apply a commit - or set of commits - and create a new commit for each. One example is if your team has release branches in addition to a master branch. As each member of the team works on fixes and features, all of those commits are merged to master. Then, depending on timing and completeness relative to releases, the commits associated with a given feature can be "cherry-picked" into the feature branches. 
+Cherry pick is a method to apply a commit - or set of commits - and create a new commit for each. One example is if your team has release branches in addition to a master branch. As each member of the team works on fixes and features, all of those commits are merged to master. Then, depending on timing and completeness relative to releases, the commits associated with a given feature can be "cherry-picked" into the feature branches.
 
 This produces a history on the feature branches that tracks the history seen on the master branch.
 
@@ -81,6 +88,22 @@ As always, there are as many ways to implement cherry-pick as there are teams th
 ## ignore
 
 `vim .git/info/exclude`  to ignore items in a local repo where the ignores themselves are not committed to the repo.  
+
+## remote
+
+`git checkout -b local_branch upstream/fix-or-feature-branch` track remote branch
+
+
+
+## reset hard to fix stuff
+
+The usual warnings about using forks and staying off of master apply.
+
+use `git log` or `git reflog` to find the sha of the commit you want to get back to, then:
+
+`git reset --hard < SHA >`
+
+Note that if you were attempting to rebase or otherwise merge when you mucked things up, you may need to `git merge --abort` or `git rebase --abort` as well.
 
 ## rebase branch changes into updated master  
 
@@ -105,8 +128,8 @@ git push origin
 ## interactive rebase to squash commits  
 
 First, start interactive rebase. In this example, we are squashing the last two commits into one.  
-`git rebase -i HEAD~2` 
-  
+`git rebase -i HEAD~2`
+
 This will load the interactive editor in VIM.  
 
 `pick` the first commit in the list and `squash` the others - don't worry about the message. After we save this first "file" using VIM, we will immediately be taken to a second "file" where we can revise the messages for our included commits to be sure there is sufficient notes on the history.  
@@ -145,3 +168,5 @@ git push origin master
 git checkout my-branch
 git rebase master
 ```
+docker run --rm -it -v $PWD:$PWD docker-registry.pdbld.f5net.com/velcro/attributions-generator:master /usr/loc
+al/bin/run-backends.sh $PWD
