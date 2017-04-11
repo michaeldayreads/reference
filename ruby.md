@@ -63,13 +63,16 @@ arrays
 
 `a = %w{ 2.71 mu 0 } ` >> `["2.71", "mu", "0"]`  
 
-hashes  
+hashes
+
 ```
+
 bibliography = {
   'Zen and the Brain' => 'James Austin',
   'Finite and Infinite Games' => 'James Carse',
   'Infinite Jest' => 'David Foster Wallace"
 }
+
 ```
 
 or  
@@ -77,7 +80,8 @@ or
 ```
 timesRead = hash.new(0) # zero is the default value
 timesRead['Infinite Jest']
->> 0
+0
+
 ```
 
 Control Structures  
@@ -92,7 +96,7 @@ Blocks
 
 A block is like an anonymous function or a lambda.
 
-Blocks can handle setup, teardown and errors. 
+Blocks can handle setup, teardown and errors.
 
 ---
 BEGIN blocks and END blocks, inherited from perl, are a way to organize code [on stackoverflow](http://stackoverflow.com/questions/11620409/ruby-methods-at-bottom-of-script/11620522)  
@@ -135,7 +139,7 @@ Embedded Documents
 
 ```
 =begin rdoc
-Embedded Document passed to ri Documentation api if it 
+Embedded Document passed to ri Documentation api if it
 immediately precedes a Method, Class, or Module
 =end
 ```
@@ -351,9 +355,9 @@ The interpreter:
 
 - starts with `BEGIN` blocks
 - goes line by line until:
-	- a statement causes it to terminate
-	- it reaches the end of the file
-	- it reaches the logical end of the file at `__END__`
+  - a statement causes it to terminate
+  - it reaches the end of the file
+  - it reaches the logical end of the file at `__END__`
 - before it quits, it looks for `END` statements and `at_exit` hooks  
 
 ## Data Types && Objects
@@ -362,8 +366,8 @@ The interpreter:
 Five built in classes, and three more in the standard library:
 
 - Integer
-	- Fixnum -- usually up to 31 bits
-	- Bignum -- the rest
+  - Fixnum -- usually up to 31 bits
+  - Bignum -- the rest
 - Float -- includes real numbers as aproximations
 - Complex
 - BigDecimal -- arbitrary precision
@@ -458,10 +462,10 @@ a << b == "foobar" == a
 "." * 3 == "..."
 
 s = "hello"				# Examples are 1.9 - add .chr for 1.8
-s[0]					# "h" 
+s[0]					# "h"
 s[s.length-1]	 		# "o"
 s[-1]					# "o"
-s[s.length]				# nil returned, but no error 
+s[s.length]				# nil returned, but no error
 s[0] = "H"				# s now "Hello"
 s[s.length-1] = "o!"	# s now "Hello!"
 s[s.length] = "!"		# IndexError (!)
@@ -500,7 +504,7 @@ Interpolation is only done once.
 When sorting and comparing, recall Ruby is working with ASCII, so `"Z" < "a"`.
 
 ### Arrays
-Mutable, untyped, and can be sparse. Negative indexes work. 
+Mutable, untyped, and can be sparse. Negative indexes work.
 
 ```
 words = %w[x y z] 			# ["x","y","z"]
@@ -570,7 +574,7 @@ Which says create the object `y` and assign to it the result of the expression `
 
 `unless` is the opposite of `if`, can also be used as a modifier and can be used with `else` - though there is no direct equivalent to `elsif`.
 
-`case` is an alternative to `if elsif ... else` 
+`case` is an alternative to `if elsif ... else`
 
 ```
 name = case

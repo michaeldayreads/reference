@@ -3,25 +3,28 @@
 `help(obj)`  A doc string list of methods on the object
 `obj.__dict__` == `vars(obj)`  
 
-
-
-
 # http server
 
 `python -m SimpleHTTPServer 80`  python 2 simple server on port 80  
 `python -m http.server 80` python 3 server on port 80  
 
-
 # basics
 
 `print str(1) + ". To concatenate numbers and strings use the str(n) method."`
-
 
 # Data types  
 
 ## strings
 
 `'answer all questions?'.translate(None, '?')`  --  rudimentary editorial implementation of translate  
+
+suppose `uri = "10.1.2.3:80"`
+
+`ip, port = uri.split(':')` returns two substrings of `ip` and `port`  
+
+`ip = uri[:uri.find(':')]` returns one substring of `ip`
+
+Note the latter is arguably _less_ pythonic, but none the less can be demanded by some linters when the second substring is not used later in the script.
 
 ## lists
 
@@ -35,7 +38,7 @@ Lists are mutable, unlike strings.
 `examples.pop()`   --  returns `['b','c']`  **mutates list**  
 `examples.pop(0)`   --  returns  `'a'`  **mutates list**  
 `for example in examples: print example`  --   _traverses_ the list  
-`for items in []` produces neither results nor errors 
+`for items in []` produces neither results nor errors
 `['a','b'] + ['a','b']` returns `['a','b','a','b']`  --  concatenate lists  
 `['a','b'] * 3` returns `['a','b','a','b','a','b']`  --  repeat lists  
 `e2 = ['a', 'b', 'c', 'd', 'e', 'f']`  _using a longer example for slicing..._  
@@ -123,6 +126,28 @@ Readable output sorted by word, then semantic category, then commonality of use 
     code verb 0 write code
     code verb 1 encrypt
 
+# Exceptions and exception handling
+
+Patterns [^Lutz_2013]
+
+## try/except
+
+Use the next pattern instead...
+
+> Explicit is better than implicit. [^zen_of_python]
+
+## try/except/else
+
+## try/finally
+
+Still raise the exception, but clean up first.
+
+## try/except/else/finally
+
+## nested try/except within try/finally
+
+
+
 # tricks, hacks, misc
 
 `ternary_esque = a if (data != '') else b`  
@@ -153,10 +178,14 @@ _pass_
 
 # concepts
 
-## Assignment 
+## Assignment
 Associates a name to an object. It is a namespace operation. When Python sees `a = 1` it creates an integer object with the value 1 and assigns the name 'a' to it. When we declare `b = a` Python adds another reference to the object '1', but there is only one object.
 
-# sources  
+sources  
+
+[^Lutz_2013]: Learning Python, 5th Edition  https://www.safaribooksonline.com/library/view/learning-python-5th/9781449355722/
+[^Phillips_Romano_Hattem_2016]: Python: Journey from Novice to Expert.
+[^zen_of_python]: https://www.python.org/dev/peps/pep-0020/
 
 * [Python Documentation 2.7](https://docs.python.org/2/) and [3.5](https://docs.python.org/3.5/)
 * [Python for Informatics - Severance (2013)](http://www.pythonlearn.com/html-270/index.html)

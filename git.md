@@ -6,6 +6,10 @@ _All working directories are full repositories_
 
 `add` Add contents (files) to the index (snapshot of the working tree) staging them for the next commit. Only changes to the time of the add will be part of a commit. Further changes have to be added again.
 
+## checkout
+
+`git checkout <SHA> path/to/file` revert one file or directory to an earlier state
+
 ## config
 
 `git config --global core.editor "vim"` set default editor to vim  
