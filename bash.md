@@ -243,6 +243,10 @@ Then use the `!n` event designator to target the line you want to repeat...
 -U # sort by time of file creation  
 ```
 
+## printenv
+
+List environment Variables
+
 ## rsync  
 `rsync -a file_to_send.txt username@server:~/path/if/desired`  
 

@@ -30,18 +30,25 @@ To track personal velocity, and as an experiment to explore the difficulties of 
 
 `spend` is simply that - time spent on a deliverable.
 
-`estimate` is updated at each record of time spent. How much more time do you estimate as of right now to complete the deliverable?
+`estimate` is time remaining, updated at each record of time spent. How much more time do you estimate as of right now to complete the deliverable?
 
-`weight` is what I am using for points.
+`weight` is original estimate:
 
 1    2 hours max
 2    4 hours max, 2 min
-3    8 / 4
-4    16 / 8
-5    32 / 16 (one week full time)
-6    64 / 32 (2w or 1 sprint)
-7    128 / 64 (4w or 1 month)
-8    256 / 128 (8w or 2 months)
-9    512 / 256 (16w or 4 months)
+3    6 / 4 (1d)
+4    8 / 6
+5    10 / 8
+6    12 / 10 (2d)
+7    14 / 12
+8    16 / 14
+9    18 / 16 (3d)
 
-> note: The flaw that this is a moving target is one that I am aware of, giving thought to, and will address in future iterations. The first problem to solve is to be able to accurately estimate the time it will take me to complete a task. Once I can say with confidence that a task will take X hours at the skill level I have now, then other metrics (e.g. HackerRank) can be used to normalize that measure of hours to a level of difficulty that is more generalizable. 
+> note: The flaw that this is a moving target is one that I am aware of, giving thought to, and will address in future iterations. The first problem to solve is to be able to accurately estimate the time it will take me to complete a task. Once I can say with confidence that a task will take X hours at the skill level I have now, then other metrics (e.g. HackerRank) can be used to normalize that measure of hours to a level of difficulty that is more generalizable.
+
+> note also; The vague values I have sussed out thus far are:
+>
+1    1-2 days
+3    1 Week
+5    2 Weeks
+8    1 month

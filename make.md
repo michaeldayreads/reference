@@ -24,6 +24,56 @@ A good practice is to have the first rule be a help target
 
 `.PHONY: target_a target_b` a way to alert `make` not to associate targets with files of the same name.
 
+To have errors on a shell command be ignored (i.e. avoid a non-zero exit code) prepend with a dash:
+
+```
+# makefile to remove temp files
+
+.PHONY: tidy all
+
+all:
+     @printf "Available targets:\n"
+     @printf "  tidy: remove all .tmp files"
+
+tidy:
+     -rm -r *.tmp
+```
+
+Recursively expanded variables are defined using `=`:
+
+```
+foo = $(bar)
+bar = $(baz)
+baz = All the things!
+
+all:
+     echo $(foo)
+
+# prints "All the things!"
+```
+
+The value is stored verbatim and expanded at substitution.
+
+vs.
+
+Simply expanded variables, defined using `:=`:
+
+```
+foo := $(bar)
+bar := $(baz)
+```
+
+Use `::` to indicate that there may be multiple targets of the same name that `make` should run:
+
+```
+baz::    ; @echo do foo
+baz::    ; @echo do bar
+```
+
+> note the example did not really outline _why_ we would want to do this, though it might just be a simple way to separate step A from step B, rather than combine them into one recipe. One other possible application would be cases of using `include` to pull together functionality across makefiles that do different things but use the same targets.
+
+## conditionals
+
 # Concepts and Background
 
 ## explicit rule
