@@ -93,7 +93,7 @@ target: prerequisites
 
 A `target` is the name of a file or the name of an action to carry out.
 
-A `prerequisite` is a file that is used as an input to the taget.
+A `prerequisite` is a file that is used as an input to the target.
 
 A `recipe` is an action that `make` carries out.
 

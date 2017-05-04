@@ -1,6 +1,6 @@
 # quickstart / quick reference  
 
-## help 
+## help
 `tmux list-keys`  
 `tmux list commands`  
 
@@ -21,7 +21,7 @@ Shortcut|result
 # panes  
 `^b` `x` kill current pane  
 
-# sessions 
+# sessions
 `tmux ls` show sessions  
 `tmux new -s session-name` new session  
 `tmux a -t session-name` attach to a session  
@@ -31,6 +31,10 @@ Shortcut|result
 `tmux rename-session -t old_name new_name`  
 OR  
 `tmux rename-session new_name` if you are in a session and wish to rename that session.  
+OR
+`Ctrl + B, $` and type new name
+OR
+`Ctrl + B, :` and use either of the first two invocations.
 
 `tmux kill-session -t session-name` end session entirely  
 `killall tmux` end all sessions  

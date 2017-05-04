@@ -37,13 +37,11 @@ Quote
 
 > Simply use the expected format.
 
-
-
-
-
 # Attributions and sources
 
 A footnote style of source referencing can be used.
+
+As an example, we'll recognize that a program is a particular kind of finite game as discussed by Carse.[^Carse_1986]
 
 First, use the `[^title_of_work_1]` notation to get a simple superscript on your reference.
 
@@ -60,5 +58,7 @@ In constructing the tag for the source, mimic the APA style of reference of auth
 For online collaborative sources, such as stackoverflow, reference the post id.
 
 Sources
+
+[^Carse_1986]: [Finite and Infinite Games](https://en.wikipedia.org/wiki/Finite_and_Infinite_Games)
 
 [^stackoverflow_15110479]: http://stackoverflow.com/questions/15110479/markdown-and-footnotes-most-natural-format-missing

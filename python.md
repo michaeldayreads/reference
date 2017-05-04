@@ -1,7 +1,12 @@
 # digging about
-`dir(obj)`  list of methods on object
-`help(obj)`  A doc string list of methods on the object
+`dir(obj)`  list of methods on object  
+`help(obj)`  A doc string list of methods on the object  
 `obj.__dict__` == `vars(obj)`  
+`import keyword; keyword.iskeyword(sanity)` to see if "sanity" is a reserved keyword  
+`keyword.kwlist` to see a full list  
+`import __builtin__; dir(__builtin__)` to list python 2 builtins
+`import builtins; dir(builtins)` for python 3 [^stackoverflow_22864221]
+
 
 # http server
 
@@ -147,6 +152,13 @@ Still raise the exception, but clean up first.
 ## nested try/except within try/finally
 
 
+# working with packages
+
+## Development mode
+
+When working in/on a package it is often useful to invoke `python setup.py develop` to create an `egg-info` directory or an `egg-link` file that links to a project's code.
+
+When you are done with a development task, use `python setup.py develop --uninstall`.
 
 # tricks, hacks, misc
 
@@ -183,9 +195,10 @@ Associates a name to an object. It is a namespace operation. When Python sees `a
 
 sources  
 
-[^Lutz_2013]: Learning Python, 5th Edition  https://www.safaribooksonline.com/library/view/learning-python-5th/9781449355722/
+[^Lutz_2013]: [Learning Python, 5th Edition](  https://www.safaribooksonline.com/library/view/learning-python-5th/9781449355722/)
 [^Phillips_Romano_Hattem_2016]: Python: Journey from Novice to Expert.
 [^zen_of_python]: https://www.python.org/dev/peps/pep-0020/
+[^stackoverflow_22864221]: https://stackoverflow.com/questions/22864221/is-the-list-of-python-reserved-words-and-builtins-available-in-a-library
 
 * [Python Documentation 2.7](https://docs.python.org/2/) and [3.5](https://docs.python.org/3.5/)
 * [Python for Informatics - Severance (2013)](http://www.pythonlearn.com/html-270/index.html)

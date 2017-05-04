@@ -269,6 +269,11 @@ Secure copy
 `source FILENAME [arguments]`  loads functions files  
 For example, we may wish to `source ~/.profile`  re-load the profile after adding a new alias to our `.profile`.  
 
+## tee
+
+`ls -a | tee results.txt` both shows the output on stdout and also writes it to a file
+`cat file_of_interest | tee -a results.txt` appends the file due to `-a` or `--append` flag 
+
 ## test
 
 Exits with a 0 (true) or 1 (false) based on the evaluation of an expression.

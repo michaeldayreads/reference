@@ -32,7 +32,7 @@ Vim is not always certain how to work with the system clipboard. Before pasting 
 ### replace single character under cursor
 `r` then `x` would replace the character under the cursor with "x" without having to enter and navigate `INSERT` mode.
 
-## and replace 
+## and replace
 
 ### substitute aka _find and replace_  
 

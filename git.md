@@ -6,9 +6,24 @@ _All working directories are full repositories_
 
 `add` Add contents (files) to the index (snapshot of the working tree) staging them for the next commit. Only changes to the time of the add will be part of a commit. Further changes have to be added again.
 
+## branch
+
+`git branch` list branches  
+`git branch -r` list remote branches  
+`git branch -d <branch to delete>`  
+`git branch -D <branch to delete>` shorthand for `git branch -d --force <branch to delete>`  
+`git branch -m <old_name> <new_name>` to rename a branch you are not on  
+`git branch -m <new_name>` to rename current branch  
+
+
 ## checkout
 
 `git checkout <SHA> path/to/file` revert one file or directory to an earlier state
+
+## commit
+
+`git commit --ammend` update the message on the last commit - NOTE: produces new SHA
+
 
 ## config
 
@@ -18,6 +33,8 @@ _All working directories are full repositories_
 
 `git diff branch_1 branch_2` compare two branches  
 `git diff branch_1 branch_2 path/to/file_of_interest.txt` compare a file between two branches
+`git diff --name-only SHA1 SHA2` lists the files that changed
+`git diff SHA name_of_file` as a drill down from `--name-only`
 
 ## init
 
@@ -45,18 +62,17 @@ git log --pretty=oneline --author='Michael Day'
 git log --graph --color --oneline --decorate
 ```
 
-## branch
+## remote
 
-`git branch` list branches  
-`git branch -r` list remote branches  
-`git branch -d <branch to delete>`  
-`git branch -D <branch to delete>` shorthand for `git branch -d --force <branch to delete>`  
-`git branch -m <old_name> <new_name>` to rename a branch you are not on  
-`git branch -m <new_name>` to rename current branch  
+`git remote -v` verbose list of remotes
+`git remote add any_name_you_like` adds a remote
+`git remote rm any_name_you_like` removes a remote
+
 
 ## stash
 
 `git stash` To stash things for later  
+`git stash save "short descriptive name"` or you will have a cryptic name for the stash
 `git stash list` to see the stash "stack"  
 `git stash show -p [stash@{n}]` essentially a diff  
 `git stash apply`  to apply the last set of stashed changes  
