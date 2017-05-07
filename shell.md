@@ -1,7 +1,6 @@
-*notes*
+> Unless otherwise indicated, this document refers to bash shell.  
 
-* Other shells will be mentioned as appropriate.
-* Option lists on commands are non-exhaustive. The intention is to explain and highlight command line and scripting usage, not to clone the man pages.
+> Option lists on commands are non-exhaustive. The intention is to explain and highlight command line and scripting usage, not to clone the man pages.
 
 # scripting
 
@@ -272,7 +271,7 @@ For example, we may wish to `source ~/.profile`  re-load the profile after addin
 ## tee
 
 `ls -a | tee results.txt` both shows the output on stdout and also writes it to a file
-`cat file_of_interest | tee -a results.txt` appends the file due to `-a` or `--append` flag 
+`cat file_of_interest | tee -a results.txt` appends the file due to `-a` or `--append` flag
 
 ## test
 

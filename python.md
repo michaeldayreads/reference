@@ -1,4 +1,48 @@
-# digging about
+# `as`
+
+see:  
+* [`try`](#try)  
+* [`with`](#with)  
+
+# `assert`
+
+see [`try`](#try)
+
+# `except`
+
+see [`try`](#try)
+
+# `else`
+
+see:  
+* [`if`](#if)  
+* [`try`](#try)
+
+# `finally`
+
+see [`try`](#try)
+
+# `try`
+
+## `as`
+
+A means of designating a variable to which the exception object is assigned.
+
+`except IndexError as my_index_error`  
+
+The exception object is now available for further manipulation.
+
+# `with`
+
+
+
+*^^ refactored*
+----
+*refactoring vv*
+
+
+# dir -- and other useful methods of inspection
+
 `dir(obj)`  list of methods on object  
 `help(obj)`  A doc string list of methods on the object  
 `obj.__dict__` == `vars(obj)`  
@@ -12,10 +56,6 @@
 
 `python -m SimpleHTTPServer 80`  python 2 simple server on port 80  
 `python -m http.server 80` python 3 server on port 80  
-
-# basics
-
-`print str(1) + ". To concatenate numbers and strings use the str(n) method."`
 
 # Data types  
 
@@ -31,7 +71,7 @@ suppose `uri = "10.1.2.3:80"`
 
 Note the latter is arguably _less_ pythonic, but none the less can be demanded by some linters when the second substring is not used later in the script.
 
-## lists
+##lists
 
 Lists are mutable, unlike strings.
 
@@ -147,6 +187,8 @@ Use the next pattern instead...
 
 Still raise the exception, but clean up first.
 
+In practice, it seems the `with` command is preferable. If needed, define your own class implementing the magic methods of `__enter__` and `__exit__`.
+
 ## try/except/else/finally
 
 ## nested try/except within try/finally
@@ -160,25 +202,29 @@ When working in/on a package it is often useful to invoke `python setup.py devel
 
 When you are done with a development task, use `python setup.py develop --uninstall`.
 
-# tricks, hacks, misc
+# tricks etc.
+
+## ternary operator
+
+Python lacks a ternary operator, however, the following can serve in some instances:
 
 `ternary_esque = a if (data != '') else b`  
 
-Web server, one-liner
+## Web server, one-liner
 >`python -m http.server 80`
 
-__Enumerate properties of an object__
+## Enumeration
 
 ```python
 for name, value in inspect.getmembers(target_object)
     print(name)
 ```
 
-
 ## command line
 
 __clear the screen__  
 'Ctrl' + 'L' on unix  
+
 `qc = os.system("clear")` wrapped in a lambda function (or windows equivalent) if 'Ctrl' + 'L' does not work
 
 `vars()` to see what is in local memory when at the command line

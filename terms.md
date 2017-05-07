@@ -52,3 +52,7 @@ To track personal velocity, and as an experiment to explore the difficulties of 
 3    1 Week
 5    2 Weeks
 8    1 month
+
+# superset
+
+If all of the elements of B are contained within A, and some elements of A are NOT in B, then B is a subset of A and A is a superset of B.
