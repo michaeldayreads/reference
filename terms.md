@@ -22,37 +22,6 @@ The part of the router architecture concerned with forwarding packets between in
 
 How data flows (logical) and how the components of the network are arranged (physical).
 
-# Points
-
-Surely no more nebulous computer science term exists. The intention of points is generally to measure productivity of a developer or team over time, with more points in the same time meaning that the person(s) measured have been more productive.
-
-To track personal velocity, and as an experiment to explore the difficulties of precisely defining "points", I use gitlab's `estimate` `spend` and `weight` slash commands.
-
-`spend` is simply that - time spent on a deliverable.
-
-`estimate` is time remaining, updated at each record of time spent. How much more time do you estimate as of right now to complete the deliverable?
-
-`weight` is original estimate:
-
-1    2 hours max
-2    4 hours max, 2 min
-3    6 / 4 (1d)
-4    8 / 6
-5    10 / 8
-6    12 / 10 (2d)
-7    14 / 12
-8    16 / 14
-9    18 / 16 (3d)
-
-> note: The flaw that this is a moving target is one that I am aware of, giving thought to, and will address in future iterations. The first problem to solve is to be able to accurately estimate the time it will take me to complete a task. Once I can say with confidence that a task will take X hours at the skill level I have now, then other metrics (e.g. HackerRank) can be used to normalize that measure of hours to a level of difficulty that is more generalizable.
-
-> note also; The vague values I have sussed out thus far are:
->
-1    1-2 days
-3    1 Week
-5    2 Weeks
-8    1 month
-
 # superset
 
 If all of the elements of B are contained within A, and some elements of A are NOT in B, then B is a subset of A and A is a superset of B.

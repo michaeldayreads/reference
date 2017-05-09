@@ -68,3 +68,16 @@ or a whole "checker" or set of messages using the "verbatim" name of the checker
 
 **Check out an earlier revision than head**  
 `svn co -r 2718 file:///var/svn/repo_or_file /target/path`
+
+# Done
+
+* Appointments and errands go on gcal/reminders
+* Everything else on gitlab issues, kanban style
+
+On gitlab:
+
+* Tag as `md` or `f5`
+* work out of that project
+* Use due dates when there is one.
+* Estimate, and then re-estimate as completed work is carved out or when the current estimate is exceeded.
+* Milestones should represent the work completed during that time frame. 

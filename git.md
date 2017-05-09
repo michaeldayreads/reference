@@ -1,12 +1,8 @@
-_All working directories are full repositories_
-
-# organized by command (no specific order)
-
-## add
+# add
 
 `add` Add contents (files) to the index (snapshot of the working tree) staging them for the next commit. Only changes to the time of the add will be part of a commit. Further changes have to be added again.
 
-## branch
+# branch
 
 `git branch` list branches  
 `git branch -r` list remote branches  
@@ -16,35 +12,49 @@ _All working directories are full repositories_
 `git branch -m <new_name>` to rename current branch  
 
 
-## checkout
+# checkout
 
 `git checkout <SHA> path/to/file` revert one file or directory to an earlier state
 
-## commit
+# cherry-pick
+
+Cherry pick is a method to apply a commit - or set of commits - and create a new commit for each. One example is if your team has release branches in addition to a master branch. As each member of the team works on fixes and features, all of those commits are merged to master. Then, depending on timing and completeness relative to releases, the commits associated with a given feature can be "cherry-picked" into the feature branches.
+
+This produces a history on the feature branches that tracks the history seen on the master branch.
+
+As always, there are as many ways to implement cherry-pick as there are teams that use it, but here is one example:
+
+`git cherry-pick -x -m 1 <commit-id>`
+
+* The `-x` options instructs git to include a "cherry-picked from ..." bread crumb in the log.
+* the `-m 1` instructs git which parent number to choose as mainline.
+
+# commit
 
 `git commit --ammend` update the message on the last commit - NOTE: produces new SHA
 
 
-## config
+# config
 
 `git config --global core.editor "vim"` set default editor to vim  
+`git config --list`  see current config.
 
-## diff  
+# diff  
 
 `git diff branch_1 branch_2` compare two branches  
 `git diff branch_1 branch_2 path/to/file_of_interest.txt` compare a file between two branches
 `git diff --name-only SHA1 SHA2` lists the files that changed
 `git diff SHA name_of_file` as a drill down from `--name-only`
 
-## init
+## ignore
+
+`vim .git/info/exclude`  to ignore items in a local repo where the ignores themselves are not committed to the repo.  
+
+# init
 
 `init` Create an empty git repository or re-initialize an existing one. Running in an existing repository is safe, nothing is overwritten, though the command can be used to move to another location. When this is done, a text file with the new path is placed in the current directory as a symbolic link to the new location.
 
-## status
-
-`status` Displays path differences between index and HEAD commit.
-
-## log
+# log
 
 `log` to see history
 
@@ -62,14 +72,15 @@ git log --pretty=oneline --author='Michael Day'
 git log --graph --color --oneline --decorate
 ```
 
-## remote
+# remote
 
 `git remote -v` verbose list of remotes
 `git remote add any_name_you_like` adds a remote
 `git remote rm any_name_you_like` removes a remote
 
+`git checkout -b local_branch upstream/fix-or-feature-branch` track remote branch
 
-## stash
+# stash
 
 `git stash` To stash things for later  
 `git stash save "short descriptive name"` or you will have a cryptic name for the stash
@@ -83,37 +94,18 @@ git log --graph --color --oneline --decorate
 `git stash save "a more useful name"` stash with the useful name showing in `git stash list`  
 `git stash clear` to remove all items from the stash **caution**  
 
-## submodule
+# status
+
+`status` Displays path differences between index and HEAD commit.
+
+# submodule
 
 `git submodule status`
 `git submodule sync`  
 `git submodule update --init` for the first time...  
 `git submodule update` on subsequent ones...
 
-# by concept or use pattern
-
-## cherry-pick
-
-Cherry pick is a method to apply a commit - or set of commits - and create a new commit for each. One example is if your team has release branches in addition to a master branch. As each member of the team works on fixes and features, all of those commits are merged to master. Then, depending on timing and completeness relative to releases, the commits associated with a given feature can be "cherry-picked" into the feature branches.
-
-This produces a history on the feature branches that tracks the history seen on the master branch.
-
-As always, there are as many ways to implement cherry-pick as there are teams that use it, but here is one example:
-
-`git cherry-pick -x -m 1 <commit-id>`
-
-* The `-x` options instructs git to include a "cherry-picked from ..." bread crumb in the log.
-* the `-m 1` instructs git which parent number to choose as mainline.
-
-## ignore
-
-`vim .git/info/exclude`  to ignore items in a local repo where the ignores themselves are not committed to the repo.  
-
-## remote
-
-`git checkout -b local_branch upstream/fix-or-feature-branch` track remote branch
-
-
+^^^ refactored ^^^
 
 ## reset hard to fix stuff
 
