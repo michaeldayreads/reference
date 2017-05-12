@@ -22,7 +22,15 @@ see:
 
 see [`try`](#try)
 
+# `raise`
+
+see [`try`](#try)
+
 # `try`
+
+This section covers the various uses/patterns associated with `try`, including error handling.
+
+
 
 ## `as`
 
@@ -31,6 +39,10 @@ A means of designating a variable to which the exception object is assigned.
 `except IndexError as my_index_error`  
 
 The exception object is now available for further manipulation.
+
+## `raise`
+
+
 
 # `with`
 

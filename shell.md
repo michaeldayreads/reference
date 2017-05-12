@@ -168,6 +168,21 @@ then, using the NS
 ## brctl (bridge control - ethernet bridge admin)
 `brctl show` list network bridges
 
+## `cd`
+
+`cd -` Shorthand to change directory back to the last directory from which you changed directory. Thus:
+
+```
+$ pwd
+> /foo/bar
+$ cd ../baz
+$ pwd
+> /foo/baz
+$ cd -
+$ pwd
+> /foo/bar
+```
+
 ## chmod  
 
 Change file mode bits.
