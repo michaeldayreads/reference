@@ -8,19 +8,29 @@ see:
 
 see [`try`](#try)
 
-# `except`
-
-see [`try`](#try)
-
 # `else`
 
 see:  
 * [`if`](#if)  
 * [`try`](#try)
 
+# egg
+
+
+
+# `except`
+
+see [`try`](#try)
+
 # `finally`
 
 see [`try`](#try)
+
+# `flake8`
+
+A commonly used installed package to identify variation from the PEP8 standards for code style.
+
+`flake8 --show-source file.py`  includes snippets to clarify where in the source the issue has been flagged.
 
 # `raise`
 
@@ -46,7 +56,14 @@ The exception object is now available for further manipulation.
 
 # `with`
 
+# `virtualenv`
 
+Tool to create distinct environments.
+
+> __Warning__: Be mindful of 2 / 3 distinction. If you are on a unit that has both 2 and 3 installed, and then invoke `virtualenv new_ve` and `. /new_ve/bin/activate` you are in a python 2 ve, and the results of `which python` will return your ve, but the results of `which python3` will return the local install of python 3.
+
+`virtualenv path/to/directory_for_ve_name`  python 2
+`virtualenv -p python3 path/to/directory_for_ve_name` python 3
 
 *^^ refactored*
 ----

@@ -1,12 +1,10 @@
 _All working directories are full repositories_
 
-# organized by command (no specific order)
-
-## add
+# `add`
 
 `add` Add contents (files) to the index (snapshot of the working tree) staging them for the next commit. Only changes to the time of the add will be part of a commit. Further changes have to be added again.
 
-## branch
+# `branch`
 
 `git branch` list branches  
 `git branch -r` list remote branches  
@@ -16,43 +14,46 @@ _All working directories are full repositories_
 `git branch -m <new_name>` to rename current branch  
 
 
-## checkout
+# `checkout`
 
-`git checkout <SHA> path/to/file` revert one file or directory to an earlier state
+Update file(s) in the working tree to match the state of those files in the SHA provided.
 
-## commit
+## Update / Revert file(s)
+
+Checkout is useful to revert a file to an earlier state or to copy changes from one branch to another for specific files.
+
+`git checkout <SHA> path/to/file`  
+
+```
+git checkout source_branch
+git log -1  # get the SHA
+git checkout target_branch
+git checkout <SHA> path/to/file
+```
+
+# `commit`
 
 `git commit --amend` update the message on the last commit - NOTE: produces new SHA
 
 
-## config
+# `config`
 
 `git config --global core.editor "vim"` set default editor to vim  
 
-## diff  
+# `diff`
 
 `git diff branch_1 branch_2` compare two branches  
 `git diff branch_1 branch_2 path/to/file_of_interest.txt` compare a file between two branches
 `git diff --name-only SHA1 SHA2` lists the files that changed
 `git diff SHA name_of_file` as a drill down from `--name-only`
 
-## init
+# `init`
 
 `init` Create an empty git repository or re-initialize an existing one. Running in an existing repository is safe, nothing is overwritten, though the command can be used to move to another location. When this is done, a text file with the new path is placed in the current directory as a symbolic link to the new location.
 
-## `merge`
-* [ ] TODO  
+# `log`
 
-## `mergetool`
-* [ ] TODO  
-
-## status
-
-`status` Displays path differences between index and HEAD commit.
-
-## log
-
-`log` to see history
+Commit history
 
 `log --pretty=oneline` for concise history
 
@@ -68,14 +69,35 @@ git log --pretty=oneline --author='Michael Day'
 git log --graph --color --oneline --decorate
 ```
 
-## remote
+# `merge`
+* [ ] TODO  
+
+# `mergetool`
+* [ ] TODO  
+
+# `push`
+
+`git push <remote> source_branch:target_branch`
+
+# `remote`
 
 `git remote -v` verbose list of remotes
 `git remote add any_name_you_like` adds a remote
 `git remote rm any_name_you_like` removes a remote
 
+# `show`
 
-## stash
+Details of an object (commit).
+
+`git show <sha>`
+
+`git show <sha> -s`  Suppress the diff, equivalent to `--no-patch`
+
+# `status`
+
+Displays path differences between index and HEAD commit.
+
+# `stash`
 
 `git stash` To stash things for later  
 `git stash save "short descriptive name"` or you will have a cryptic name for the stash
@@ -89,14 +111,16 @@ git log --graph --color --oneline --decorate
 `git stash save "a more useful name"` stash with the useful name showing in `git stash list`  
 `git stash clear` to remove all items from the stash **caution**  
 
-## submodule
+# `submodule`
 
 `git submodule status`
 `git submodule sync`  
 `git submodule update --init` for the first time...  
 `git submodule update` on subsequent ones...
 
-# by concept or use pattern
+
+by concept or use pattern
+--------------------------
 
 ## cherry-pick
 
@@ -118,8 +142,6 @@ As always, there are as many ways to implement cherry-pick as there are teams th
 ## remote
 
 `git checkout -b local_branch upstream/fix-or-feature-branch` track remote branch
-
-
 
 ## reset hard to fix stuff
 
@@ -156,9 +178,19 @@ git push origin
 First, start interactive rebase. In this example, we are squashing the last two commits into one.  
 `git rebase -i HEAD~2`
 
-This will load the interactive editor in VIM.  
+To be more explicit, suppose we have the following `git log` entries:
 
-`pick` the first commit in the list and `squash` the others - don't worry about the message. After we save this first "file" using VIM, we will immediately be taken to a second "file" where we can revise the messages for our included commits to be sure there is sufficient notes on the history.  
+```
+f53648c WIP: data for example Michael Day Fri May 12 13:54:39 2017
+08aabb4 Exceptions, testing, and tox Michael Day Fri May 12 13:52:46 2017
+1d8284d Started python refactor, rename shell Michael Day Sun May 7 10:53:31 2017
+```
+
+We can use `git rebase -i 1d8284d` to "stand on top of" commit 1d8284d to perform our rebase. This has the same result (in this specific case) as `git rebase -i HEAD~2` and has the advantage of being more explicit.
+
+Either method starts the interactive rebase in your default editor.  
+
+The most common pattern has been to `pick` the first commit in the list and `squash` or `fixup` the others. This gives us the option of including/modifying the commit messages in the case of `squash`, or discarding those messages in the case of `fixup` After we save this first "file" using VIM, we will immediately be taken to a second "file" where we can revise the messages for our included commits to be sure there is sufficient notes on the history.  
 
 Once the rebase is complete, `git push origin -f my-branch`.
 

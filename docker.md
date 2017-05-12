@@ -1,3 +1,41 @@
+# Dockerfile
+
+A succession of command line instructions invoked by `build` to assemble an image.
+
+
+
+# `exec`
+
+Run a command in a background/daemon docker container.
+
+`docker exec CONTAINER_ID ls`
+
+or
+
+`docker exec CONTAINER_NAME ls`
+
+# `run`
+
+To run a container and attach to it via interactive terminal:
+
+```
+docker run -it -v `pwd`:/mount_path image:tag bash
+```
+
+To run a daemon:
+
+```
+docker run -d -v `pwd`:/mount_path image:tag tail -f /dev/null
+```
+
+To pass an environment variable to the container:
+
+```
+docker run -it --env TEST_DIR=$PWD -v `pwd`:`pwd` python:2.7 bash
+```
+
+^^^ refactored ^^^
+
 # cli
 
 ## attach
@@ -42,7 +80,8 @@ Host source may be an absolute path or named volume.
 
 Ports on containers must be specified at the time the container is RUN. There is not a way to open ports on the container after the fact.
 
-###### sources  
+sources
+* [Docker documentation](https://docs.docker.com/engine/reference/builder/)  
 * https://stackoverflow.com/questions/22049212/docker-copy-file-from-container-to-host#22050116
 * https://stackoverflow.com/questions/17903705/is-it-possible-to-start-a-shell-session-in-a-running-container-without-ssh
 

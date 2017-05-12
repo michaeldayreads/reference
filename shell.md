@@ -2,6 +2,217 @@
 
 > Option lists on commands are non-exhaustive. The intention is to explain and highlight command line and scripting usage, not to clone the man pages.
 
+# commands
+
+## `apt`
+
+> `apt-get update`
+> resynchronize the package index files
+
+`apt-get install foo`
+> install foo
+
+## brctl (bridge control - ethernet bridge admin)
+`brctl show` list network bridges
+
+## `cd`
+
+`cd -` Shorthand to change directory back to the last directory from which you changed directory. Thus:
+
+```
+$ pwd
+> /foo/bar
+$ cd ../baz
+$ pwd
+> /foo/baz
+$ cd -
+$ pwd
+> /foo/bar
+```
+
+## chmod  
+
+Change file mode bits.
+
+`chmod +x script.sh`  make `script.sh` executable  
+
+### Symbols  
+Multiple can be given, separated by commas.
+
+#### rwxXst
+`r` read  
+`w` write  
+`x` execute  
+`X` execute or search only if file is a directory or already has execute permission for some user [?]    
+`s` set user or group ID on execution [?]  
+`t` restrict deletion flag [?]  
+
+#### ugoa  
+`u` _user_ who owns it  
+`g` file's _group_  
+`o` _other_ users not in the files group  
+`a` _all_ users  
+
+## compgen
+
+`compgen -a` list all available aliases
+
+## diff
+
+`diff -i file_one.txt file_two.txt` output different lines, case insensitive
+
+## `env`
+
+Used on its own to see environment (see [`printenv`](#printenv)) and additionally to override the environment within which a command will be executed.
+
+## `export`
+
+Setting a variable:
+
+`FOO="bar"`
+
+Establishes a key/value pair that is available to the current shell process without becoming part of the environment that is passed to a child process. This is commonly referred to as a _shell variable_, in contrast to an _environment variable_.
+
+The `export` command exports a shell variable to the environment, making it available to child processes.
+
+## find
+
+`find ~/path/to/start/from -name pattern` where pattern is the name or partial name (* / ?) of the file
+
+**note** Be sure to use quotes to prevent filename expansion, aka _globbing on the wild card `*`_
+
+`find . -name '*py' ! -path '*test*'` Find all python files, but exclude directories that have "test" as part of their path, e.g. `/systest/` or `/test/`.
+
+## gpg  
+`gpg --list-keys`  to get see what keys are on a system  
+`gpg --export > all.gpg` to get all keys on key ring  
+`gpg --import > all.gpg` to import that key set into another system  
+`gpg -r {key_id} -e {file_name}` encrypt a file (adds .gpg to the end of the file name to name the new file)   
+
+## history
+
+`history | grep command-of-interest`  
+
+```
+270 blah-blah-blah  
+271 command-of-interest  
+272 blah-blah-blah
+```
+
+Then use the `!n` event designator to target the line you want to repeat...
+
+`!271`
+
+## ls
+```
+-c # use time when last changed for sorting (-t) or long printing (-l)  
+-F # / directory * exe @ symbolic = socket % whiteout | FIFO  
+-G # colorized  
+-h # unit suffixes  
+-l # long format  
+-R # recursively list sub-directories encountered  
+-r # reverse order  
+-S # sort by size  
+-t # sort by time modified  
+-u # sort by time of last access  
+-U # sort by time of file creation  
+```
+
+## printenv
+
+List environment Variables
+
+See:  
+* [`env`](#env)
+* [`set`](#set)
+
+## rsync  
+`rsync -a file_to_send.txt username@server:~/path/if/desired`  
+
+## SCP
+
+Secure copy
+
+`user@host:path/to/file` format to specify target
+
+`-r` recursive
+
+`scp -F path/to/ssh_config_file path/to/file/to/copy.py host_name:/path/to/copy/file/into`
+
+## `set`
+
+List all variables and functions for the session.
+
+Use `(set -o posix; set)` to exclude functions.
+
+Use `set | grep foo` and `printenv | grep foo` to get evidence if `foo` is an environment variable or shell variable.
+
+The most common pattern is to use `set` in a script to set the options for that script. Thus, including `set -x` in the top of a script elicits the same behavior as invoking the script with that option passed.
+
+### options
+
+See http://www.tldp.org/LDP/abs/html/options.html#OPTIONSREF
+
+Those commonly referenced:
+
+- `-e` exit on error
+- `-x` print and expand each command
+
+
+## sleep
+
+`sleep <seconds>`  suspend execution for a minimum of seconds given.  
+
+## source  
+
+`source FILENAME [arguments]`  loads functions files  
+For example, we may wish to `source ~/.profile`  re-load the profile after adding a new alias to our `.profile`.  
+
+## tee
+
+`ls -a | tee results.txt` both shows the output on stdout and also writes it to a file
+`cat file_of_interest | tee -a results.txt` appends the file due to `-a` or `--append` flag
+
+## test
+
+Exits with a 0 (true) or 1 (false) based on the evaluation of an expression.
+
+**NOTE** that since we are looking at a *return code* the logic can feel backwards! 0 == TRUE and 1 == FALSE because we want to be able to use the return code in the rest of a script!
+
+`test` returns 1, since there is no expression
+
+`[ ]`  this is an alias for `test`, and so returns exactly the same as above.
+
+`[ "any string on its own evaluates to true."]` useful for debugging.
+
+There are numerous flags that provide the ability to do focused testing or combine expressions in standard logic.
+
+`if [ "$FOO" == "" -o "$BAR" == "" ]; then echo "do something if either one is missing"; fi` OR  
+
+`if [ "$FOO" != "" -a "$BAR" != "" ]; then echo "do something only if both are present"; fi`  AND  
+
+### options
+
+`[ -d .git ]` returns 0 (true) in a directory under git source control.
+
+`[ -f .git ]` would return 1 (false)
+
+`[ -n "string" ]` tests if the length of a string is nonzero, would return 0 (true).
+
+`[ -z "" ]` tests if the length of a string *is* zero, so would return 0 (true).
+
+### useful patterns
+
+`[ -n "$ENV_VAR_WE_NEED" ] || die "error message"`
+
+## uptime  
+`uptime` to see how long server has been running, users, load averages for 1,5 and 15 minutes  
+
+## wc
+`wc -l life_the_universe_and_everthing.sh` ideally this would return 42, as would running it :P   
+
+
+
 # scripting
 
 `#!/bin/bash` is a convention to let `execve` know what interpreter to load to execute a script. The actual path might vary, and can be determined with `which`.
@@ -24,7 +235,7 @@ Scripts that have been made executable (`chmod +x foo.sh`) will run in a differe
 
 # builtins
 
-`:`  From the documentation -- `Do nothing beyond expanding arguments and performing redirections. The return status is zero.`
+`:`  The colon character is a null command, or a no op. From the documentation -- `Do nothing beyond expanding arguments and performing redirections. The return status is zero.`
 
 Some use cases help:
 
@@ -156,173 +367,21 @@ then, using the NS
 `nslookup domain.com NS-server` and  
 `host domain.com NS-server`  
 
-# commands
-
-## APT
-> `apt-get update`
-> resynchronize the package index files
-
-`apt-get install foo`
-> install foo
-
-## brctl (bridge control - ethernet bridge admin)
-`brctl show` list network bridges
-
-## `cd`
-
-`cd -` Shorthand to change directory back to the last directory from which you changed directory. Thus:
-
-```
-$ pwd
-> /foo/bar
-$ cd ../baz
-$ pwd
-> /foo/baz
-$ cd -
-$ pwd
-> /foo/bar
-```
-
-## chmod  
-
-Change file mode bits.
-
-`chmod +x script.sh`  make `script.sh` executable  
-
-### Symbols  
-Multiple can be given, separated by commas.
-
-#### rwxXst
-`r` read  
-`w` write  
-`x` execute  
-`X` execute or search only if file is a directory or already has execute permission for some user [?]    
-`s` set user or group ID on execution [?]  
-`t` restrict deletion flag [?]  
-
-#### ugoa  
-`u` _user_ who owns it  
-`g` file's _group_  
-`o` _other_ users not in the files group  
-`a` _all_ users  
-
-## compgen
-
-`compgen -a` list all available aliases
-
-## diff
-
-`diff -i file_one.txt file_two.txt` output different lines, case insensitive
-
-## find
-
-`find ~/path/to/start/from -name pattern` where pattern is the name or partial name (* / ?) of the file
-
-**note** Be sure to use quotes to prevent filename expansion, aka _globbing on the wild card `*`_
-
-`find . -name '*py' ! -path '*test*'` Find all python files, but exclude directories that have "test" as part of their path, e.g. `/systest/` or `/test/`.
-
-## gpg  
-`gpg --list-keys`  to get see what keys are on a system  
-`gpg --export > all.gpg` to get all keys on key ring  
-`gpg --import > all.gpg` to import that key set into another system  
-`gpg -r {key_id} -e {file_name}` encrypt a file (adds .gpg to the end of the file name to name the new file)   
-
-## history
-
-`history | grep command-of-interest`  
-
-```
-270 blah-blah-blah  
-271 command-of-interest  
-272 blah-blah-blah
-```
-
-Then use the `!n` event designator to target the line you want to repeat...
-
-`!271`
-
-## ls
-```
--c # use time when last changed for sorting (-t) or long printing (-l)  
--F # / directory * exe @ symbolic = socket % whiteout | FIFO  
--G # colorized  
--h # unit suffixes  
--l # long format  
--R # recursively list sub-directories encountered  
--r # reverse order  
--S # sort by size  
--t # sort by time modified  
--u # sort by time of last access  
--U # sort by time of file creation  
-```
-
-## printenv
-
-List environment Variables
-
-## rsync  
-`rsync -a file_to_send.txt username@server:~/path/if/desired`  
-
-## SCP
-
-Secure copy
-
-`user@host:path/to/file` format to specify target
-
-`-r` recursive
-
-`scp -F path/to/ssh_config_file path/to/file/to/copy.py host_name:/path/to/copy/file/into`
-
-## sleep
-
-`sleep <seconds>`  suspend execution for a minimum of seconds given.  
-
-## source  
-
-`source FILENAME [arguments]`  loads functions files  
-For example, we may wish to `source ~/.profile`  re-load the profile after adding a new alias to our `.profile`.  
-
-## tee
-
-`ls -a | tee results.txt` both shows the output on stdout and also writes it to a file
-`cat file_of_interest | tee -a results.txt` appends the file due to `-a` or `--append` flag
-
-## test
-
-Exits with a 0 (true) or 1 (false) based on the evaluation of an expression.
-
-**NOTE** that since we are looking at a *return code* the logic can feel backwards! 0 == TRUE and 1 == FALSE because we want to be able to use the return code in the rest of a script!
-
-`test` returns 1, since there is no expression
-
-`[ ]`  this is an alias for `test`, and so returns exactly the same as above.
-
-`[ "any string on its own evaluates to true."]` useful for debugging.
-
-There are numerous flags that provide the ability to do focused testing or combine expressions in standard logic.
-
-### options
-
-`[ -d .git ]` returns 0 (true) in a directory under git source control.
-
-`[ -f .git ]` would return 1 (false)
-
-`[ -n "string" ]` tests if the length of a string is nonzero, would return 0 (true).
-
-`[ -z "" ]` tests if the length of a string *is* zero, so would return 0 (true).
-
-### useful patterns
-
-`[ -n "$ENV_VAR_WE_NEED" ] || die "error message"`
-
-## uptime  
-`uptime` to see how long server has been running, users, load averages for 1,5 and 15 minutes  
-
-## wc
-`wc -l life_the_universe_and_everthing.sh` ideally this would return 42, as would running it :P   
-
 ### The real misc. debris...
+
+#### yaml "scripts"
+
+Continuous Integration/Delivery/Deployment tools often use `.yaml` files, with a portion of them being used for scripts. The intention is generally to have simple one line commands and to invoke shell scripts for more complex logic. In cases of simple logic, a structure such as:
+
+```
+- |
+  if ["$FOO" == "bar"]; then
+      echo "this would be an actual command or script..."
+    else
+      echo "and this would be the alternate case..."
+  fi
+- echo "and then back to regular commands"
+```
 
 ### vagrant
 `vagrant ssh -- -A -v`
