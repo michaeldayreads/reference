@@ -25,7 +25,7 @@ Shortcut|result
 `tmux ls` show sessions  
 `tmux new -s session-name` new session  
 `tmux a -t session-name` attach to a session  
-`tmux switch -t session_name` switch to that session
+`tmux switch -t session_name` switch to that session -- or `CTRL+b, s, <n>` for a menu of sessions.
 `tmux detach`  detach from the session you are in  
 
 `tmux rename-session -t old_name new_name`  
