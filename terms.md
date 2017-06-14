@@ -14,6 +14,8 @@ Note that CDep requires CDel requires CI.
 
 # Control Plane
 
+Signaling between network entities: OSPF, BGP, LDP
+
 The part of the architecture concerned with drawing the network topology (logically), i.e. the routing table that says what to do with incoming packets, as opposed to the part that actually uses that table to do the forwarding, which is typically referred to as the "data plane".
 
 The routing table is constructed from the Routing Information Base (RIB) which are static and dynamic routes. The control plane then refines this into the Forwarding Information Base (FIB) to be used by the Data (Forwarding) Plane.
@@ -26,11 +28,25 @@ In practice, each transaction at the data plane may contain information that imp
 
 # Data/Forwarding Plane
 
+Actual data movement - get a packet from A to B: IPTables, Routing Tables.
+
+Speed is critical. 
+
 The part of the router architecture concerned with forwarding packets between incoming and outgoing interface connections.  
+
+# Management Plane
+
+Operator tools: CLI, API, SNMP, SSH,
 
 # Network Topology
 
 How data flows (logical) and how the components of the network are arranged (physical).
+
+# OSPF
+
+Open Shortest Path First.
+
+IP routing protocol.
 
 # superset
 
