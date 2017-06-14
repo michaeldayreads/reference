@@ -1,4 +1,4 @@
-This is a collection of miscellaneous small docs to keep the proliferation of files to a minimum.
+This document collates collections of notes and hacks that are either too small or too infrequently referenced for a stand alone document to be effective.
 
 # Atom editor
 
@@ -11,6 +11,10 @@ This is a collection of miscellaneous small docs to keep the proliferation of fi
 Line numbering tool in Unix/Linux
 
 `make | nl` will number the output of make
+
+# HipChat
+
+`/code` to have chats code formatted
 
 # pylint
 
@@ -60,24 +64,11 @@ or a whole "checker" or set of messages using the "verbatim" name of the checker
 
 `deactivate` to exit it
 
-## HipChat
-
-`/code` to have chats code formatted
-
 # svn  
 
 **Check out an earlier revision than head**  
 `svn co -r 2718 file:///var/svn/repo_or_file /target/path`
 
-# Done
+# YouTube
 
-* Appointments and errands go on gcal/reminders
-* Everything else on gitlab issues, kanban style
-
-On gitlab:
-
-* Tag as `md` or `f5`
-* work out of that project
-* Use due dates when there is one.
-* Estimate, and then re-estimate as completed work is carved out or when the current estimate is exceeded.
-* Milestones should represent the work completed during that time frame. 
+To pin a playback at a specific time append `#t=3m14s` to the link.
