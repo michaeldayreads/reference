@@ -15,6 +15,14 @@
 ## brctl (bridge control - ethernet bridge admin)
 `brctl show` list network bridges
 
+## `cat`
+
+Concatenate and print files.
+
+Useful to quickly look at files with low risk of changing the file.
+
+Useful to produce one file from two: `cat file_B >> file_A`
+
 ## `cd`
 
 `cd -` Shorthand to change directory back to the last directory from which you changed directory. Thus:
