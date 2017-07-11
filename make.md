@@ -1,4 +1,4 @@
-# mu
+# Overview
 
 `make` invokes `GNUmakefile`, `makefile` and `Makefile` - in that order - within the current directory and runs the default rule or goal, which is the _first_ rule in the file.
 
@@ -97,11 +97,23 @@ A `prerequisite` is a file that is used as an input to the target.
 
 A `recipe` is an action that `make` carries out.
 
-## flags  
+# REFERENCE of rules, directives and built-in target names  
+
+`.PHONY` Indicate to make that it should not look for a file, and thus a last updated time, of the name(s) that are specified as *phony* targets.
+
+# options passed at invocation
+
+## `-C` change directory
+
 `-C <path/to/directory>` change to directory before doing anything further  
+
+## `-d` and `--debug[=options]` debug
+
+
 
 Sources
 ---
+https://www.gnu.org/software/make/manual/html_node/index.html
 Franken, Johannes. (2010). _Introduction to making Makefiles_ http://www.jfranken.de/homepages/johannes/vortraege/make.en.html
 Free Software Foundation. (2016) _The GNU Make Manual_, version 0.74.
 Graham-Cunmming, John. (2015). _The GNU Make Book_. No Starch Press.

@@ -34,6 +34,12 @@ To pass an environment variable to the container:
 docker run -it --env TEST_DIR=$PWD -v `pwd`:`pwd` python:2.7 bash
 ```
 
+To mount the pwd as the working directory:
+
+```
+docker run -it -v `pwd`:`pwd` -w `pwd` python:2.7 bash
+```
+
 ^^^ refactored ^^^
 
 # cli

@@ -1,3 +1,31 @@
+# agility
+
+Radically overused and misunderstood, often used as a noun (incorrect) rather than as an adjective.
+
+According to https://www.youtube.com/watch?v=a-BOSpxYJ9M the way to reclaim agility is to focus on:
+
+What to do:
+
+* Find out where you are.
+* Take a small step toward your goal.
+* Adjust your understanding based on what you learned.
+* Repeat.
+
+How to do it:
+
+* When faced with two or more alternatives that deliver roughly the same value, take the path that makes future change easier.
+
+And...
+
+You apply this fractally.
+
+A good design is easier to change than a bad design.
+
+The error, the history, the anticipated short term future.
+
+All 'rules' require a context.
+
+
 # chroot
 
 Unix operation that changes the apparent root directory for the current process and that processes children.
@@ -30,7 +58,7 @@ In practice, each transaction at the data plane may contain information that imp
 
 Actual data movement - get a packet from A to B: IPTables, Routing Tables.
 
-Speed is critical. 
+Speed is critical.
 
 The part of the router architecture concerned with forwarding packets between incoming and outgoing interface connections.  
 

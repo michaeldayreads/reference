@@ -38,7 +38,7 @@ $ pwd
 > /foo/bar
 ```
 
-## chmod  
+## `chmod`
 
 Change file mode bits.
 
@@ -65,7 +65,7 @@ Multiple can be given, separated by commas.
 
 `compgen -a` list all available aliases
 
-## diff
+## `diff`
 
 `diff -i file_one.txt file_two.txt` output different lines, case insensitive
 
@@ -83,7 +83,7 @@ Establishes a key/value pair that is available to the current shell process with
 
 The `export` command exports a shell variable to the environment, making it available to child processes.
 
-## find
+## `find`
 
 `find ~/path/to/start/from -name pattern` where pattern is the name or partial name (* / ?) of the file
 
@@ -91,13 +91,13 @@ The `export` command exports a shell variable to the environment, making it avai
 
 `find . -name '*py' ! -path '*test*'` Find all python files, but exclude directories that have "test" as part of their path, e.g. `/systest/` or `/test/`.
 
-## gpg  
+## `gpg`  
 `gpg --list-keys`  to get see what keys are on a system  
 `gpg --export > all.gpg` to get all keys on key ring  
 `gpg --import > all.gpg` to import that key set into another system  
 `gpg -r {key_id} -e {file_name}` encrypt a file (adds .gpg to the end of the file name to name the new file)   
 
-## history
+## `history`
 
 `history | grep command-of-interest`  
 
@@ -111,7 +111,7 @@ Then use the `!n` event designator to target the line you want to repeat...
 
 `!271`
 
-## ls
+## `ls`
 ```
 -c # use time when last changed for sorting (-t) or long printing (-l)  
 -F # / directory * exe @ symbolic = socket % whiteout | FIFO  
@@ -126,7 +126,7 @@ Then use the `!n` event designator to target the line you want to repeat...
 -U # sort by time of file creation  
 ```
 
-## printenv
+## `printenv`
 
 List environment Variables
 
@@ -134,10 +134,21 @@ See:
 * [`env`](#env)
 * [`set`](#set)
 
-## rsync  
+## `read`
+
+`read A && echo $A`
+`read -p "A proper prompt > " A && echo $A`
+
+```
+while read A; do
+  echo $A
+done
+```
+
+## `rsync`  
 `rsync -a file_to_send.txt username@server:~/path/if/desired`  
 
-## SCP
+## `scp`
 
 Secure copy
 
@@ -320,6 +331,8 @@ ss      Seconds, a number from 0 to 61 (59 plus a maximum of two leap seconds).
 #### redirect  
 `ls -al > directory_list.txt` file listing directory contents  
 `ls > text.txt 2>&1` both std and err as `2>&1` redirects stderr to stdout  
+
+See `tee` for method to have std out and also redirect to a file. 
 
 #### sftp  
 

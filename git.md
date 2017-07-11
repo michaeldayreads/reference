@@ -137,6 +137,12 @@ Displays path differences between index and HEAD commit.
 `git submodule update --init` for the first time...  
 `git submodule update` on subsequent ones...
 
+to remove: [^so-1260748]
+* delete section from `.gitmodules` or, if last one, remove the file
+* delete section (if any) from `.git/config`
+* `git rm --cached path_to_submodule` (no trailing slash)
+* `rm -rf .git/modules/path_to_submodule`
+* `git commit -m "removed submodule <name>"`
 
 ^^^ refactored ^^^
 
@@ -212,6 +218,7 @@ git push -f origin fix-or-feature-branch:fix-or-feature-branch
 https://git-scm.com/book/en/v2  
 https://git-scm.com/docs  
 http://ndpsoftware.com/git-cheatsheet.html  
+[^so-1260748]: (https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule#1260982)
 
 
 ```

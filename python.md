@@ -32,6 +32,12 @@ A commonly used installed package to identify variation from the PEP8 standards 
 
 `flake8 --show-source file.py`  includes snippets to clarify where in the source the issue has been flagged.
 
+# `import`
+
+## absolute
+
+## relative 
+
 # `raise`
 
 see [`try`](#try)
