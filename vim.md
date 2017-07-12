@@ -131,6 +131,10 @@ filetype indent on
 
 `.` repeats!  
 
+## Time and Date stamp
+`:r! date:x`
+
+
 ## line numbers  
 `:set nu` to invoke -- `nu` short for `number`   
 `:set nonu` to revoke  
