@@ -55,6 +55,10 @@ As always, there are as many ways to implement cherry-pick as there are teams th
 `git diff --name-only SHA1 SHA2` lists the files that changed
 `git diff SHA name_of_file` as a drill down from `--name-only`
 
+# `fetch`
+
+`git fetch --all --prune` remove deleted branches  
+
 # `init`
 
 Create an empty git repository or re-initialize an existing one. Running in an existing repository is safe, nothing is overwritten, though the command can be used to move to another location. When this is done, a text file with the new path is placed in the current directory as a symbolic link to the new location.
