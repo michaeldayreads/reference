@@ -83,6 +83,35 @@ Establishes a key/value pair that is available to the current shell process with
 
 The `export` command exports a shell variable to the environment, making it available to child processes.
 
+## `fc`
+
+Fix Command builtin that edits and re-executes - or lists - a range of commands from the history.
+
+> Be careful of the default behavior, which is to re-execute!
+
+Suppose you perform `history | grep foo` and find the spot where you were working with `foo` and the result is:
+
+`101 foo bar`
+
+and you want to see what you did with `bar` before and after line 101.
+
+`fc -l 98 103` will print those 5 lines, lets say they are:
+
+```
+98  cd foo
+99  . bar arg-a
+100 cat bar.log ../full.log
+101 foo bar
+102 rm bar.log
+103 ls -la
+```
+
+and if you wanted to re-execute 99 to 102, but with `arg-b` you could
+
+`fc -e vim 99 102`
+
+and those commands would be copied to vim, you could modify the arg for `. bar` and then save and exit.
+
 ## `find`
 
 `find ~/path/to/start/from -name pattern` where pattern is the name or partial name (* / ?) of the file
@@ -110,6 +139,8 @@ The `export` command exports a shell variable to the environment, making it avai
 Then use the `!n` event designator to target the line you want to repeat...
 
 `!271`
+
+see `fc`
 
 ## `ls`
 ```
@@ -332,7 +363,7 @@ ss      Seconds, a number from 0 to 61 (59 plus a maximum of two leap seconds).
 `ls -al > directory_list.txt` file listing directory contents  
 `ls > text.txt 2>&1` both std and err as `2>&1` redirects stderr to stdout  
 
-See `tee` for method to have std out and also redirect to a file. 
+See `tee` for method to have std out and also redirect to a file.
 
 #### sftp  
 
