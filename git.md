@@ -104,9 +104,9 @@ git log --graph --color --oneline --decorate
 
 ## comparing branches
 
-`git log ^foo/master bar/master`
+`git log foo/master ^bar/master`
 
-Shows commits in foo that are not in bar.
+Show what commits are in foo that are not in bar. 
 
 # `merge`
 
