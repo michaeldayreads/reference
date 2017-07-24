@@ -40,6 +40,23 @@ As always, there are as many ways to implement cherry-pick as there are teams th
 
 `git cherry-pick -x -m 1 <commit-id>`
 
+-x adds a comment saying what commit it was picked from
+
+-m specifies the mainline parent, from 1
+
+A more complete statement of this example is:
+
+```
+git fetch --all                               # so that --ff-only is accurate
+git checkout master
+git merge --ff-only upstream/master
+git log --oneline                             # find <sha> of interest, typically a merge commit
+git checkout target_branch                    # typically a release branch, e.g 1.0-stable
+git merge --ff-only upstream/target_branch    # just to be sure current
+git cherry-pick -x -m 1 <sha>
+git push origin target_branch:target_branch   # and then open a PR or MR
+```
+
 * The `-x` options instructs git to include a "cherry-picked from ..." bread crumb in the log.
 * the `-m 1` instructs git which parent number to choose as mainline.
 
@@ -54,6 +71,10 @@ As always, there are as many ways to implement cherry-pick as there are teams th
 `git diff branch_1 branch_2 path/to/file_of_interest.txt` compare a file between two branches
 `git diff --name-only SHA1 SHA2` lists the files that changed
 `git diff SHA name_of_file` as a drill down from `--name-only`
+
+# `fetch`
+
+`git fetch --all --prune` remove deleted branches  
 
 # `init`
 
@@ -80,6 +101,13 @@ git log --pretty=oneline --until='5 minutes ago'
 git log --pretty=oneline --author='Michael Day'
 git log --graph --color --oneline --decorate
 ```
+
+## comparing branches
+
+`git log ^foo/master bar/master`
+
+Shows commits in foo that are not in bar.
+
 # `merge`
 
 # `mergetool`
