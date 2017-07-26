@@ -261,9 +261,15 @@ There are numerous flags that provide the ability to do focused testing or combi
 ## wc
 `wc -l life_the_universe_and_everthing.sh` ideally this would return 42, as would running it :P   
 
+## `xargs`
 
+Construct an arguments list and execute the results.
 
-# scripting
+A common pattern is:
+
+`find . -name foo | xargs sed -i '' -e 's/bar/baz/'`
+
+# __SHELL SCRIPTS__
 
 `#!/bin/bash` is a convention to let `execve` know what interpreter to load to execute a script. The actual path might vary, and can be determined with `which`.
 
