@@ -273,6 +273,18 @@ A common pattern is:
 
 `#!/bin/bash` is a convention to let `execve` know what interpreter to load to execute a script. The actual path might vary, and can be determined with `which`.
 
+## Control Flow aka Logic & Conditionals
+
+### `if`
+
+```
+if foo; then
+  bar;
+elif baz; then
+  qux;
+else xux
+```
+
 ## Variables
 
 To set an environment variable:
