@@ -189,6 +189,16 @@ Secure copy
 
 `scp -F path/to/ssh_config_file path/to/file/to/copy.py host_name:/path/to/copy/file/into`
 
+Depending on how your ssh_config_file is set up, you may be using a `user@host_name:` format, in which case either specify a full path:
+
+`/home/ubuntu/path/to/copy/file/to.txt`
+
+or, alternatively just the partial path from the home directory for the user:
+
+`path/to/copy/file/to.txt`
+
+Note in the later case we presume the presence of the home path.
+
 ## `set`
 
 List all variables and functions for the session.
