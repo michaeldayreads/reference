@@ -255,6 +255,10 @@ There are numerous flags that provide the ability to do focused testing or combi
 
 `[ -n "$ENV_VAR_WE_NEED" ] || die "error message"`
 
+## `uname`
+
+Print basic system information. Use `uname -a` to get all information, or `man uname` to find option to target.
+
 ## uptime  
 `uptime` to see how long server has been running, users, load averages for 1,5 and 15 minutes  
 
