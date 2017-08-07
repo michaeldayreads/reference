@@ -48,6 +48,8 @@ docker run -it -v `pwd`:`pwd` -w `pwd` python:2.7 bash
 
 `docker attach <name>`  
 
+Use `CTRL-p` then `CTRL-q` to detach and leave the container running.
+
 
 
 ## build
