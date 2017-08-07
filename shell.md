@@ -187,6 +187,10 @@ Secure copy
 
 `-r` recursive
 
+When using `-r` in combination with `-F`:
+
+`scp -r -F path/to/config_file path/to/copy user@host:relative/path/for/copies`
+
 `scp -F path/to/ssh_config_file path/to/file/to/copy.py host_name:/path/to/copy/file/into`
 
 Depending on how your ssh_config_file is set up, you may be using a `user@host_name:` format, in which case either specify a full path:
