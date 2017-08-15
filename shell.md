@@ -48,6 +48,7 @@ Change file mode bits.
 Multiple can be given, separated by commas.
 
 #### rwxXst
+
 `r` read  
 `w` write  
 `x` execute  
@@ -56,6 +57,7 @@ Multiple can be given, separated by commas.
 `t` restrict deletion flag [?]  
 
 #### ugoa  
+
 `u` _user_ who owns it  
 `g` file's _group_  
 `o` _other_ users not in the files group  
@@ -72,6 +74,12 @@ Multiple can be given, separated by commas.
 ## `env`
 
 Used on its own to see environment (see [`printenv`](#printenv)) and additionally to override the environment within which a command will be executed.
+
+## `exec`
+
+Replaces the current process with a specific command. No subprocess is forked.
+
+Can be a useful way to return to a new shell state.
 
 ## `export`
 
@@ -121,10 +129,25 @@ and those commands would be copied to vim, you could modify the arg for `. bar` 
 `find . -name '*py' ! -path '*test*'` Find all python files, but exclude directories that have "test" as part of their path, e.g. `/systest/` or `/test/`.
 
 ## `gpg`  
+
 `gpg --list-keys`  to get see what keys are on a system  
 `gpg --export > all.gpg` to get all keys on key ring  
 `gpg --import > all.gpg` to import that key set into another system  
 `gpg -r {key_id} -e {file_name}` encrypt a file (adds .gpg to the end of the file name to name the new file)   
+
+
+## `grep`
+
+File pattern searcher.
+
+
+`grep foo baz`  search baz for lines containing foo
+
+`grep foo baz -v`  search baz for lines that do NOT contain foo
+
+`grep foo baz -c`  returns match count
+
+`grep foo baz --color` results colored for contrast
 
 ## `history`
 

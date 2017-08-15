@@ -62,9 +62,37 @@ Speed is critical.
 
 The part of the router architecture concerned with forwarding packets between incoming and outgoing interface connections.  
 
+# Gateway node 
+
+See Host node.
+
+# Host 
+
+tbd
+
+# Host Node
+
+Nodes concerned (by virtue of the protocols used) with the contents of the data (packet/datagram etc.) which in the most familiar case are client/server. Nodes that serve to forward the data - be they routers, switches, proxies etc. - are all gateway nodes.
+
+# Lightweight Directory Access Protocol (LDAP)
+
+Directories can be thought of as databases that are read an order of magnitude more than they are written. Two examples are DNS and authentication, the latter particularly in a large entity where multiple services are provided anchored to the same user, e.g. laptop, email, calendar, timecard etc.
+
+LDAP is a protocol that is a subset of the X.500 specification, the latter using all 7 layers of the OSI where the former uses only TCP/IP, and also eliminates numerous uncommon operations. 
+
+Thus LDAP clients talk to an LDAP server which talks - when necessary - to the data store. Note that the simplest implementation of an LDAP server may use only the file system on the backend servers, in which case the LDAP server can be thought of as an abstraction of the file system and thus the database, yet still optimized via the protocol (interface) for read heavy write light performance.
+
 # Management Plane
 
-Operator tools: CLI, API, SNMP, SSH,
+Operator tools: CLI, API, SNMP, SSH ...
+
+# Network Address Translation
+
+A method to substitute private IP addresses with public IP addresses to increase IP density, provide security by obfuscation, and the ability to roll services. 
+
+# Network Time Protocol (NTP)
+
+An application of the intersection algorithm to the task of synchronizing clocks of networked computers to within a few milliseconds.
 
 # Network Topology
 
