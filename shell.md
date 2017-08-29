@@ -2,7 +2,27 @@
 
 > Option lists on commands are non-exhaustive. The intention is to explain and highlight command line and scripting usage, not to clone the man pages.
 
+---
+crib
+---
+
 # commands
+
+## `alias`
+
+Map one token to many tokens, typically to save keystrokes on repetitive tasks.
+
+It can be invoked per session, e.g. when you ssh to a host, and then `unalias` can remove it from the session if needed.
+
+```
+alias kc="kubectl"
+# hack
+# hack 
+# hack
+unalias kc
+```
+
+The more common pattern is to add aliases to `.bashrc` or `.bash_profile` so that they are built into each session.
 
 ## `apt`
 
@@ -59,13 +79,20 @@ Multiple can be given, separated by commas.
 #### ugoa  
 
 `u` _user_ who owns it  
-`g` file's _group_  
+`g` file _group_  
 `o` _other_ users not in the files group  
 `a` _all_ users  
 
 ## compgen
 
 `compgen -a` list all available aliases
+
+
+## `curl`
+
+Internet transfers for resources specified as URLs using Internet Protocols. 
+
+`curl 10.1.2.3 -m 5`  specify a maximum of 5 seconds to complete the entire operation.
 
 ## `diff`
 
@@ -163,11 +190,21 @@ Then use the `!n` event designator to target the line you want to repeat...
 
 `!271`
 
+And use `!!` to reference the last command, as in `sudo !!`
+
 see `fc`
 
+## `ifconfig` (WIP)
+
+Configure a network interface.
+
+`-a` Display details of all interfaces.
+
 ## `ls`
+
 ```
 -c # use time when last changed for sorting (-t) or long printing (-l)  
+-C # column output
 -F # / directory * exe @ symbolic = socket % whiteout | FIFO  
 -G # colorized  
 -h # unit suffixes  
@@ -180,6 +217,16 @@ see `fc`
 -U # sort by time of file creation  
 ```
 
+## `mtr`
+
+Traceroute and ping. 
+
+
+## `netstat`
+
+Print network connections, routing tables, interfaces stats and more.
+
+`netstat -rn -f inet
 ## `printenv`
 
 List environment Variables
@@ -309,6 +356,10 @@ Construct an arguments list and execute the results.
 A common pattern is:
 
 `find . -name foo | xargs sed -i '' -e 's/bar/baz/'`
+
+---
+End man crib
+---
 
 # __SHELL SCRIPTS__
 
