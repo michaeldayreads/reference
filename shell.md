@@ -190,8 +190,13 @@ Then use the `!n` event designator to target the line you want to repeat...
 
 `!271`
 
-And use `!!` to reference the last command, as in `sudo !!`
+And use `!!` to reference the last command, as in `sudo !!` or:
 
+```
+find . -name foo
+# presuming the result is/are the file/s you wish to edit...
+vim $(!!)
+```
 see `fc`
 
 ## `ifconfig` (WIP)
