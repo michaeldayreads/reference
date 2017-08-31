@@ -45,6 +45,25 @@ Vim is not always certain how to work with the system clipboard. Before pasting 
 
 # folding
 
+To set folding use `:setlocal foldmethod=<type>` where type can be:
+
+- manual
+- indent
+- syntax
+- expr
+- marker
+- diff
+
+`foldmethod` may be abbreviated as `fdm` as in:
+
+`:setlocal fdm=indent`
+
+## Opening and closing
+
+`za`    Toggle
+`zo`    Open
+`zc`    Close
+
 ## creating, modifying  
 `zf3j` creates a fold from the cursor down three lines  
 `zf/text` creates a fold from the cursor to the next instance of `text`  
@@ -141,7 +160,20 @@ filetype indent on
 
 ## visual mode
 
+key-binding     select mode
+v               characters
+V               whole lines
+Ctrl-v          rectangular blocks
+
 use `v` to enter visual mode, then use navigation keys to select text, which you may then `d` or `y`.  
+
+This is a simple way to indent text:
+
+    (navigate)  # to top of block to move over
+    v           # enter visual mode
+    j           # for each line to edit
+    I           # to enter insert mode
+    esc         # to complete the insert 
 
 ## undo
 
