@@ -2,6 +2,8 @@
 
 ## get
 
+cm,deploy,ing,po,rs,rc,sa,svc
+
 Valid resource types include:
 
 - clusters (valid only for federation apiservers)
