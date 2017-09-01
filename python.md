@@ -16,7 +16,7 @@ see:
 
 # egg
 
-
+WIP
 
 # `except`
 
@@ -26,7 +26,7 @@ see [`try`](#try)
 
 see [`try`](#try)
 
-# `flake8`
+# `flake8` -- shell
 
 A commonly used installed package to identify variation from the PEP8 standards for code style.
 
@@ -37,6 +37,15 @@ A commonly used installed package to identify variation from the PEP8 standards 
 ## absolute
 
 ## relative 
+
+# `pep8` -- shell
+
+Style guide for python.
+
+## Naming styles
+
+
+`_single_leading_underscore` weak "internal use" indicator, will not be imported by `from my_module import *` but WILL be imported by `from my_module import _foo` ? 
 
 # `raise`
 
