@@ -149,7 +149,7 @@ and those commands would be copied to vim, you could modify the arg for `. bar` 
 
 ## `find`
 
-`find ~/path/to/start/from -name pattern` where pattern is the name or partial name (* / ?) of the file
+`find ~/path/to/start/from -name pattern` where pattern is the name or partial name of the file
 
 **note** Be sure to use quotes to prevent filename expansion, aka _globbing on the wild card `*`_
 
@@ -167,6 +167,7 @@ and those commands would be copied to vim, you could modify the arg for `. bar` 
 
 File pattern searcher.
 
+Note that `egrep` is for extended regex (equivilent to `grep -E`) and `fgrep` is for literal characeters only and is equivalent to `grep -F`
 
 `grep foo baz`  search baz for lines containing foo
 
@@ -175,6 +176,35 @@ File pattern searcher.
 `grep foo baz -c`  returns match count
 
 `grep foo baz --color` results colored for contrast
+
+`grep -r foo .`             Search recursively from the current directory
+
+`grep -r foo /baz`          Search recursively from the `baz` directory
+
+`grep foo * -d skip`        Search ONLY the base directory: `-d` is the directory "action" flag; read, skip, recurse
+
+```
+-n      line number
+-i      case insensitive
+-e      additional patterns, i.e. -e baz -e qux
+-w      word matches only
+-x      whole line
+-l      files WITH match
+-L      files NOT matching
+-m      max count
+-s      suppress errors for nonexistent/unreadable files
+-q      quiet or --silent; exit immediately with 0 when a match is found
+```
+
+Context
+
+```
+-A n    Print n lines after
+-B n    Print n lines before
+-C n    Print n lines before AND after
+
+```
+
 
 ## `history`
 
