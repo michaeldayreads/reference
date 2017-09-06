@@ -38,6 +38,26 @@ A commonly used installed package to identify variation from the PEP8 standards 
 
 ## relative 
 
+# `pdb` - The Python Debugger
+
+`import pdb; pdb.set_trace()`
+
+Then use `c` to step through.
+
+Other commands:
+
+h       Help
+c       Continue:
+s       Step:
+a       Args: list the arguments of the current file.
+p expr  Print: evaluate expression and print its value.
+pp expr Pprint: like print, but pretty print. 
+w       Where: prints a stack trace.
+d       Down: move the current frame one level down in the stack trace.
+u       Up: move the current frame one level up in the stack trace.
+q       Quit: The debugger is quit and the program is aborted.
+
+
 # `pep8` -- shell
 
 Style guide for python.
