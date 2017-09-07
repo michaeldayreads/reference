@@ -29,6 +29,16 @@ git log -1  # get the SHA
 git checkout target_branch
 git checkout <SHA> path/to/file
 ```
+## Duplicate or Copy an Existing Branch to a New Branch
+
+```
+git checkout old
+git branch new
+```
+
+OR
+
+`git checkout -b new old
 
 # `cherry-pick`
 
