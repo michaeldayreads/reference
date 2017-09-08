@@ -214,6 +214,10 @@ log
 
     log POD -c CONTAINER
 
+`-f` allows you to follow that log.
+
+`kubectl -f pod_name | grep -v "lines_to_ignore include this text"` is a useful pattern to cut down on noise.
+
 Container may be omitted if there is only one in the pod. There are numerous flags to constrain the output, or to `-f` follow it. By default a "snapshot" is returned (according to `--help` without any description of what that means).
 
 Note that `logs` is an alias.
