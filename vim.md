@@ -165,7 +165,7 @@ v               characters
 V               whole lines
 Ctrl-v          rectangular blocks
 
-use `v` to enter visual mode, then use navigation keys to select text, which you may then `d` or `y`.  
+use `v` to enter visual mode, then use navigation keys to select text, which you may then `d` to cut or `y` to copy.  
 
 This is a simple way to indent text:
 
