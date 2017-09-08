@@ -42,20 +42,23 @@ A commonly used installed package to identify variation from the PEP8 standards 
 
 `import pdb; pdb.set_trace()`
 
-Then use `c` to step through.
+Then use `s` to step through at low granularity, i.e. pdb stops when in can, though you may be at different levels of the stack.
+
+Most often, the first pass is at `n` which is the next line in the function in the file where you placed the pdb.
 
 Other commands:
 
-h       Help
-c       Continue:
-s       Step:
-a       Args: list the arguments of the current file.
-p expr  Print: evaluate expression and print its value.
-pp expr Pprint: like print, but pretty print. 
-w       Where: prints a stack trace.
-d       Down: move the current frame one level down in the stack trace.
-u       Up: move the current frame one level up in the stack trace.
-q       Quit: The debugger is quit and the program is aborted.
+?           List help
+h <cmd>     Help on that pdb command
+c           Continue:
+s           Step:
+a           Args: list the arguments of the current file.
+p expr      Print: evaluate expression and print its value.
+pp expr     Pprint: like print, but pretty print. 
+w           Where: prints a stack trace.
+d           Down: move the current frame one level down in the stack trace.
+u           Up: move the current frame one level up in the stack trace.
+q           Quit: The debugger is quit and the program is aborted.
 
 
 # `pep8` -- shell
