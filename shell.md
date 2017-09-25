@@ -235,6 +235,12 @@ Configure a network interface.
 
 `-a` Display details of all interfaces.
 
+## `ln`
+
+Create a hard or symbolic link. Most commonly it is the latter, as in:
+
+`ln -s actual/directory/often/very/long/path short-hand-link`
+
 ## `ls`
 
 ```
