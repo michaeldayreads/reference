@@ -110,6 +110,7 @@ git log --pretty=oneline --since='5 minutes ago'
 git log --pretty=oneline --until='5 minutes ago'
 git log --pretty=oneline --author='Michael Day'
 git log --graph --color --oneline --decorate
+git log --grep=coverage
 ```
 
 ## comparing branches
