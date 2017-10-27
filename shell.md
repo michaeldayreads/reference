@@ -314,6 +314,13 @@ or, alternatively just the partial path from the home directory for the user:
 
 Note in the later case we presume the presence of the home path.
 
+## `sed`
+
+Stream editor. Takes files or standard input, modifies according to arguments, sends to standard out.
+
+
+
+
 ## `set`
 
 List all variables and functions for the session.

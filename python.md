@@ -108,7 +108,7 @@ Tool to create distinct environments.
 *refactoring vv*
 
 
-# dir -- and other useful methods of inspection
+# dir -- and other useful methods of inspection/debugging.
 
 `dir(obj)`  list of methods on object  
 `help(obj)`  A doc string list of methods on the object  
@@ -117,7 +117,21 @@ Tool to create distinct environments.
 `keyword.kwlist` to see a full list  
 `import __builtin__; dir(__builtin__)` to list python 2 builtins
 `import builtins; dir(builtins)` for python 3 [^stackoverflow_22864221]
+`locals()` Active local objects.
+`globals()` Active global objects; contrast with `gc` below.
 
+There is also the garbage collector (gc) interface, which can be used to look for memory leaks in addition to general introspection. The most common introspection command is:
+
+```
+import gc
+foo = {'bar':'qux'}
+gc.get_referents(foo)
+```
+
+To see all objects - of which there are thousands just to have python running:
+`gc.get_objects()`
+
+See `pdb`
 
 # http server
 

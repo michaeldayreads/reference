@@ -1,1 +1,0 @@
-`subdomain=mday api_key | timechart count span=1m` API call count per minute
