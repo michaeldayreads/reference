@@ -126,6 +126,9 @@ Show what commits are in foo that are not in bar.
 
 # `push`
 
+> hack to prevent pushing by accident: `git remote set-url --push origin no_push`
+
+
 `git push <remote> source_branch:target_branch`
 
 # `remote`
