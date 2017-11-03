@@ -149,7 +149,7 @@ and those commands would be copied to vim, you could modify the arg for `. bar` 
 
 ## `find`
 
-`find ~/path/to/start/from -name pattern` where pattern is the name or partial name of the file
+`find ~/path/to/start/from -name pattern` where pattern is the name or partial name of the file (or directory).
 
 **note** Be sure to use quotes to prevent filename expansion, aka _globbing on the wild card `*`_
 
@@ -242,6 +242,15 @@ Create a hard or symbolic link. Most commonly it is the latter, as in:
 `ln -s actual/directory/often/very/long/path short-hand-link`
 
 ## `ls`
+
+Note on wildcards and globs: be aware that `.` - particularly at the start of a filename - can lead to some unintuitive ls results; e.g you are editing the file `stuff.txt` using vim, and vim has created a file `.stuff.txt.swp`, producing the following behavior:
+
+```
+> ls *swp
+ls: *swp: No such file or directory
+> ls .*swp
+-rw-r--r--  1 foo  bar baz  2218 Nov  3 13:28 .stuff.txt.swp
+```
 
 ```
 -c # use time when last changed for sorting (-t) or long printing (-l)  
