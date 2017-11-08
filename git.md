@@ -17,6 +17,8 @@ Update file(s) in the working tree to match the state of those files in the SHA 
 
 `git checkout -b local_branch upstream/fix-or-feature-branch` track remote branch
 
+`git checkout --track upstream/branch_to_track` track an existing remote branch
+
 ## Update / Revert file(s)
 
 Checkout is useful to revert a file to an earlier state or to copy changes from one branch to another for specific files.
