@@ -142,7 +142,7 @@ Goto a line by using the number followed by `G` or using `:` followed by the num
 `:set syntax=off` to have that setting persist for that file  
 
 
-`:set colorcolumn=80`
+`:set cc=80`
 `:highlight ColorColumn ctermbg=DarkGray` gives an offset bar at column specified above.
 
 ## python settings
