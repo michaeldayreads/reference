@@ -1,3 +1,8 @@
+# Invoking the shell within vim
+
+`:! mkdir foo` will attempt to execute `mkdir foo` from the directory you were in when you invoked vim.
+
+
 # text manipulation
 
 ## copy  
