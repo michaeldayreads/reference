@@ -194,6 +194,10 @@ Note that `egrep` is for extended regex (equivilent to `grep -E`) and `fgrep` is
 -m      max count
 -s      suppress errors for nonexistent/unreadable files
 -q      quiet or --silent; exit immediately with 0 when a match is found
+-I      ignore binary files
+-C      context around; eg `grep -C 1 foo /baz`
+-A      context after
+-B      context before
 ```
 
 Context
