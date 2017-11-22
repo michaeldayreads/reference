@@ -53,4 +53,4 @@ A request-response protocol facilitating running subprocesses in an alternative 
 
 A |content-addressable memory| implementation of distributed computing, providing tuples taht can be accessed concurrently. Data is pushed to the space by producers, and then consumers retrieve the data.
 
-+JavaSpaces+ is an implementation of a tuple space in | Java | 
++ JavaSpaces + is an implementation of a tuple space in | Java | 
