@@ -53,4 +53,8 @@ A request-response protocol facilitating running subprocesses in an alternative 
 
 A |content-addressable memory| implementation of distributed computing, providing tuples taht can be accessed concurrently. Data is pushed to the space by producers, and then consumers retrieve the data.
 
-+ JavaSpaces + is an implementation of a tuple space in | Java | 
++ JavaSpaces + is an implementation of a tuple space in | Java |.
+
++ Pointer + an object that contains a memory address pointing to another location in memory containing a value of interest. It is a *reference* to the value in the register pointed to. A strict definition of a pointer would require that the interface permit pointer arithmetic - manipulation of the address locations. The most common syntax for a pointer is `&p`. 
+
+Pointers may be |dereferenced| - typically using the notation `p = *x` - which means the pointer takes the address of `x`. 
