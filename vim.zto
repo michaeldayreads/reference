@@ -1,6 +1,11 @@
 vim
 ---
 ---
+% Formating and Syntax
+
+%% Indenting
+
+`:set autoindent`
 
 % Spell Check
 
