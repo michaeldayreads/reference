@@ -72,10 +72,17 @@ git push origin target_branch:target_branch   # and then open a PR or MR
 * The `-x` options instructs git to include a "cherry-picked from ..." bread crumb in the log.
 * the `-m 1` instructs git which parent number to choose as mainline.
 
+# `commit`
+
+`git commit --amend --author "Corrected Name <corrected@email.com>"`
+
+
 # `config`
 
 `git config --global core.editor "vim"` set default editor to vim  
 `git config --list`  see current config.
+`git config user.email "foo@baz.com"  set email (for repo)
+`git config user.email` view email (for repo)
 
 # `diff`
 
