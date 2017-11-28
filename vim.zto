@@ -50,6 +50,8 @@ Vim is not always certain how to work with the system clipboard. Before pasting 
 
 # search
 
+In standard mode, `/` starts a search string. You can make it case insensitive with `/\c`.
+
 ## characters
 
 `fq` find next q (use `n` to move to next find)  
