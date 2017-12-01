@@ -331,8 +331,9 @@ Note in the later case we presume the presence of the home path.
 
 Stream editor. Takes files or standard input, modifies according to arguments, sends to standard out.
 
+`sed '100,200!d' targetfile`  prints out lines 100 to 200. Pipe to `grep`...
 
-
+`sed '100,200!d' targetfile | grep def` would be an easy way to see all the functions defined in a python file between those lines. Very useful if those lines are a very large class.
 
 ## `set`
 

@@ -1,3 +1,9 @@
+% Debugging
+
+`fmt.Printf("%v\n", structOfInterest)` To print a struct, as the plus flag `%+v" prints field names.
+
+%%__END_ZTO__%%
+
 # Syntax and concepts
 
 ## control
