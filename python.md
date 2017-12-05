@@ -152,6 +152,57 @@ suppose `uri = "10.1.2.3:80"`
 
 Note the latter is arguably _less_ pythonic, but none the less can be demanded by some linters when the second substring is not used later in the script.
 
+
+### format
+
+```
+foo = "foo"
+print("example 0: %s")
+# example 0: foo
+```
+
+```
+foo = 17
+print("{0:d} {0:o} {0:X} {0:b}".format(foo))
+# 17 21 11 10001
+```
+
+Types of substitutions:
+b   binary
+c   character
+d   decimal
+o   octal
+x   hex (lowercase)
+X   hex (uppercase)
+n   number (using local settings for number separators)
+''  None. Same as d.
+
+Floating point:
+e   Exponent
+E   Exponent (uppercase)
+f   Fixed
+F   Fixed (uppercase)
+g   General; f until too big, then e.
+G   General (uppercase)
+n   Same as g, but local.
+%   Multiples by 100, f, and percent sign.
+''  Same as g, but at least one digit after decimal.
+
+```
+def print_formatted(num):
+    """Print a table of numbers 1 to num in decimal, oct, HEX, and binary."""
+
+    width = len('{0:b}'.format(num))
+
+    for i in range(1, num):
+        for base in 'doXb':
+            print '{0:{width}{base}}'.format(i, base=base, width=width),
+        print
+
+num = int(raw_input))
+print_formatted(num)
+```
+
 ##lists
 
 Lists are mutable, unlike strings.
