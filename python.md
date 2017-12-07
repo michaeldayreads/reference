@@ -38,6 +38,18 @@ A commonly used installed package to identify variation from the PEP8 standards 
 
 ## relative 
 
+# `map`
+
+`data = map(str, raw_input()).split(' ')`   simple way to get "a b c" from stdin
+
+```
+# for a larger data set
+n = int(raw_input())
+queries = {}
+for i in range(n):
+    queries[i] = map(str, raw_input().split(' '))
+```
+
 # `pdb` - The Python Debugger
 
 `import pdb; pdb.set_trace()`
