@@ -27,6 +27,13 @@ Microsoft proprietary competitor to | CORBA |.
 
 Similar to | CORBA |, a means of providing distributed computing and a generalized API for projects within the Delphi (Object Pascal) framework.
 
++ Design by contract +
+
+aka + contract programming +
+
+The application of preconditions (client obligations, supplier benefits), post conditions (client benefits, supplier obligations) and invariants (general laws or rules for contracts) to service/software design. Strangely this is trademarked by Eiffel Software.
+
+
 + dereference +
 
 aka + dereferencing +
