@@ -37,11 +37,16 @@ The more common pattern is to add aliases to `.bashrc` or `.bash_profile` so tha
 
 ## `cat`
 
-Concatenate and print files.
+Concatenate (combine) and print files.
 
 Useful to quickly look at files with low risk of changing the file.
 
-Useful to produce one file from two: `cat file_B >> file_A`
+Useful to produce one file from two: `cat file_B >> file_A` produces 
+
+```
+file_A
+file_B
+```
 
 ## `cd`
 
