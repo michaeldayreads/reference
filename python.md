@@ -398,16 +398,36 @@ sources
 
 ## running tests
 
-`pytest test_file.py`  run all tests in this file.  
+```
+pytest                                      # use pwd as root dir, find tests
+pytest -v                                   # verbose output
+pytest path/to/test_file.py                 # run tests in test_file.py
+pytest path/to/test_file.py::test_foo       # run only test foo in test_file.py
 
-### `-k` or keyword flag
-`pytest -k "test_foo" test_file.py`  runs tests with "test_foo" as part of name
+# some options
+
+pytest -k foo               # run tests/classes matching foo
+pytest -x                   # exit on first error / failure
+pytest --lf                 # run only tests that failed last time
+pytest --ff                 # run all tests, but failed ones first
+pytest -l                   # show locals in traceback
+pytest --collect-only       # collect but do not run
+pytest --pdb                # start pdb on error
+pytest -s                   # same as --capture=no i.e. stdout while testing
+pytest --tb=long            # show full (available) traceback
+pytest --durations=n        # show n slowest tests
+pytest --durations=0        # show times for ALL tests
+pytest --markers            # list markers
+pytest --fixtures           # list fixtures
+```
 
 ### `--ignore=path/to/ignore`
 
 ### `-p no:cacheprovider`
 
 Turns off the caching plugin. Can be useful when tests are running in a context where they do not have write capability (e.g. docker).
+
+_NOTE_: `pytest -h` lists help based on directory, as `conftest.py` files in the path can impact what options, markers, and fixtures are available.
 
 ## Writing Tests
 
