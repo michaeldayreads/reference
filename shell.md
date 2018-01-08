@@ -35,6 +35,14 @@ The more common pattern is to add aliases to `.bashrc` or `.bash_profile` so tha
 ## brctl (bridge control - ethernet bridge admin)
 `brctl show` list network bridges
 
+## `bc`
+
+Basic calculator.
+
+Can be used interactively with `-i`, or can be passed a(some) file(s) which can contain more complex calculations, including functions.
+
+[wikipedia](https://en.wikipedia.org/wiki/Bc_(programming_language)) provides reasonable examples.
+
 ## `cat`
 
 Concatenate (combine) and print files.
