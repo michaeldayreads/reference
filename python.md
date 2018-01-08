@@ -383,18 +383,10 @@ _pass_
 ## Assignment
 Associates a name to an object. It is a namespace operation. When Python sees `a = 1` it creates an integer object with the value 1 and assigns the name 'a' to it. When we declare `b = a` Python adds another reference to the object '1', but there is only one object.
 
-sources  
-
-[^Lutz_2013]: [Learning Python, 5th Edition](  https://www.safaribooksonline.com/library/view/learning-python-5th/9781449355722/)
-[^Phillips_Romano_Hattem_2016]: Python: Journey from Novice to Expert.
-[^zen_of_python]: https://www.python.org/dev/peps/pep-0020/
-[^stackoverflow_22864221]: https://stackoverflow.com/questions/22864221/is-the-list-of-python-reserved-words-and-builtins-available-in-a-library
-
-* [Python Documentation 2.7](https://docs.python.org/2/) and [3.5](https://docs.python.org/3.5/)
-* [Python for Informatics - Severance (2013)](http://www.pythonlearn.com/html-270/index.html)
-* [Think Python, 2nd Edition - Downey (2015)](http://www.greenteapress.com/thinkpython/)
-* [pep-0257](https://www.python.org/dev/peps/pep-0257/)
 # Pytest
+
+`pytest --collect-only` see what tests are going to run
+
 
 ## running tests
 
@@ -436,3 +428,16 @@ Before writing any new tests, familiarize yourself with the tests that have alre
 `grep -rniI -C 3 assert /path` 
 
 ... shows assert statements and patterns already in use. 
+
+
+sources  
+
+[^Lutz_2013]: [Learning Python, 5th Edition](  https://www.safaribooksonline.com/library/view/learning-python-5th/9781449355722/)
+[^Phillips_Romano_Hattem_2016]: Python: Journey from Novice to Expert.
+[^zen_of_python]: https://www.python.org/dev/peps/pep-0020/
+[^stackoverflow_22864221]: https://stackoverflow.com/questions/22864221/is-the-list-of-python-reserved-words-and-builtins-available-in-a-library
+
+* [Python Documentation 2.7](https://docs.python.org/2/) and [3.5](https://docs.python.org/3.5/)
+* [Python for Informatics - Severance (2013)](http://www.pythonlearn.com/html-270/index.html)
+* [Think Python, 2nd Edition - Downey (2015)](http://www.greenteapress.com/thinkpython/)
+* [pep-0257](https://www.python.org/dev/peps/pep-0257/)

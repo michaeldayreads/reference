@@ -99,6 +99,16 @@ Internet transfers for resources specified as URLs using Internet Protocols.
 
 `curl 10.1.2.3 -m 5`  specify a maximum of 5 seconds to complete the entire operation.
 
+## `date`
+
+Manipulate and reference the date on the host.
+
+Most common use is to output the date, as in:
+
+```
+date +%Y%m%d-%a-%H%m    # 20180108-Mon-1001
+```
+
 ## `diff`
 
 `diff -i file_one.txt file_two.txt` output different lines, case insensitive
