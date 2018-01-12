@@ -2,8 +2,6 @@
 
 A succession of command line instructions invoked by `build` to assemble an image.
 
-
-
 # `exec`
 
 Run a command in a background/daemon docker container.
@@ -20,6 +18,12 @@ To run a container and attach to it via interactive terminal:
 
 ```
 docker run -it -v `pwd`:/mount_path image:tag bash
+```
+
+To override the defined entrypoint:
+
+```
+docker run -it --entrypoint="/bin/sh" <image>:<tag>
 ```
 
 To run a daemon:
