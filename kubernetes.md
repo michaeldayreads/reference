@@ -1,6 +1,17 @@
-# kubectl
+### kubectl
 
-## get
+#### expose
+
+Creates a service from a deploy, svc, rs, rc, or po on the specified port, defaulting to a ClusterIP type.
+
+The following is a quick way to stand up an nginx deploy/rs of two po behind a svc, using NodePort:
+
+```
+kubectl run nginx --replicas=2 --image=nginx
+kubectl expose deploy/nginx --type=NodePort --port=80
+```
+
+#### get
 
 cm,deploy,ing,po,rs,rc,sa,svc
 
@@ -34,6 +45,18 @@ Valid resource types include:
 - statefulsets
 - storageclasses
 - thirdpartyresources
+
+When listing all resources of interest, to focus use `grep -v`, e.g. see all pods that do not have age in terms of days:
+
+```
+kubectl get po | grep -v "[0-9]d"
+# or use perl regex
+kubectl get po | grep -P -v "\dd"
+```
+
+Or, to look a bit more precisely with clear age contrast when grep is using color:
+
+`kubectl get po | grep -P " \ds| \d\ds| \dh| \d\dh| \d\dm| \dm"`
 
 
 # Useful and to be expanded on...
