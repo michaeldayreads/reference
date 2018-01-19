@@ -7,6 +7,10 @@ vim
 
 `:set autoindent`
 
+%% Word wrap
+
+`:set wrap | set linebreak`
+
 % Spell Check
 
 `:set spelllang=en`
