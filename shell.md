@@ -210,6 +210,7 @@ Note that `egrep` is for extended regex (equivilent to `grep -E`) and `fgrep` is
 -n      line number
 -i      case insensitive
 -e      additional patterns, i.e. -e baz -e qux
+-v      negative search
 -w      word matches only
 -x      whole line
 -l      files WITH match
