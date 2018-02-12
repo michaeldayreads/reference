@@ -42,6 +42,8 @@ A commonly used installed package to identify variation from the PEP8 standards 
 
 `data = map(str, raw_input()).split(' ')`   simple way to get "a b c" from stdin
 
+`data = list(map(str, input().split(' ')))` python 3
+
 ```
 # for a larger data set
 n = int(raw_input())
@@ -213,6 +215,15 @@ def print_formatted(num):
 
 num = int(raw_input))
 print_formatted(num)
+```
+
+Another example, in python 3
+
+```
+test = 1 / 2.0
+
+print('%.6f' % test)
+# >>> 0.500000
 ```
 
 ##lists

@@ -64,6 +64,15 @@ A request-response protocol facilitating running subprocesses in an alternative 
 5. Server stub unmarshalls parameters from message.
 6. Server stub calls server procedure, with response traversing the same path back.
 
++ Source Network Address Translation +
+
+aka + SNAT +
+
+The method of modifying the Source IP address on incoming packets to a network to ensure that a desired egress IP is identified by all responding servers.
+
+Do not confuse with an essentially nonsense term of Secure Network Address Translation which generally uses Source NAT and claims that the particular implementation is Secure by virtue of some (typically) proprietary mechanism. The security of the implementation should be evaluated in terms of general network primitives, including Source NAT but necessarily other protocols and methods for routing based on them that have a specific security claim to make. For example, using Source NAT in combination with specific additional technology at the point of egress may offer concrete security improvements. However, in this case Source NAT is necessary, but neither sufficient for nor equivalent to an additional form of NAT that is inherently secure. 
+
+
 + Tuple space +
 
 A |content-addressable memory| implementation of distributed computing, providing tuples taht can be accessed concurrently. Data is pushed to the space by producers, and then consumers retrieve the data.

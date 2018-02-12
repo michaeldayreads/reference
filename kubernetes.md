@@ -112,6 +112,13 @@ Pods are the atomic unit in k8s. Containers are deployed _within_ a pod. The pod
 
 Pods are _logical hosts_, and the containers within the pod will typically be tightly coupled.
 
+## Annotations
+
+Key Value maps of meatadata attached to objects. Not used to select objects, contrast with Labels.
+
+This is an easy way to add data to the k8s object so that services within the cluster can understand details about the object asside from the selection.
+
+
 ## Deployments
 
 Containerized applications that run on top of clusters. The master schedules the application instances and these are actually created by the individual nodes. So the deployment lives in the master, and the apps live in the nodes.
@@ -128,7 +135,11 @@ Services also make service discovery within the cluster possible, meaning that t
 
 ## Labels
 
+Used by k8s to identify a resource and/or as part of a query ops personell perform on a cluster.
+
 Key/value pairs that may be attached to some objects (i.e. pods) and then used as a selector by another (i.e a service). Selectors are applied at deployment, labels may be added at creation or modified later.
+
+Labels are also used by k8s to select objects - contrast with Annotations.
 
 # other objects / terms
 

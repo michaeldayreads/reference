@@ -38,9 +38,13 @@ vim
 ## delete
 `x` current character to left  
 `X` current character to right  
-`dw` current word  
-`dd` current line  
-`2dd` this and the next line  
+`dw` current word
+`d$` cursor to end of line
+`d^` cursor to beginning of line 
+`dd` current line
+`2dd` this and the next line
+`dgg` this line and ALL above
+`dG` this line and ALL below 
 
 Note that `d` also copies the content, and `p` then puts or pastes it.  
 

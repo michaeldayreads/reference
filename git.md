@@ -81,6 +81,7 @@ git push origin target_branch:target_branch   # and then open a PR or MR
 
 `git config --global core.editor "vim"` set default editor to vim  
 `git config --list`  see current config.
+`git config --list --global` to see global config. Note, if none are set, an error is generated.
 `git config user.email "foo@baz.com"  set email (for repo)
 `git config user.email` view email (for repo)
 
