@@ -1,6 +1,124 @@
-### kubectl
+# Overview
 
-#### expose
+Open source container orchestration system initially developed and used at Google.
+
+# kubectl
+
+The `--help` flag accepts a RESOURCE as well, however, the help provided might be generic to the action.
+
+All are prefaced by `kubectl`
+
+    cluster-info
+
+basic information about running cluster
+
+    cluster-info dump
+
+Provides more detail
+
+-
+
+    delete < RESOURCE > < NAME >
+
+Resources can be a comma separated (no spaces) list for multiple types with the same name or `-l` labels.
+
+A file can also be specified (yaml or json).
+
+## describe
+
+`describe <resource type>`
+
+Enumerates key details for resources matching the request. Flags enable various types of filtering.
+
+## exec
+
+`exec < POD > < COMMAND >`
+
+Execute a command on the first container in a `pod`. Passing the `-c` flag allows the specifying of a container other than the first. `-it` can be passed to attach to stdin/stdout.
+
+## expose
+
+`expose < RESOURCE TYPE > < RESOURCE NAME > --port=80 --target-port=8000`
+
+This resource would serve on port 80 and connect to containers on port 8000.
+
+It is also possible to pass a file
+
+`expose file_describing_resource.yaml --port=80 --target-port=8000`
+
+The file can be either yaml or json, and fields that may be used are defined by the api.
+
+## get
+
+`get < RESOURCE TYPE >`
+
+List resources, such as nodes, deployments, pods etc. `--help` will provide a complete list of such resources.
+
+## label
+
+`label < RESOURCE TYPE > < NAME >`
+
+Apply, or `--overwrite` labels. As with other commands, a json or yaml file may be specified. Note that a label can be removed entirely by a trailing `-`
+
+`kubectl label pod web-1 bye-`
+
+Which would remove the label `bye` from the web-1 pod. However, as these are key/value pairs this does not seem particularly common except to correct errors.  Consider the case of using `version=1.0.2` or `status=healthy` or `env=prod` as examples. In all these cases, the expectation is that the label value would change, but the label itself would remain.
+
+## log
+
+`log POD -c CONTAINER`
+
+`-f` allows you to follow that log.
+
+`kubectl -f pod_name | grep -v "lines_to_ignore include this text"` is a useful pattern to cut down on noise.
+
+Container may be omitted if there is only one in the pod. There are numerous flags to constrain the output, or to `-f` follow it. By default a "snapshot" is returned (according to `--help` without any description of what that means).
+
+Note that `logs` is an alias.
+
+## rollout
+
+`rollout SUBCOMMAND RESOURCE_TYPE/NAME`
+
+Subcommands include:
+
+```
+history
+pause
+resume
+status
+undo
+```
+
+Details on each subcommand are available using `--help`.
+
+## run
+
+`run DEPLOYMENT_NAME --image=<repo url> --port=<port number>`
+
+Under the name provided, the master scheduled the creation of the container by the Node, which creates the Pod and containers specified.
+
+## scale
+
+`scale RESOUCE_TYPE/RESOURCE_NAME --replicas=COUNT`
+
+Resource types are Deployment, ReplicaSet, Replication Controller, or Job.
+
+A file may also be used:
+
+`scale -f FILE.yaml --replicas=COUNT`
+
+
+## set image
+
+`set image TYPE/NAME CONTAINER_NAME=IMAGE`
+
+The image may be a standard docker registry image or a path to an image in a private repository may be provided.
+
+> Note: `set` is a broader command presently operating ONLY on `image`.
+
+
+## expose
 
 Creates a service from a deploy, svc, rs, rc, or po on the specified port, defaulting to a ClusterIP type.
 
@@ -11,7 +129,7 @@ kubectl run nginx --replicas=2 --image=nginx
 kubectl expose deploy/nginx --type=NodePort --port=80
 ```
 
-#### get
+## get
 
 cm,deploy,ing,po,rs,rc,sa,svc
 
@@ -156,146 +274,60 @@ replicaset (rs)
 replication controller (rc)
 -
 
+# Resources, Community and Extensions
 
+A collection of Kubernetes specific content that is not part of Vanilla Kubernetes.
 
+## Openshift 
 
-# kubetcl (command line interface)
+OpenShift adds many things to Kubernetes
 
-## context
+### Build Configuration
 
-Basic syntax is:
+Docker builds often run as root. The additional build interface may provide some security beneifits.
 
-    kubectl ACTION RESOURCE
+Getting from source to image.
 
-e.g.
+### Deployment Configuration
 
-    kubectl get nodes
+Partial or complete deploymet/re-deployment based on:
+- Image change (tag)
+- Code change (webhook)
+- Config change
 
-for help specific to a ACTION add --help.
+### Image Stream
 
-    kubectl get --help
+### Integrated Docker Registry
 
-The `--help` flag accepts a RESOURCE as well, however, the help provided might be generic to the action.
+## Logging is EFK
 
-## reference
+A common logging solution in k8s appears to be Elasticsearch (document storage/search engine), Logstash (log parsing), and Kibana (visualization).
 
-All are prefaced by `kubectl`
+For OpenShift, Logstash is replaced with Fluentd (CNCF).
 
-    cluster-info
+### Policies are expanded
 
-basic information about running cluster
+### Project
 
-    cluster-info dump
+A project wraps a namespace and controlls access to that namespace. This appears to be where RBAC was implemented. It is not clear if Projects offer more than simply an abstraction on top of RBAC (that would be fine, though it would be nice to know for sure).
 
-Provides more detail
+### Routes
 
--
+Default router is HAProxy.
 
-    delete < RESOURCE > < NAME >
+Route is a construct to define rules applied to incomming connections.
 
-Resources can be a comma separated (no spaces) list for multiple types with the same name or `-l` labels.
+Compare this to k8s, where an Ingress Controller ( F5 CC or NGINX controller) provides the referse proxy and the Ingress Resource defines the connection rules.
 
-A file can also be specified (yaml or json).
+### Software Defined Network
 
-describe
--
+### Source to Image (S2I)
 
-    describe <resource type>
+A pipeline tool for producing images from source in a predicatable, repeatable way.
 
-Enumerates key details for resources matching the request. Flags enable various types of filtering.
+### Tools / Tooling
 
-exec
--
 
-    exec < POD > < COMMAND >
 
-Execute a command on the first container in a `pod`. Passing the `-c` flag allows the specifying of a container other than the first. `-it` can be passed to attach to stdin/stdout.
+### WebConsole
 
-expose
--
-
-    expose < RESOURCE TYPE > < RESOURCE NAME > --port=80 --target-port=8000
-
-This resource would serve on port 80 and connect to containers on port 8000.
-
-It is also possible to pass a file
-
-    expose file_describing_resource.yaml --port=80 --target-port=8000
-
-The file can be either yaml or json, and fields that may be used are defined by the api.
-
-get
--
-
-    get < RESOURCE TYPE >
-
-List resources, such as nodes, deployments, pods etc. `--help` will provide a complete list of such resources.
-
-label
--
-
-    label < RESOURCE TYPE > < NAME >
-
-Apply, or `--overwrite` labels. As with other commands, a json or yaml file may be specified. Note that a label can be removed entirely by a trailing `-`
-
-
-    kubectl label pod web-1 bye-
-
-Which would remove the label `bye` from the web-1 pod. However, as these are key/value pairs this does not seem particularly common except to correct errors.  Consider the case of using `version=1.0.2` or `status=healthy` or `env=prod` as examples. In all these cases, the expectation is that the label value would change, but the label itself would remain.
-
-log
--
-
-    log POD -c CONTAINER
-
-`-f` allows you to follow that log.
-
-`kubectl -f pod_name | grep -v "lines_to_ignore include this text"` is a useful pattern to cut down on noise.
-
-Container may be omitted if there is only one in the pod. There are numerous flags to constrain the output, or to `-f` follow it. By default a "snapshot" is returned (according to `--help` without any description of what that means).
-
-Note that `logs` is an alias.
-
-rollout
--
-
-    rollout SUBCOMMAND RESOURCE_TYPE/NAME
-
-Subcommands include:
-
-    history
-    pause
-    resume
-    status
-    undo
-
-Details on each subcommand are available using `--help`.
-
-run
--
-
-    run DEPLOYMENT_NAME --image=<repo url> --port=<port number>
-
-Under the name provided, the master scheduled the creation of the container by the Node, which creates the Pod and containers specified.
-
-scale
--
-
-
-    scale RESOUCE_TYPE/RESOURCE_NAME --replicas=COUNT
-
-Resource types are Deployment, ReplicaSet, Replication Controller, or Job.
-
-A file may also be used:
-
-    scale -f FILE.yaml --replicas=COUNT
-
-
-set image
--
-
-    set image TYPE/NAME CONTAINER_NAME=IMAGE
-
-The image may be a standard docker registry image or a path to an image in a private repository may be provided.
-
-> Note: `set` is a broader command presently operating ONLY on `image`.
