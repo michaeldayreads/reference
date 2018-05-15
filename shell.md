@@ -317,6 +317,7 @@ Traceroute and ping.
 Print network connections, routing tables, interfaces stats and more.
 
 `netstat -rn -f inet
+
 ## `printenv`
 
 List environment Variables
@@ -324,6 +325,26 @@ List environment Variables
 See:  
 * [`env`](#env)
 * [`set`](#set)
+
+## pushd / popd
+
+An alternative to `cd` that builds a stack of directories navigated that can later be retraced using `popd`.
+
+Redirect output to `/dev/null` to invoke in a "silent" manner, e.g.;
+
+```
+pushd foo/bar > /dev/null
+```
+
+The option `-n` operates on the stack only, without navigating the user within the shell, thus;
+
+```
+pushd foo/bar     # add pwd, foo/bar to dirs stack AND cd to foo/bar
+pushd -n foo/bar  # same as above, but do not change into that directory
+```
+
+The `-n` case might be useful to build a stack of dirs to act on later.
+
 
 ## `read`
 
