@@ -11,6 +11,16 @@
 `git branch -m <old_name> <new_name>` to rename a branch you are not on  
 `git branch -m <new_name>` to rename current branch  
 
+## Converting a detached head to a branch
+
+If you checkout a SHA, you will be in a detached head state. This is useful for looking around, but if you need to make changes or wish to name that SHA for ease of reference without creating a tag, best to create a branch.
+
+```
+git checkout <SHA>
+git branch foo
+git checkout foo
+```
+
 # `checkout`
 
 Update file(s) in the working tree to match the state of those files in the SHA provided.
