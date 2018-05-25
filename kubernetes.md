@@ -190,6 +190,12 @@ you could then target another command by namespace as in:
 
 # Core Objects / Terms
 
+## Annotations
+
+Key Value maps of meatadata attached to objects. Not used to select objects, contrast with Labels.
+
+This is an easy way to add data to the k8s object so that services within the cluster can understand details about the object asside from the selection.
+
 ## Clusters
 
 A collection of resources including:
@@ -230,16 +236,18 @@ Pods are the atomic unit in k8s. Containers are deployed _within_ a pod. The pod
 
 Pods are _logical hosts_, and the containers within the pod will typically be tightly coupled.
 
-## Annotations
-
-Key Value maps of meatadata attached to objects. Not used to select objects, contrast with Labels.
-
-This is an easy way to add data to the k8s object so that services within the cluster can understand details about the object asside from the selection.
-
 
 ## Deployments
 
 Containerized applications that run on top of clusters. The master schedules the application instances and these are actually created by the individual nodes. So the deployment lives in the master, and the apps live in the nodes.
+
+## Ports
+
+A `port` makes a service visible within a cluster.
+
+A `targetPort` the actual port on the pod.
+
+A `nodePort` the port that kube-proxy is aware of.  
 
 ## Services
 
@@ -259,20 +267,7 @@ Key/value pairs that may be attached to some objects (i.e. pods) and then used a
 
 Labels are also used by k8s to select objects - contrast with Annotations.
 
-# other objects / terms
 
-
-dameonset (ds)
--
-
-job
--
-
-replicaset (rs)
--
-
-replication controller (rc)
--
 
 # Resources, Community and Extensions
 
