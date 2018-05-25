@@ -2,10 +2,6 @@
 
 > Option lists on commands are non-exhaustive. The intention is to explain and highlight command line and scripting usage, not to clone the man pages.
 
----
-crib
----
-
 # commands
 
 ## `alias`
@@ -465,7 +461,20 @@ Print basic system information. Use `uname -a` to get all information, or `man u
 ## uptime  
 `uptime` to see how long server has been running, users, load averages for 1,5 and 15 minutes  
 
+## visudo
+
+Safely edit the sudoers file.
+
+Can be a useful way to change the path for sudo, but be careful, as this essentially scopes the trusted binaries.
+
+## watch
+
+Display and refresh the output of another shell command.
+
+`watch -n 0.1 -d foo` run the `foo` command every 0.1 seconds, refreshing the display and highlighting the differences.
+
 ## wc
+
 `wc -l life_the_universe_and_everthing.sh` ideally this would return 42, as would running it :P   
 
 ## `xargs`
@@ -476,11 +485,7 @@ A common pattern is:
 
 `find . -name foo | xargs sed -i '' -e 's/bar/baz/'`
 
----
-End man crib
----
-
-# __SHELL SCRIPTS__
+# SCRIPTS
 
 `#!/bin/bash` is a convention to let `execve` know what interpreter to load to execute a script. The actual path might vary, and can be determined with `which`.
 
