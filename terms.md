@@ -1,3 +1,39 @@
+# Architecture
+
+## Emergent
+
+Build working software and produce an "as built" diagram. 
+
+## Evolutionary
+
+
+
+## Intentional 
+
+Plan everything in advance of building anything.
+
+# Testing aka Quality
+
+## Types or tools for testing and quality
+
+Layers of testing:
+- Linting and static code analysis
+- Unit testing
+- Contract Testing -- Use a provider/consumer model to write request/response unit tests from one side to a mock of the other. Then use the mock to actually test that other side.
+- Integration Testing
+- End to End (system) tests.
+- Health Monitoring -- event driven checks, e.g. decreasing code coverage, increasing response times, increasing build times etc.
+- External Acceptance Tests -- Add hoc end to end testing performed outside of the development group. If this is performed by actual expected users, it may be considered beta testing. If it is testing in the security dimension, it may be considered pen testing.
+
+Dimensions of specialized testing:
+- Security
+- Reliability / Resiliency over time 
+- Performance / Speed
+- Scale / Load
+- Availability, may be tested separately for a baseline and then examined in other dimensions above.
+
+# MD ^^ / reformat vv
+
 + Content-Addressable Storage + 
 
 aka + content addressable memory + Typically refers to hardware implementations.
