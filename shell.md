@@ -265,6 +265,15 @@ vim $(!!)
 ```
 see `fc`
 
+### using search and replace
+
+We can replace a specific string in a prior command easily:
+
+```
+!!:s/old/new   # run the last command but replace `old` with `new`
+!42:s/old/new  # run history entry 42 but replace `old` with `new`
+```
+
 ## `ifconfig` (WIP)
 
 Configure a network interface.
