@@ -64,17 +64,17 @@ Apply, or `--overwrite` labels. As with other commands, a json or yaml file may 
 
 Which would remove the label `bye` from the web-1 pod. However, as these are key/value pairs this does not seem particularly common except to correct errors.  Consider the case of using `version=1.0.2` or `status=healthy` or `env=prod` as examples. In all these cases, the expectation is that the label value would change, but the label itself would remain.
 
-## log
+## logs
 
-`log POD -c CONTAINER`
+`logs POD -c CONTAINER`
 
-`-f` allows you to follow that log.
+`-f` allows you to follow that log (all entries).
 
-`kubectl -f pod_name | grep -v "lines_to_ignore include this text"` is a useful pattern to cut down on noise.
+`--tail=n` where n is number of recent logs to show, and -1 is equivalent to `-f`
+
+`kubectl logs -f pod_name | grep -v "lines_to_ignore include this text"` is a useful pattern to cut down on noise.
 
 Container may be omitted if there is only one in the pod. There are numerous flags to constrain the output, or to `-f` follow it. By default a "snapshot" is returned (according to `--help` without any description of what that means).
-
-Note that `logs` is an alias.
 
 ## rollout
 
@@ -272,6 +272,21 @@ Labels are also used by k8s to select objects - contrast with Annotations.
 # Resources, Community and Extensions
 
 A collection of Kubernetes specific content that is not part of Vanilla Kubernetes.
+
+## Brigade
+
+An in-cluster event-based scripting of Kubernetes piplines. Brigade offers an API Gateway that can accept events/triggers (GitHub webhook events are supported out of the box) and then deploy a Build of one or more Jobs to accomplish a result. For example, a git commit could trigger a webhook to the API Gateway that would result in the running of *cluster based* tests.
+
+## Draft
+
+A tool that uses Docker, Helm and (usually) mini-kube to let a dev poke and prod at thier containers within a cluster. 
+
+## Helm
+
+A package manager for Kubernetes that simplifies organizing resources as templates and high level configuration (values.yaml) that can be repeatedly rendered and deployed, version controlled, rolled back, and modularized in an extensible manner. 
+
+`helm install foo -f values_file.yaml`  Apply a values file during install
+
 
 ## Openshift 
 
