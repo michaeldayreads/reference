@@ -12,6 +12,10 @@ Build working software and produce an "as built" diagram.
 
 Plan everything in advance of building anything.
 
+## Interface Definition Language (IDL) aka Interface Description Language
+
+A method to describe an interface that is independent of any particular implementation language. CORBA is an example.
+
 # Testing aka Quality
 
 ## Types or tools for testing and quality
@@ -31,6 +35,8 @@ Dimensions of specialized testing:
 - Performance / Speed
 - Scale / Load
 - Availability, may be tested separately for a baseline and then examined in other dimensions above.
+
+
 
 # MD ^^ / reformat vv
 
