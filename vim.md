@@ -1,17 +1,17 @@
 vim
 ---
----
-% Formating and Syntax
 
-%% Indenting
+# Formating and Syntax
+
+## Indenting
 
 `:set autoindent`
 
-%% Word wrap
+## Word wrap
 
 `:set wrap | set linebreak`
 
-% Spell Check
+# Spell Check
 
 `:set spelllang=en`
 `:setlocal spell`
@@ -19,9 +19,6 @@ vim
 
 `]s` and `[s` to navigate.
 `zg` to add a word to personal file.
-
-
-%%_END_ZTO_%%
 
 # Invoking the shell within vim
 
@@ -170,7 +167,17 @@ Goto a line by using the number followed by `G` or using `:` followed by the num
 # syntax highlighting and appearance  
 
 `:syntax on` and `:syntax off` for file specific toggling  
-`:set syntax=off` to have that setting persist for that file  
+`:set syntax=off` to have that setting persist for that file
+
+Note that if the file extension has changed, the associated syntax may also change.
+
+To ensure you get the syntax you want:
+
+```
+:set syntax=off
+:set syntax=<language>
+:set syntax=on
+``` 
 
 
 `:set cc=80`
