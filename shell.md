@@ -214,6 +214,17 @@ Note that `egrep` is for extended regex (equivilent to `grep -E`) and `fgrep` is
 
 `grep foo * -d skip`        Search ONLY the base directory: `-d` is the directory "action" flag; read, skip, recurse
 
+A more complete example:
+
+```
+grep -rniI foo --exclude-dir=vendor --include \*.go .
+```
+
+This returns the `file:nn` where the line contains `foo`, but it does not search in the vendor directory and it only searches files that end in `.go`.
+
+> Note: The format of `--flag=value` and `--flag value` are often equivalent. This example includes bothformats, but either can be used for the flags above.
+
+
 ```
 -n      line number
 -i      case insensitive
