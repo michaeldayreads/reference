@@ -70,9 +70,12 @@ In standard mode, `/` starts a search string. You can make it case insensitive w
 ### substitute aka _find and replace_  
 
 #### without confirmation  
+
 `:%s/ignorance/understanding/g` find and replace in __all lines__  
 `:s/ignorance/understanding/g` find and replace in __current line only__  
+
 #### _with_ confirmation  
+
 `:%s/ignorance/understanding/gc` find and replace in __all lines__  
 `:s/ignorance/understanding/gc` find and replace in __current line only__  
 

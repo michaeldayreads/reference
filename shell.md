@@ -28,6 +28,14 @@ The more common pattern is to add aliases to `.bashrc` or `.bash_profile` so tha
 `apt-get install foo`
 > install foo
 
+## `awk`
+
+A useful way to combine results, e.g:
+
+```
+kubectl logs -n bar $(kubectl get po -n bar | grep foo | awk '{print $1}')
+```
+
 ## brctl (bridge control - ethernet bridge admin)
 `brctl show` list network bridges
 
