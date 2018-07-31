@@ -282,7 +282,7 @@ find . -name foo
 # presuming the result is/are the file/s you wish to edit...
 vim $(!!)
 ```
-see `fc`
+see [`fc`](#fc)
 
 ### using search and replace
 
@@ -444,6 +444,28 @@ Those commonly referenced:
 
 `source FILENAME [arguments]`  loads functions files  
 For example, we may wish to `source ~/.profile`  re-load the profile after adding a new alias to our `.profile`.  
+
+## tar
+
+To create an archive of the `foo/` directory within the current path:
+`tar zv --create --file=foo.tgz foo`
+
+The `z` option indicates zip, the `v` option tells tar to be verbose.
+
+As suggested by `zv` the first token is a set of options that need not be preceeded by `-`, so:
+`tar czvf foo.tgz foo`
+is a more concise and more common form.
+
+Once created, you can examine the contents using:
+`tar --list --file=foo.tgz` OR `tar -tf foo.tgz`
+
+To extract:
+`tar --extract --file=foo.tgz` OR `tar xf foo.tgz`
+
+Be mindful of how the files you are archiving are being passed. If you include a path, that whole base path will be included in the tar, and present when you extract.
+
+To change into the correct directory to be able to avoid extra prefixing file path elements, use:
+`tar czv --directory=/bar/qux --file=foo.tgz foo` or `tar czvCf /bar/qux foo`
 
 ## tee
 

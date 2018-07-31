@@ -175,17 +175,18 @@ Displays path differences between index and HEAD commit.
 
 # `stash`
 
-`git stash` To stash things for later  
-`git stash save "short descriptive name"` or you will have a cryptic name for the stash
-`git stash list` to see the stash "stack"  
-`git stash show -p [stash@{n}]` essentially a diff  
-`git stash apply`  to apply the last set of stashed changes  
-`git stash apply stash@{n}` to apply the nth set  
-`git stash apply [stash@{n}] --index` apply and stage as staged at stash   
-`git stash drop [stash@{n}]` remove nth set (or last if omitted)  
-`git stash pop [stash@{n}]` apply and remove nth set (or last if omitted)  
-`git stash save "a more useful name"` stash with the useful name showing in `git stash list`  
-`git stash clear` to remove all items from the stash **caution**  
+`git stash` To stash things for later.  
+`git stash -p` To have git break what has changed into "hunks" and ask you what to do with each.  
+`git stash save "short descriptive name"` or you will have a cryptic name for the stash.  
+`git stash list` to see the stash "stack".  
+`git stash show -p [stash@{n}]` essentially a diff.  
+`git stash apply`  to apply the last set of stashed changes.  
+`git stash apply stash@{n}` to apply the nth set.  
+`git stash apply [stash@{n}] --index` apply and stage as staged at stash.  
+`git stash drop [stash@{n}]` remove nth set (or last if omitted).  
+`git stash pop [stash@{n}]` apply and remove nth set (or last if omitted).  
+`git stash save "a more useful name"` stash with the useful name showing in `git stash list`.  
+`git stash clear` to remove all items from the stash **caution**.  
 
 
 # `status`
