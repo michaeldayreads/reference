@@ -82,6 +82,14 @@ git push origin target_branch:target_branch   # and then open a PR or MR
 * The `-x` options instructs git to include a "cherry-picked from ..." bread crumb in the log.
 * the `-m 1` instructs git which parent number to choose as mainline.
 
+Another useful pattern is to combine two orthoganal changes that have been tested on separate branches:
+
+```
+git checkout fix-a                              # this branch fixes issue a, and we want to combine the fix for b into it
+git log -10 fix-b                               # to find SHA for commit that fixes issue b
+git cherry-pick <SHA for fix b>                 # now we have fix b on top of fix a; be mindful of time stamps and rebase as needed
+```
+
 # `commit`
 
 `git commit --amend --author "Corrected Name <corrected@email.com>"`
