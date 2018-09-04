@@ -149,6 +149,10 @@ Show what commits are in foo that are not in bar.
 
 # `merge`
 
+When merging - which is also the basis for `rebase`, `stash pop` and `stash apply` to keep `us` and `them` clear:
+
+`us` = into and `them` = from
+
 # `mergetool`
 
 
