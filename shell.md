@@ -350,7 +350,15 @@ See:
 * [`env`](#env)
 * [`set`](#set)
 
-## pushd / popd
+
+## `ps`
+
+Process Status
+
+most of the time what we are interested in is `ps aux` which gives us a more complete process list that we will in turn pipe to `grep`.
+
+
+## `pushd` / `popd`
 
 An alternative to `cd` that builds a stack of directories navigated that can later be retraced using `popd`.
 
@@ -372,7 +380,16 @@ The `-n` case might be useful to build a stack of dirs to act on later.
 
 ## `read`
 
-`read A && echo $A`
+Get input from the user. Also a useful way to wait for a keystroke to continue a script, e.g:
+
+```
+read -p "Press enter to continue"
+```
+
+More examples:
+
+`read A && echo $A`  
+
 `read -p "A proper prompt > " A && echo $A`
 
 ```
@@ -452,20 +469,31 @@ To create an archive of the `foo/` directory within the current path:
 
 The `z` option indicates zip, the `v` option tells tar to be verbose.
 
-As suggested by `zv` the first token is a set of options that need not be preceeded by `-`, so:
+As suggested by `zv` the first token is a set of options that need not be preceeded by `-`, so:  
 `tar czvf foo.tgz foo`
 is a more concise and more common form.
 
-Once created, you can examine the contents using:
+Once created, you can examine the contents using:  
 `tar --list --file=foo.tgz` OR `tar -tf foo.tgz`
 
-To extract:
+To extract:  
 `tar --extract --file=foo.tgz` OR `tar xf foo.tgz`
 
 Be mindful of how the files you are archiving are being passed. If you include a path, that whole base path will be included in the tar, and present when you extract.
 
-To change into the correct directory to be able to avoid extra prefixing file path elements, use:
+To change into the correct directory to be able to avoid extra prefixing file path elements, use:  
 `tar czv --directory=/bar/qux --file=foo.tgz foo` or `tar czvCf /bar/qux foo`
+
+> Note: `tar` expects the file paths to be absolute and will return an error when given a relative path.  
+
+If we imagine our home directory is bar, and attempt to invoke:  
+`tar czc --directory=/bar/qux --file=~/foo.tgz`  
+
+We would get an error of:  
+`tar: Failed to open '~/foo.tgz'`
+
+Rather we should use:  
+`tar czc --directory=/bar/qux --file=/bar/foo.tgz`
 
 ## tee
 
