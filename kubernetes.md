@@ -36,6 +36,14 @@ Enumerates key details for resources matching the request. Flags enable various 
 
 Execute a command on the first container in a `pod`. Passing the `-c` flag allows the specifying of a container other than the first. `-it` can be passed to attach to stdin/stdout.
 
+A common pattern is:
+
+`kubectl exec -it <pod_name> -- /bin/sh`
+
+or:
+
+`kubectl exec -it <pod_name> --container <container_name>-- /bin/sh`
+
 ## expose
 
 `expose < RESOURCE TYPE > < RESOURCE NAME > --port=80 --target-port=8000`

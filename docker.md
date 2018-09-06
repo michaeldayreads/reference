@@ -20,10 +20,10 @@ To run a container and attach to it via interactive terminal:
 docker run -it -v `pwd`:/mount_path image:tag bash
 ```
 
-To override the defined entrypoint:
+To override the defined entrypoint (should be first argument):
 
 ```
-docker run -it --entrypoint="/bin/sh" <image>:<tag>
+docker run --entrypoint="/bin/sh" -it <image>:<tag>
 ```
 
 To run a daemon:
