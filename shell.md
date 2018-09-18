@@ -453,6 +453,19 @@ Those commonly referenced:
 - `-x` print and expand each command
 
 
+## `sed`
+
+`sed` is a stream editor. The most common usage pattern is to perform substitutions on pipes or "in place" on existing files by use of the `-i` flag.
+
+For instance, to replace `<MY_IP>` within a config file with the environment variable `my_ip` your bash script could include:
+
+```
+sed -i 's/<MY_IP>/'$my_ip'/' /path/to/config.file
+```
+
+Note the use of single quotes to allow interpolation and the `-i` in place flag.
+
+
 ## sleep
 
 `sleep <seconds>`  suspend execution for a minimum of seconds given.  
