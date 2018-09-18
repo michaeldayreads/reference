@@ -1,3 +1,11 @@
+# PEM 
+
+Textual encoding standard defined in RFC 7864 for the transmission of cryptographic primitives. The name is due to the Privacy Enhanced Email (PEM) intention of the standard, though many other aspects of PEM have been deprecated.
+
+
+---
+---
+
 # Architecture
 
 ## Emergent
