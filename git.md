@@ -110,6 +110,15 @@ git cherry-pick <SHA for fix b>                 # now we have fix b on top of fi
 `git diff --name-only SHA1 SHA2` lists the files that changed
 `git diff SHA name_of_file` as a drill down from `--name-only`
 
+To focus on changes smaller than lines:
+
+```
+git diff --word-diff <sha_or_file(s)_as_usual>              # word diff, in the bash or vim sense of word
+git diff --word-diff-regex=. <sha_or_file(s)_as_usual>      # character diff using {+change+} notation
+git diff --color-words=. <sha_or_file(s)_as_usual>          # highlights what changed directly, no additional markers
+```
+
+
 # `fetch`
 
 `git fetch --all --prune` remove deleted branches  
