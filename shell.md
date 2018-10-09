@@ -331,6 +331,11 @@ ls: *swp: No such file or directory
 -U # sort by time of file creation  
 ```
 
+
+## `man`
+
+Online manual pages. Note that for builtins use `help <builtin>` instead.
+
 ## `mtr`
 
 Traceroute and ping. 
