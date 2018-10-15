@@ -42,7 +42,11 @@ A common pattern is:
 
 or:
 
-`kubectl exec -it <pod_name> --container <container_name>-- /bin/sh`
+`kubectl exec -it <pod_name> --container <container_name> -- /bin/sh`
+
+or:
+
+`kubectl exec -it <pod_name> -c <container_name> -- /bin/sh`
 
 ## expose
 
