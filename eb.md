@@ -1,0 +1,38 @@
+# Effective Behaviors
+
+Some behavior may not be automated (at lease pre GIAI). For behavior that can be automated, sometimes the cost to automate is too high with existing skill set and tooling, or refinement may be required to prevent automating the wrong thing.
+
+This document is intended leverage what I have learned that has not yet been automated.
+
+## Speed
+
+Quality cannot be sped up, but large tasks can be broken into smaller ones. Always aim to have shipable code as soon as possible, even if what you are shipping is tiny. 
+
+Find the smallest possible thing you can deliver and then _take your time on it_. 
+
+> Slow is smooth. And _smooth is fast_.
+>
+> Navy SEAL saying
+
+## Code Reviews
+
+### Requesting
+
+Before your commit:
+- run any and all linters you can
+
+After the commit and prior to opening or updating a merge request, take a walk. The longer the better. _Do not skip this step no matter how pressed for time you are._ 
+
+> If you don't have time to do it right, you will have to find time to do it over.
+
+When you get back from your walk, read the code as if reviewing it for another technologist. 
+
+### Providing
+
+Check for:
+- dead code
+- commented out code
+- names that do not make sense
+- repeated code
+- TODOs should not be merged
+- FIXMEs should have enough detail to be useful
