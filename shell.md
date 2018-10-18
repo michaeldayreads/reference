@@ -237,6 +237,10 @@ This returns the `file:nn` where the line contains `foo`, but it does not search
 
 > Note: The format of `--flag=value` and `--flag value` are often equivalent. This example includes bothformats, but either can be used for the flags above.
 
+## Options
+
+`-e <pattern>` can be useful for special characters, such as `grep -rnI -e "-z" ./shell`
+
 
 ```
 -n      line number
