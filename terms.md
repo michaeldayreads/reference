@@ -1,11 +1,3 @@
-# PEM 
-
-Textual encoding standard defined in RFC 7864 for the transmission of cryptographic primitives. The name is due to the Privacy Enhanced Email (PEM) intention of the standard, though many other aspects of PEM have been deprecated.
-
-
----
----
-
 # Architecture
 
 ## Emergent
@@ -23,6 +15,20 @@ Plan everything in advance of building anything.
 ## Interface Definition Language (IDL) aka Interface Description Language
 
 A method to describe an interface that is independent of any particular implementation language. CORBA is an example.
+
+# PEM 
+
+Textual encoding standard defined in RFC 7864 for the transmission of cryptographic primitives. The name is due to the Privacy Enhanced Email (PEM) intention of the standard, though many other aspects of PEM have been deprecated.
+
+# Pointer
+
+> Golang used to grok this term. If not applicable to other languages, please open an issue.
+
+A pointer is a variable that holds the memory address of another variable.
+
+If we create a pointer `p` we can get the address that it points to using the **address operator** `&p`.
+
+We can get the _value_ of the variable that `p` points to by using **pointer indirection** `*p`.
 
 # Testing aka Quality
 
