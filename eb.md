@@ -1,12 +1,12 @@
 # Effective Behaviors
 
-Some behavior may not be automated (at lease pre GIAI). For behavior that can be automated, sometimes the cost to automate is too high with existing skill set and tooling, or refinement may be required to prevent automating the wrong thing.
+Some behavior may not be automated (at least pre AGI, and post AGI the meaning of automation must change). For behavior that can be automated, sometimes the cost to automate is too high with existing skill set and tooling, or refinement may be required to prevent automating the wrong thing.
 
-This document is intended leverage what I have learned that has not yet been automated.
+This document is intended to consolidate what I have learned that has not yet been automated.
 
 ## Speed
 
-Quality cannot be sped up, but large tasks can be broken into smaller ones. Always aim to have shipable code as soon as possible, even if what you are shipping is tiny. 
+Quality cannot be sped up, but large tasks can be broken into smaller ones. Always aim to have usable code as soon as possible, even if what you are shipping is tiny. 
 
 Find the smallest possible thing you can deliver and then _take your time on it_. 
 
@@ -34,5 +34,5 @@ Check for:
 - commented out code
 - names that do not make sense
 - repeated code
-- TODOs should not be merged
-- FIXMEs should have enough detail to be useful
+- `TODO` comments should not be merged
+- `FIXME` comments should clearly indicate what work would have been included, time permitted

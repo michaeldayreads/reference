@@ -1,5 +1,11 @@
 # setup and tool chain
 
+## dep
+
+The "official experiment" for dependency management in Go.
+
+See [`package`](#Packages)
+
 ## GOPATH
 
 Go resolves import statements using the GOPATH. If the var is not set, it attempts to resolve import statements from `$HOME/go`. 
@@ -8,11 +14,9 @@ Go resolves import statements using the GOPATH. If the var is not set, it attemp
 
 The `src`, `pkg`
 
-## dep
+## test and testing
 
-The "official experiment" for dependency management in Go.
-
-See [`package`](#Packages)
+Also see [`ginkgo`](#ginkgo)
 
 # Primitives, Concepts and Interesting Properties
 
@@ -126,7 +130,7 @@ func main() {
 
 ```
 
-# Pass by Value
+## Pass by Value
 
 Calling a function 
 
@@ -176,3 +180,6 @@ Widely adopted packages.
 
 ## Cobra
 
+## ginkgo
+
+To run only one test or a subset of tests we "focus" the specs. This can be done either programmatically or using the `--focus=REGEXP` and `--skip=REGEXP` flags.

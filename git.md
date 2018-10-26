@@ -162,8 +162,6 @@ When merging - which is also the basis for `rebase`, `stash pop` and `stash appl
 
 `us` = into and `them` = from
 
-# `mergetool`
-
 
 # `push`
 
@@ -174,13 +172,28 @@ When merging - which is also the basis for `rebase`, `stash pop` and `stash appl
 
 # `remote`
 
-# `remote`
-
 `git remote -v` verbose list of remotes
 `git remote add any_name_you_like` adds a remote
 `git remote rm any_name_you_like` removes a remote
 `git remote add upstream <url>` to add an upstream
 `git remote set-url origin <new url>` to update an origin (or upstream) following a name change  
+
+# `revert`
+
+Use `git revert <sha>` to undo an earlier commit.
+
+When reverting multiple commits, reverse the order so they get backed out in the right way.
+
+That is:
+
+```
+<sha_second> foo
+<sha__first> bar
+```
+
+would be reverted by invoking `git revert <sha_second> <sha_first>`
+
+If there are conflicts, either the order you are specifying is incorrect or the scope of what you are looking to revert needs to be re-evaluated.
 
 # `show`
 
