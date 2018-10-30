@@ -18,6 +18,14 @@ The `src`, `pkg`
 
 Also see [`ginkgo`](#ginkgo)
 
+### html coverage review
+
+The `go tool` includes the ability to use generated coverage files to see line by line what is covered by unit tests and what is not. This works with [`ginkgo`](#ginkgo) coverage reports as well.
+
+
+Run `go tool cover -html=<coverage_file>`. Typically `<coverage_file>` is `coverage.out` though this may vary in larger projects where CI/CD is combining/preparing coverage data for consumption by other tools.
+
+
 # Primitives, Concepts and Interesting Properties
 
 ## Blank Identifier
