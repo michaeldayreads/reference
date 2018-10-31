@@ -586,9 +586,13 @@ Display and refresh the output of another shell command.
 
 Construct an arguments list and execute the results.
 
-A common pattern is:
+Replace `bar` with `baz` in all files named `foo`
 
-`find . -name foo | xargs sed -i '' -e 's/bar/baz/'`
+    find . -name foo | xargs sed -i '' -e 's/bar/baz/'
+
+Find lines with `bar` in files named `foo`.
+
+    find . -name foo | xargs grep --color bar
 
 # SCRIPTS
 
@@ -713,8 +717,15 @@ See `tee` for method to have std out and also redirect to a file.
 Sender Policy Framework.  TXT records published on DNS that list hosts considered legit.  
 `nslookup -type=txt domain.com`.  
 
-#### ssh  
-`ls -al ~/.ssh` list present keys (if any)
+#### `ssh`  
+
+`eval "$(ssh-agent -s)"` Start an agent if one is not running.
+
+`ls -al ~/.ssh` List present keys in most common path location (if any).
+
+`ssh-add -l` List keys the agent has.
+
+`ssh-add path/to/key` to add a key. Use `-K` if you wish to have the key added to a Mac keychain. 
 
 `ssh -F path/to/ssh_config_file host_name`
 
