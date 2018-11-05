@@ -50,9 +50,17 @@ Dimensions of specialized testing:
 - Scale / Load
 - Availability, may be tested separately for a baseline and then examined in other dimensions above.
 
+# VLAN
 
+The addition of tags within the L2 headers to provide logical partitioning distinct from the physical network. That is, VLANs may exist within one LAN or distributed across multiple LANs. 
 
-# MD ^^ / reformat vv
+# VXLAN
+
+L2 frames encapsulated within L4 UDP datagrams.
+
+https://tools.ietf.org/html/rfc7348
+
+# Markdown ^^ / reformat vv
 
 + Content-Addressable Storage + 
 
@@ -72,7 +80,7 @@ An object oriented interface design that provides standard bindings to major lan
 
 > This seems to be, in effect, a standardized way to implement APIs.
 
-#distrbuted_computing
+# Distributed Computing
 
 + DCOM + Distributed Computing Object Model.
 
@@ -88,15 +96,6 @@ Similar to | CORBA |, a means of providing distributed computing and a generaliz
 aka + contract programming +
 
 The application of preconditions (client obligations, supplier benefits), post conditions (client benefits, supplier obligations) and invariants (general laws or rules for contracts) to service/software design. Strangely this is trademarked by Eiffel Software.
-
-
-+ dereference +
-
-aka + dereferencing +
-aka + indirecting +
-
-An operation on a |pointer| that returns a value equivalent to the value stored at the pointer's address.
-
 
 + ICMP +
 
@@ -115,7 +114,7 @@ A request-response protocol facilitating running subprocesses in an alternative 
 
 1. Client calls the client stub. This is a local procedure call.
 2. Client stub _marshalls_ the parameters into a message that is provided to the system.
-3. Clinet OS sends message to server.
+3. Client OS sends message to server.
 4. OS on Server passes packets to the server stub.
 5. Server stub unmarshalls parameters from message.
 6. Server stub calls server procedure, with response traversing the same path back.
@@ -131,7 +130,7 @@ Do not confuse with an essentially nonsense term of Secure Network Address Trans
 
 + Tuple space +
 
-A |content-addressable memory| implementation of distributed computing, providing tuples taht can be accessed concurrently. Data is pushed to the space by producers, and then consumers retrieve the data.
+A |content-addressable memory| implementation of distributed computing, providing tuples that can be accessed concurrently. Data is pushed to the space by producers, and then consumers retrieve the data.
 
 + JavaSpaces + is an implementation of a tuple space in | Java |.
 
