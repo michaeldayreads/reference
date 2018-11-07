@@ -138,6 +138,24 @@ Most common use is to output the date, as in:
 date +%Y%m%d-%a-%H%m    # 20180108-Mon-1001
 ```
 
+Keep in mind that the command is intended to alter the date of the system. Typically, one must sudo this command to have that impact, however, it is best to use `-j` to explicitly not use the output of whatever formatting or conversion you are doing as the new system time.
+
+```
+deadline=$(date -j -f "%Y-%m-%d" "2069-07-20" "+%s") # Apollo 11 centennial
+```
+
+This can be combined with `let` to perform calculations:
+
+```
+# how many days till a deadline?
+dcd() {
+    deadline=$(date -j -f "%Y-%m-%d" "2069-07-20" "+%s") # Apollo 11 centennial
+    today=$(date +%s)
+    let day_count_down="($deadline-$today)/(60*60*24)"
+    echo $day_count_down
+}
+```
+
 ## `diff`
 
 `diff -i file_one.txt file_two.txt` output different lines, case insensitive
