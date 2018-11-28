@@ -255,13 +255,14 @@ This returns the `file:nn` where the line contains `foo`, but it does not search
 
 > Note: The format of `--flag=value` and `--flag value` are often equivalent. This example includes bothformats, but either can be used for the flags above.
 
-## Options
+### Options
 
 `-e <pattern>` can be useful for special characters, such as `grep -rnI -e "-z" ./shell`
 
 
 ```
 -n      line number
+-h      no headers (i.e. filenames)
 -i      case insensitive
 -e      additional patterns, i.e. -e baz -e qux
 -v      negative search
@@ -287,6 +288,15 @@ Context
 
 ```
 
+### Useful examples
+
+Suppose you know a pattern occurs frequently across a number of files, and you simply want to see the variations of the patterns. 
+
+```
+grep -rh foo bar/ | sort | uniq
+```
+
+This returns a list of the examples. Note that the `-h` option omits the filename to ensure that the same example use in two files will not be seen as two `uniq` examples. A secondary `grep` with a more precise result could then be used to show context and/or list the files.
 
 ## `history`
 
