@@ -16,6 +16,11 @@ Plan everything in advance of building anything.
 
 A method to describe an interface that is independent of any particular implementation language. CORBA is an example.
 
+
+# NIC
+
+Network Interface Controller provides access to the physical and data link layers for communication, e.g. ethernet or wifi.
+
 # PEM 
 
 Textual encoding standard defined in RFC 7864 for the transmission of cryptographic primitives. The name is due to the Privacy Enhanced Email (PEM) intention of the standard, though many other aspects of PEM have been deprecated.

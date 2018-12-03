@@ -1,3 +1,7 @@
+# General High Level
+
+Docker Desktop does not give a clear warning that a "reset default settings" means it will wipe all the images on your unit.
+
 # Dockerfile
 
 A succession of command line instructions invoked by `build` to assemble an image.
