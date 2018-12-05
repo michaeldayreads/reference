@@ -475,6 +475,8 @@ Stream editor. Takes files or standard input, modifies according to arguments, s
 
 `sed '100,200!d' targetfile | grep def` would be an easy way to see all the functions defined in a python file between those lines. Very useful if those lines are a very large class.
 
+`env | sed '/<redact>/d'` to redact lines matching that pattern.
+
 ## `set`
 
 List all variables and functions for the session.
