@@ -17,6 +17,14 @@ Plan everything in advance of building anything.
 A method to describe an interface that is independent of any particular implementation language. CORBA is an example.
 
 
+# DNS
+
+The collection of RFC's and their implementation that grew out of the original `HOSTS.txt` maintained within the ARPANET to map human memorable names to IP addresses.
+
+Communication generally uses UDP on port 53.
+
+> This is why Amazon's DNS is called `Route 53`.
+
 # NIC
 
 Network Interface Controller provides access to the physical and data link layers for communication, e.g. ethernet or wifi.
