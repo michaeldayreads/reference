@@ -65,7 +65,8 @@ L2 frames encapsulated within L4 UDP datagrams.
 
 https://tools.ietf.org/html/rfc7348
 
-# Markdown ^^ / reformat vv
+Markdown ^^ / reformat vv
+-------------------------
 
 + Content-Addressable Storage + 
 
@@ -85,7 +86,7 @@ An object oriented interface design that provides standard bindings to major lan
 
 > This seems to be, in effect, a standardized way to implement APIs.
 
-# Distributed Computing
+--  Distributed Computing -- 
 
 + DCOM + Distributed Computing Object Model.
 
@@ -107,8 +108,6 @@ The application of preconditions (client obligations, supplier benefits), post c
 Internet Control Message Protocol
 
 A supporting protocol to IP that sends control and diagnostic messages.
-
-#distributed_computing
 
 
 + RPC +
