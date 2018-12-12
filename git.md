@@ -106,8 +106,8 @@ git cherry-pick <SHA for fix b>                 # now we have fix b on top of fi
 # `diff`
 
 `git diff branch_1 branch_2` compare two branches  
-`git diff branch_1 branch_2 path/to/file_of_interest.txt` compare a file between two branches
-`git diff --name-only SHA1 SHA2` lists the files that changed
+`git diff branch_1 branch_2 path/to/file_of_interest.txt` compare a file between two branches  
+`git diff --name-only SHA1 SHA2` lists the files that changed  
 `git diff SHA name_of_file` as a drill down from `--name-only`
 
 To focus on changes smaller than lines:
