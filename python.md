@@ -1,58 +1,50 @@
-# `as`
+# Linting and Style
 
-see:  
-* [`try`](#try)  
-* [`with`](#with)  
-
-# `assert`
-
-see [`try`](#try)
-
-# `else`
-
-see:  
-* [`if`](#if)  
-* [`try`](#try)
-
-# egg
-
-WIP
-
-# `except`
-
-see [`try`](#try)
-
-# `finally`
-
-see [`try`](#try)
-
-# `flake8` -- shell
+## `flake8` -- shell
 
 A commonly used installed package to identify variation from the PEP8 standards for code style.
 
 `flake8 --show-source file.py`  includes snippets to clarify where in the source the issue has been flagged.
 
-# `import`
+## `pep8` -- shell
 
-## absolute
+Style guide for python.
 
-## relative 
+## Naming
 
-# `map`
+Files are often modules. Names should be short, lowercase, and `_` are okay.
 
-`data = map(str, raw_input()).split(' ')`   simple way to get "a b c" from stdin
+Directories are often packages and should follow the file naming conventions though `_` are discouraged.
 
-`data = list(map(str, input().split(' ')))` python 3
+Classes should be WordCapped.
+
+`_single_leading_underscore` weak "internal use" indicator, will not be imported by `from my_module import *` but WILL be imported by `from my_module import _foo` ? 
+
+# Inspection and Debugging
+
+`dir(obj)`  list of methods on object  
+`help(obj)`  A doc string list of methods on the object  
+`obj.__dict__` == `vars(obj)`  
+`import keyword; keyword.iskeyword(sanity)` to see if "sanity" is a reserved keyword  
+`keyword.kwlist` to see a full list  
+`import __builtin__; dir(__builtin__)` to list python 2 builtins
+`import builtins; dir(builtins)` for python 3 [^stackoverflow_22864221]
+`locals()` Active local objects.
+`globals()` Active global objects; contrast with `gc` below.
+`vars()` To see what is in local memory.
+
+There is also the garbage collector (gc) interface, which can be used to look for memory leaks in addition to general introspection. The most common introspection command is:
 
 ```
-# for a larger data set
-n = int(raw_input())
-queries = {}
-for i in range(n):
-    queries[i] = map(str, raw_input().split(' '))
+import gc
+foo = {'bar':'qux'}
+gc.get_referents(foo)
 ```
 
-# `pdb` - The Python Debugger
+To see all objects - of which there are thousands just to have python running:
+`gc.get_objects()`
+
+## `pdb` - The Python Debugger
 
 `import pdb; pdb.set_trace()`
 
@@ -73,84 +65,6 @@ w           Where: prints a stack trace.
 d           Down: move the current frame one level down in the stack trace.
 u           Up: move the current frame one level up in the stack trace.
 q           Quit: The debugger is quit and the program is aborted.
-
-
-# `pep8` -- shell
-
-Style guide for python.
-
-## Naming styles
-
-
-`_single_leading_underscore` weak "internal use" indicator, will not be imported by `from my_module import *` but WILL be imported by `from my_module import _foo` ? 
-
-# `raise`
-
-see [`try`](#try)
-
-# `try`
-
-This section covers the various uses/patterns associated with `try`, including error handling.
-
-
-
-## `as`
-
-A means of designating a variable to which the exception object is assigned.
-
-`except IndexError as my_index_error`  
-
-The exception object is now available for further manipulation.
-
-## `raise`
-
-
-
-# `with`
-
-# `virtualenv`
-
-Tool to create distinct environments.
-
-> __Warning__: Be mindful of 2 / 3 distinction. If you are on a unit that has both 2 and 3 installed, and then invoke `virtualenv new_ve` and `. /new_ve/bin/activate` you are in a python 2 ve, and the results of `which python` will return your ve, but the results of `which python3` will return the local install of python 3.
-
-`virtualenv path/to/directory_for_ve_name`  python 2
-`virtualenv -p python3 path/to/directory_for_ve_name` python 3
-
-*^^ refactored*
-----
-*refactoring vv*
-
-
-# dir -- and other useful methods of inspection/debugging.
-
-`dir(obj)`  list of methods on object  
-`help(obj)`  A doc string list of methods on the object  
-`obj.__dict__` == `vars(obj)`  
-`import keyword; keyword.iskeyword(sanity)` to see if "sanity" is a reserved keyword  
-`keyword.kwlist` to see a full list  
-`import __builtin__; dir(__builtin__)` to list python 2 builtins
-`import builtins; dir(builtins)` for python 3 [^stackoverflow_22864221]
-`locals()` Active local objects.
-`globals()` Active global objects; contrast with `gc` below.
-
-There is also the garbage collector (gc) interface, which can be used to look for memory leaks in addition to general introspection. The most common introspection command is:
-
-```
-import gc
-foo = {'bar':'qux'}
-gc.get_referents(foo)
-```
-
-To see all objects - of which there are thousands just to have python running:
-`gc.get_objects()`
-
-See `pdb`
-
-# http server
-
-`python -m SimpleHTTPServer 80`  python 2 simple server on port 80  
-`python -m http.server 80` python 3 server on port 80  
 
 # Data types  
 
@@ -226,7 +140,7 @@ print('%.6f' % test)
 # >>> 0.500000
 ```
 
-##lists
+## lists
 
 Lists are mutable, unlike strings.
 
@@ -275,6 +189,20 @@ Dictionaries are key/value maps and are not ordered. To return a value, referenc
 `mdd[mu] = mdd.get(mu, 0) + 1`  --  use `get` method to set a new value to the default & iterate  
 `mdd.get('unknown', 'No definition provided')`  --  used for graceful query failure  
 `for terms in mdd: print terms, mdd[terms]`  --  list out the dictionary  
+
+## Maps
+
+`data = map(str, raw_input()).split(' ')`   simple way to get "a b c" from stdin
+
+`data = list(map(str, input().split(' ')))` python 3
+
+```
+# for a larger data set
+n = int(raw_input())
+queries = {}
+for i in range(n):
+    queries[i] = map(str, raw_input().split(' '))
+```
 
 ## Tuples
 Immutable sequences that are hashable and comparable.
@@ -326,47 +254,12 @@ Readable output sorted by word, then semantic category, then commonality of use 
     code verb 0 write code
     code verb 1 encrypt
 
-# Exceptions and exception handling
-
-Patterns [^Lutz_2013]
-
-## try/except
-
-Use the next pattern instead...
-
-> Explicit is better than implicit. [^zen_of_python]
-
-## try/except/else
-
-## try/finally
-
-Still raise the exception, but clean up first.
-
-In practice, it seems the `with` command is preferable. If needed, define your own class implementing the magic methods of `__enter__` and `__exit__`.
-
-## try/except/else/finally
-
-## nested try/except within try/finally
 
 
-# working with packages
 
-## Development mode
 
-When working in/on a package it is often useful to invoke `python setup.py develop` to create an `egg-info` directory or an `egg-link` file that links to a project's code.
 
-When you are done with a development task, use `python setup.py develop --uninstall`.
-
-# tricks etc.
-
-## ternary operator
-
-Python lacks a ternary operator, however, the following can serve in some instances:
-
-`ternary_esque = a if (data != '') else b`  
-
-## Web server, one-liner
->`python -m http.server 80`
+# Misc
 
 ## Enumeration
 
@@ -375,24 +268,52 @@ for name, value in inspect.getmembers(target_object)
     print(name)
 ```
 
-## command line
+## Exceptions and exception handling
 
-__clear the screen__  
-'Ctrl' + 'L' on unix  
+Patterns [^Lutz_2013]
 
-`qc = os.system("clear")` wrapped in a lambda function (or windows equivalent) if 'Ctrl' + 'L' does not work
+### try/except
 
-`vars()` to see what is in local memory when at the command line
+Use the next pattern instead...
 
-# style, convention and readability
+> Explicit is better than implicit. [^zen_of_python]
 
-## doc strings
-_pass_
+### try/except/else
 
-# concepts
+### try/finally
 
-## Assignment
-Associates a name to an object. It is a namespace operation. When Python sees `a = 1` it creates an integer object with the value 1 and assigns the name 'a' to it. When we declare `b = a` Python adds another reference to the object '1', but there is only one object.
+Still raise the exception, but clean up first.
+
+In practice, it seems the `with` command is preferable. If needed, define your own class implementing the magic methods of `__enter__` and `__exit__`.
+
+### try/except/else/finally
+
+See [^Lutz_2013]
+
+### nested try/except within try/finally
+
+See [^Lutz_2013]
+ 
+
+## Packages
+
+### Development mode
+
+When working in/on a package it is often useful to invoke `python setup.py develop` to create an `egg-info` directory or an `egg-link` file that links to a project's code.
+
+When you are done with a development task, use `python setup.py develop --uninstall`.
+
+## Server
+
+`python -m SimpleHTTPServer 80`  python 2 simple server on port 80  
+`python -m http.server 80` python 3 server on port 80  
+
+
+## Ternary operator
+
+Python lacks a ternary operator, however, the following can serve in some instances:
+
+`ternary_esque = a if (data != '') else b`  
 
 # Pytest
 
