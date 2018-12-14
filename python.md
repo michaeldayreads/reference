@@ -27,11 +27,11 @@ Classes should be WordCapped.
 `obj.__dict__` == `vars(obj)`  
 `import keyword; keyword.iskeyword(sanity)` to see if "sanity" is a reserved keyword  
 `keyword.kwlist` to see a full list  
-`import __builtin__; dir(__builtin__)` to list python 2 builtins
-`import builtins; dir(builtins)` for python 3 [^stackoverflow_22864221]
-`locals()` Active local objects.
-`globals()` Active global objects; contrast with `gc` below.
-`vars()` To see what is in local memory.
+`import __builtin__; dir(__builtin__)` to list python 2 builtins  
+`import builtins; dir(builtins)` for python 3 [Stack Overflow](#stackoverflow-22864221)  
+`locals()` Active local objects.  
+`globals()` Active global objects; contrast with `gc` below.  
+`vars()` To see what is in local memory.  
 
 There is also the garbage collector (gc) interface, which can be used to look for memory leaks in addition to general introspection. The most common introspection command is:
 
@@ -254,11 +254,6 @@ Readable output sorted by word, then semantic category, then commonality of use 
     code verb 0 write code
     code verb 1 encrypt
 
-
-
-
-
-
 # Misc
 
 ## Enumeration
@@ -270,13 +265,13 @@ for name, value in inspect.getmembers(target_object)
 
 ## Exceptions and exception handling
 
-Patterns [^Lutz_2013]
+Patterns [Lutz 2013](#lutz-2013----learning-python-5th-edition)
 
 ### try/except
 
 Use the next pattern instead...
 
-> Explicit is better than implicit. [^zen_of_python]
+> Explicit is better than implicit. [Peters (2014)](#peters-2014-the-zen-of-python-pep-20)
 
 ### try/except/else
 
@@ -288,13 +283,12 @@ In practice, it seems the `with` command is preferable. If needed, define your o
 
 ### try/except/else/finally
 
-See [^Lutz_2013]
+See [Lutz 2013](#lutz-2013----learning-python-5th-edition)
 
 ### nested try/except within try/finally
 
-See [^Lutz_2013]
+See [Lutz 2013](#lutz-2013----learning-python-5th-edition)
  
-
 ## Packages
 
 ### Development mode
@@ -362,14 +356,14 @@ Before writing any new tests, familiarize yourself with the tests that have alre
 ... shows assert statements and patterns already in use. 
 
 
-sources  
+##### sources  
 
-[^Lutz_2013]: [Learning Python, 5th Edition](  https://www.safaribooksonline.com/library/view/learning-python-5th/9781449355722/)
-[^Phillips_Romano_Hattem_2016]: Python: Journey from Novice to Expert.
-[^zen_of_python]: https://www.python.org/dev/peps/pep-0020/
-[^stackoverflow_22864221]: https://stackoverflow.com/questions/22864221/is-the-list-of-python-reserved-words-and-builtins-available-in-a-library
-
-* [Python Documentation 2.7](https://docs.python.org/2/) and [3.5](https://docs.python.org/3.5/)
-* [Python for Informatics - Severance (2013)](http://www.pythonlearn.com/html-270/index.html)
-* [Think Python, 2nd Edition - Downey (2015)](http://www.greenteapress.com/thinkpython/)
-* [pep-0257](https://www.python.org/dev/peps/pep-0257/)
+###### [Downey (2015) -- Think Python, 2nd Edition](http://www.greenteapress.com/thinkpython/)
+###### [Goodger, van Rossum (2001) Docstring Conventions (PEP 257)](https://www.python.org/dev/peps/pep-0257/)
+###### [Lutz (2013) -- Learning Python, 5th Edition](https://www.safaribooksonline.com/library/view/learning-python-5th/9781449355722/)
+###### [Peters (2014) The Zen of Python (PEP 20)](https://www.python.org/dev/peps/pep-0020/)
+###### [PSF Python Documentation 2.7](https://docs.python.org/2.7/)
+###### [PSF Python Documentation 3.5](https://docs.python.org/3.5/)
+###### [Romano, Phillips, Hattem (2016)](https://www.safaribooksonline.com/library/view/python-journey-from/9781787120761/)
+###### [Severance (2013) -- Python for Informatics](http://www.pythonlearn.com/html-270/index.html)
+###### [Stackoverflow 22864221](https://stackoverflow.com/questions/22864221/is-the-list-of-python-reserved-words-and-builtins-available-in-a-library)

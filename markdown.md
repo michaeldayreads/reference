@@ -24,12 +24,12 @@ Similarly we can link to headers within the present document. This means we can 
 
 We can use this as a hack to create a source list.
 
-For example we could reference a particular work using a link format following an Author_Year convention such as [Carse 1986](#Carse_1986). 
+For example we could reference a particular work using a link format following an Author_Year convention such as [Carse 1986](#carse_1986----finite-and-infinite-games). 
 
 Similarly, we can create footnotes using the `<sup></sup>` HTML tags as we've done here <sup>[1](#1)</sup> as a footnote.
 
 ```
-For example we could reference a particular work using a link format following an Author_Year convention such as [Carse 1986](#Carse_1986). 
+For example we could reference a particular work using a link format following an Author_Year convention such as [Carse 1986](#carse_1986----finite-and-infinite-games). 
 
 Similarly, we can create footnotes using the `<sup></sup>` HTML tags as we've done here <sup>[1](#1)</sup> as a footnote.
 ```
