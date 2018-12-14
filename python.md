@@ -1,3 +1,7 @@
+# footnote test
+
+Here we talk about [Foo](#foo)
+
 # Linting and Style
 
 ## `flake8` -- shell
@@ -363,6 +367,10 @@ Before writing any new tests, familiarize yourself with the tests that have alre
 
 
 sources  
+-------
+
+###### foo
+yada yada
 
 [^Lutz_2013]: [Learning Python, 5th Edition](  https://www.safaribooksonline.com/library/view/learning-python-5th/9781449355722/)
 [^Phillips_Romano_Hattem_2016]: Python: Journey from Novice to Expert.
