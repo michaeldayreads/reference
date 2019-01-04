@@ -265,7 +265,7 @@ This returns the `file:nn` where the line contains `foo`, but it does not search
 -h      no headers (i.e. filenames)
 -i      case insensitive
 -e      additional patterns, i.e. -e baz -e qux
--v      negative search
+-v      negative search (use -v -e foo -e bar to eliminate both)
 -w      word matches only
 -x      whole line
 -l      files WITH match
