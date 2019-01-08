@@ -244,6 +244,23 @@ to remove: [^so-1260748]
 * `rm -rf .git/modules/path_to_submodule`
 * `git commit -m "removed submodule <name>"`
 
+
+# `tag`
+
+Mark a point (sha) in the commit history. 
+
+A tag can be local or remote, simple or annotated.
+
+A common use case is to tag a release.
+
+A personal use case is to tag the sha a work in progress is forked from to simplify commands and automation by using the tag as a pointer to a sha.
+
+```
+git log -10                 #  find sha to use for commands like rebase and diff
+git tag foo <sha>           #  attept to locally tag this sha as "foo"
+git tag -d foo              #  to move the tag, first delete it
+```
+
 ^^^ refactored ^^^
 
 by concept or use pattern
