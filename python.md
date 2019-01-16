@@ -48,11 +48,13 @@ To see all objects - of which there are thousands just to have python running:
 
 `import pdb; pdb.set_trace()`
 
-Then use `s` to step through at low granularity, i.e. pdb stops when in can, though you may be at different levels of the stack.
+Then use `s` to step through at low granularity, i.e. pdb stops when in can, though you may be at different levels of the stack.  
 
-Most often, the first pass is at `n` which is the next line in the function in the file where you placed the pdb.
+Most often, the first pass is at `n` which is the next line in the function in the file where you placed the pdb.  
 
-Other commands:
+> Note: In the event that you place a `set_trace()` in a loop, or otherwise have a large number of break points set in this manner, use `pdb.set_trace = lambda: None` to overload the `set_trace()` function and then you can `continue` through the end of the execution.
+
+Other commands:  
 
 ?           List help
 h <cmd>     Help on that pdb command
