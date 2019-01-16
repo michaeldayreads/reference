@@ -119,11 +119,11 @@ To set folding use `:setlocal foldmethod=<type>` where type can be:
 
 ## by character
 
-` `|` `|` `
------|-----|------
-  |`k`|
-`h`| | `l`
-  |`j`|  
+` ` | ` ` | ` `
+--- | --- | ---
+` ` | `k` | ` `
+`h` | ` ` | `l`
+` ` | `j` | ` ` 
 
 ## by word  
 `b` **first** character of _previous_ word  
