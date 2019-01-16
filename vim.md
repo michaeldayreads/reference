@@ -182,9 +182,19 @@ To ensure you get the syntax you want:
 :set syntax=on
 ``` 
 
-
 `:set cc=80`
 `:highlight ColorColumn ctermbg=DarkGray` gives an offset bar at column specified above.
+
+To determine what languages your vim is able to understand, the following commands within vim let us list those possibilities:
+
+```
+:echo glob($VIMRUNTIME . '/ftplugin/*.vim')
+:echo glob($VIMRUNTIME . '/syntax/*.vim')
+```
+
+> Note that there are many, so a more targeted search - such as `/syntax/p*.vim'` when trying to remind yourself if python is spelled out (yep) or abbreviated will give us a shorter list to read.
+
+> Troubleshooting: This is handy when file attributes are lost, such as during file recovery where your formatting is lost.
 
 ## python settings
 
