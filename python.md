@@ -290,7 +290,20 @@ See [Lutz 2013](#lutz-2013----learning-python-5th-edition)
 ### nested try/except within try/finally
 
 See [Lutz 2013](#lutz-2013----learning-python-5th-edition)
- 
+
+## Modulo
+
+Modulo operator is straight forward:
+
+```
+>>> 10 % 5
+0
+>>> 11 % 5
+1
+```
+
+Note that the mod of this operator may not be exactly computable for floats - use `math.fmod(x, y)` when working with float numbers.
+
 ## Packages
 
 ### Development mode
