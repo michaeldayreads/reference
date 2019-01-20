@@ -184,6 +184,7 @@ To ensure you get the syntax you want:
 
 `:set cc=80`
 `:highlight ColorColumn ctermbg=DarkGray` gives an offset bar at column specified above.
+`:set colorcolum=` to turn the column "off" on a file by file basis.
 
 To determine what languages your vim is able to understand, the following commands within vim let us list those possibilities:
 
