@@ -211,7 +211,39 @@ Displays path differences between index and HEAD commit.
 
 `git stash <pathspec>` is a quick way to invoke `git stash push <pathspec>`, though using the more complete syntax can expose more options.
 
-`git stash -m "my message" -- <pathspec>...` can stash only the file(s) of interest.
+In practice, what often is most effective is:
+
+```
+git stash push -m "Describe changes" -- <pathspec>
+```
+
+The pathspec is optional, as just the `--` can be used to compare to head. Note that new files must be added. So another way to think of this workflow is;
+
+```
+git add <pathspec> ... <pathsepc>
+git stash push -m "stash message" --
+```
+
+or
+
+```
+git add <pathspec> ... <pathsepc>
+git stash push -m "stash message" -- <pathspec> ... <pathspec>
+```
+
+... in cases where there a files that are tracked and modifed, but not added that we don't want to stash and that we don't yet want to commit.
+
+is an alternative to 
+
+```
+git add <pathspec> ... <pathsepc>
+git commit -m "commit message"
+```
+
+This lets us leave uncommitted changes to files already tracked in a modified state for further changes before either stashing or committing them.
+
+In both cases, anything not specifically added is left as changes in the working directory.
+
 
 `git stash` To stash things for later.  
 `git stash -p` To have git break what has changed into "hunks" and ask you what to do with each.  
