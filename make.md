@@ -6,7 +6,7 @@ Current convention seems to favor `Makefile` since this more reliably shows as t
 
 In windows environments, a file extension may be required to ensure the OS knows what program to run to interpret the file, e.g. `makefile.NMK` for `NMAKE`.
 
-Note that aside from the __default__ rule or goal, order does not matter.
+Note that aside from the __default__ rule or goal - which is the first in the file, as mentioned above - rule/target order within the file does not matter.
 
 `make <rule>` invokes the specified rule, usually referred to as the target.
 
@@ -23,6 +23,17 @@ Note that aside from the __default__ rule or goal, order does not matter.
 A good practice is to have the first rule be a help target
 
 `.PHONY: target_a target_b` a way to alert `make` not to associate targets with files of the same name.
+
+The symbol `@` before shell commands tells make not to echo the output. Thus:
+
+```
+my_target:
+    @echo Some helpful text.
+```
+
+Prints only the text itself rather than what in this context is a redundant statement of what it is about to print. 
+
+This can be a useful way of tidying up the output on "obvious" invocations, though at the risk of obfuscation. Use thoughtfully.
 
 To have errors on a shell command be ignored (i.e. avoid a non-zero exit code) prepend with a dash:
 
@@ -96,6 +107,12 @@ A `target` is the name of a file or the name of an action to carry out.
 A `prerequisite` is a file that is used as an input to the target.
 
 A `recipe` is an action that `make` carries out.
+
+# Gotchas
+
+## Avoiding `nothing to be done for <foo>`
+
+You may see `@:` which is a way of executing a bash no-op silently.
 
 # REFERENCE of rules, directives and built-in target names  
 
