@@ -2,6 +2,10 @@
 
 > Option lists on commands are non-exhaustive. The intention is to explain and highlight command line and scripting usage, not to clone the man pages.
 
+# shell differences
+
+Function names in `bash` are less restrictive than names in `sh`; in particular, `sh` does not permit `.` or `-` but does permit `_`.
+
 # commands
 
 ## `alias`
