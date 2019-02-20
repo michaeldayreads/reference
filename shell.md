@@ -656,6 +656,10 @@ To clear the variable:
 
 `unset MY_VAR`
 
+To clear a function:
+
+`unset -f MY_FUNC`
+
 ### Variables and executable scripts
 
 Scripts that have been made executable (`chmod +x foo.sh`) will run in a different process than the one where your invocation of that script takes place. This means that to ensure `BAR` is available to`foo.sh` we have to include the variable declaration in the invocation of the script: `BAR="baz" foo.sh`.
