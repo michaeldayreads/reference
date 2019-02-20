@@ -447,11 +447,15 @@ done
 
 Secure copy
 
-`user@host:path/to/file` format to specify target
+basic format is `scp [options] source target`
 
-`-r` recursive
+`user@host:path/to/file` format to specify a remote source or target
 
-When using `-r` in combination with `-F`:
+### Common Options
+
+`-r` recursive 
+`-F` config file
+`-i` identity file
 
 `scp -r -F path/to/config_file path/to/copy user@host:relative/path/for/copies`
 
