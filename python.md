@@ -68,6 +68,33 @@ d           Down: move the current frame one level down in the stack trace.
 u           Up: move the current frame one level up in the stack trace.
 q           Quit: The debugger is quit and the program is aborted.
 
+## ipdb
+
+IPython, the engine behind the jupiter notebooks, provides a far richer REPL. This can be used instead of the standard pdb.
+
+`import ipdb; ipdb.set_trace()`
+
+Once within ipdb, it can be very useful to:
+
+```
+from IPython import embed
+embed
+```
+
+This then gets you into a standard IPython interpreter. To return to the debugger, enter `quit`.
+
+The embeded IPython is easier for building classes, functions and other multiline requirements. The objects you create within IPython are retained and available after you `quit` and return to the debugger.
+
+## reload
+
+Use `importlib.reload(module_under_dev)` to have your most recent changes available in the interactive interpreter. 
+
+## pprint
+
+Inspect nested objects:
+
+`pprint.pprint(some_dictionary, indent=2)`
+
 # Data types  
 
 ## strings
