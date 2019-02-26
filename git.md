@@ -27,7 +27,9 @@ Update file(s) in the working tree to match the state of those files in the SHA 
 
 `git checkout -b local_branch upstream/fix-or-feature-branch` track remote branch
 
-`git checkout --track upstream/branch_to_track` track an existing remote branch
+`git checkout --track upstream/branch_to_track` to check out a local copy of a remote branch and set the local copy to track that remote copy.
+
+> Use `git branch --set-upstream-to remote/branch` to add or modify the remote branch that your local should track.
 
 ## Update / Revert file(s)
 
