@@ -1,8 +1,22 @@
 # Effective Behaviors
 
-Some behavior may not be automated (at least pre AGI, and post AGI the meaning of automation must change). For behavior that can be automated, sometimes the cost to automate is too high with existing skill set and tooling, or refinement may be required to prevent automating the wrong thing.
+Some behavior may not be automated (at least pre Artificial General Intelligence, and post AGI the meaning of automation must change). 
+
+For behavior that can be automated, sometimes the cost to automate is too high with existing skill set and tooling, or refinement may be required to prevent automating the wrong thing.
 
 This document is intended to consolidate what I have learned that has not yet been automated.
+
+## Debug
+
+Not seeing what you are expecting? Ask yourself:
+- Do you have a baseline?
+  - When was it set?
+  - How did you document it?
+- Are you using the most recent changes?
+- Are you using the most recent dependencies?
+- Are you comparing to the most recent implementation examples?
+- If there have been changes, have you looked at the code that changed?
+
 
 ## Speed
 
