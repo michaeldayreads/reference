@@ -55,3 +55,12 @@ Check for:
 - `TODO` comments should not be merged
 - `FIXME` comments should clearly indicate what work would have been included, time permitted
 
+## Product / Customer Interfacing
+
+### JIRA
+
+#### Queries
+
+JQL is SQL-esq, but can be quirky:
+- Use `EMPTY` rather than `''`, `""` or `null`; as in `assignee is EMPTY`.
+
