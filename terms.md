@@ -43,6 +43,31 @@ If we create a pointer `p` we can get the address that it points to using the **
 
 We can get the _value_ of the variable that `p` points to by using **pointer indirection** `*p`.
 
+# REST
+
+Representational State Transfer. Not synonymous with HTTP, though RESTful web services are very commonly implemented using HTTP. As a result, the HTTP methods:
+- GET
+- HEAD
+- POST
+- PUT
+- PATCH
+- DELETE
+- CONNECT
+- OPTIONS
+- TRACE
+are available.
+
+Typically not all the methods are utilized. For CRUD operations we may see:
+
+```
+POST    # Create
+GET     # Read
+PUT     # Update 
+DELETE  # Delete
+```
+
+Though PUT may map to both create and update. When used for create, we would be specifying the URI for the new resource, rather than having it returned after a POST.
+
 # Testing aka Quality
 
 ## Types or tools for testing and quality

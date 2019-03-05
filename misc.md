@@ -1,4 +1,8 @@
-# Effective Behaviors
+# misc
+
+Behaviors, checklists, and product/collaboration tool specific practices or hacks.
+
+## Behaviors / Mind Set
 
 Some behavior may not be automated (at least pre Artificial General Intelligence, and post AGI the meaning of automation must change). 
 
@@ -6,7 +10,7 @@ For behavior that can be automated, sometimes the cost to automate is too high w
 
 This document is intended to consolidate what I have learned that has not yet been automated.
 
-## Debug
+### Debug
 
 Not seeing what you are expecting? Ask yourself:
 - Do you have a baseline?
@@ -18,7 +22,7 @@ Not seeing what you are expecting? Ask yourself:
 - If there have been changes, have you looked at the code that changed?
 
 
-## Speed
+### Speed
 
 Quality cannot be sped up, but large tasks can be broken into smaller ones. Always aim to have usable code as soon as possible, even if what you are shipping is tiny. 
 
@@ -50,3 +54,4 @@ Check for:
 - repeated code
 - `TODO` comments should not be merged
 - `FIXME` comments should clearly indicate what work would have been included, time permitted
+
