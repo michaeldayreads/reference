@@ -45,7 +45,9 @@ We can get the _value_ of the variable that `p` points to by using **pointer ind
 
 # REST
 
-Representational State Transfer. Not synonymous with HTTP, though RESTful web services are very commonly implemented using HTTP. As a result, the HTTP methods:
+An architectural style. Representational State Transfer. Access a `resource` using a `method`, sometimes discussed as `nouns` and `verbs`, particularly when discussing HTTP based REST.
+
+REST is not synonymous with HTTP, though RESTful web services are very commonly implemented using HTTP. This makes the URI/Ls the resources manipulated by the HTTP methods. In theory, any of the HTTP methods could be implemented:
 - GET
 - HEAD
 - POST
@@ -55,7 +57,6 @@ Representational State Transfer. Not synonymous with HTTP, though RESTful web se
 - CONNECT
 - OPTIONS
 - TRACE
-are available.
 
 Typically not all the methods are utilized. For CRUD operations we may see:
 
@@ -67,6 +68,10 @@ DELETE  # Delete
 ```
 
 Though PUT may map to both create and update. When used for create, we would be specifying the URI for the new resource, rather than having it returned after a POST.
+
+# Test
+
+This is a test entry that I will check in a branch.
 
 # Testing aka Quality
 
