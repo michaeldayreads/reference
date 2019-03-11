@@ -266,10 +266,10 @@ Displays path differences between index and HEAD commit.
 
 # `submodule`
 
-`git submodule status`
+`git submodule status`  
 `git submodule sync`  
 `git submodule update --init` for the first time...  
-`git submodule update` on subsequent ones...
+`git submodule update` on subsequent ones...  
 
 to remove: [^so-1260748]
 * delete section from `.gitmodules` or, if last one, remove the file
