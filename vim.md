@@ -13,6 +13,8 @@ vim
 
 # Spell Check
 
+`:set spell` and `:set nospell` to toggle in current file.
+
 `:set spelllang=en`
 `:setlocal spell`
 `:set spellfile=/path/to/personal_spell_file/en.utf-8.add`
