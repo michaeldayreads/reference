@@ -205,6 +205,9 @@ Details of an object (commit).
 
 `git show <sha> -s`  Suppress the diff, equivalent to `--no-patch`
 
+`git show <sha> --name-only`  Supress the diff, but show the files modified.  
+
+
 # `status`
 
 Displays path differences between index and HEAD commit.
