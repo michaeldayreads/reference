@@ -618,6 +618,8 @@ Display and refresh the output of another shell command.
 
 ## wc
 
+Word Count
+
 `wc -l life_the_universe_and_everthing.sh` ideally this would return 42, as would running it :P   
 
 ## `xargs`
