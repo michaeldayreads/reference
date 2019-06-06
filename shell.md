@@ -6,6 +6,10 @@
 
 Function names in `bash` are less restrictive than names in `sh`; in particular, `sh` does not permit `.` or `-` but does permit `_`.
 
+# quotes and escaping
+
+Single quotes prevent expansion. For example, if you have a script that consumes an arg token that includes bash special characters, use `'<token>'` not `"<token>"`.
+
 # commands
 
 ## `alias`
