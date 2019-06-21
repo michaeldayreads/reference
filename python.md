@@ -107,7 +107,7 @@ The `import` statement is the most common (but not the only) way to import a pyt
 
 In most implementations, an import statement will either import a file or a collection of files organized as a package.
 
-> _Always recursively read the `__init__.py` files throughout a package._
+> -> _Always recursively read the `__init__.py` files throughout a package._
 
 When packages are imported, the `__init__.py` file is implicitly executed. It is common that `__init__.py` will contain only rudimentary documentation describing the package, though it is only slightly less common that it will contain code that proves central to understanding the behavior of the code in the package.  
 
