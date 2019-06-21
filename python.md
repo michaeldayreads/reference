@@ -95,6 +95,22 @@ Inspect nested objects:
 
 `pprint.pprint(some_dictionary, indent=2)`
 
+# Reading and reasoning about code
+
+## import
+
+A `module` in python is an object of python code. It is a namespace within which the code is organized.
+
+If the `module` has a `__path__` attribute, it is a package; all packages are modules, but not all modules are packages.
+
+The `import` statement is the most common (but not the only) way to import a python module. Note that post 3.2, packages include `namespace` packages that can span different parts of the file tree or network.
+
+In most implementations, an import statement will either import a file or a collection of files organized as a package.
+
+> _Always recursively read the `__init__.py` files throughout a package._
+
+When packages are imported, the `__init__.py` file is implicitly executed. It is common that `__init__.py` will contain only rudimentary documentation describing the package, though it is only slightly less common that it will contain code that proves central to understanding the behavior of the code in the package.  
+
 # Data types  
 
 ## strings
