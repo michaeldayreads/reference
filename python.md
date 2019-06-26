@@ -78,7 +78,7 @@ Once within ipdb, it can be very useful to:
 
 ```
 from IPython import embed
-embed
+embed()
 ```
 
 This then gets you into a standard IPython interpreter. To return to the debugger, enter `quit`.
@@ -113,8 +113,32 @@ When packages are imported, the `__init__.py` file is implicitly executed. It is
 
 # Data types  
 
-## strings
+## Mutable and Immutable
 
+Everything in python is an object. When you assign a value to a name/token python creates an object with a unique id. Some objects have mutable state:
+- Lists
+- Dictionarys
+- Set
+
+This can lead to some unexpected behavior. For example;
+
+```
+def add_todo(todo, todo_list=[]):
+    return todo_list.append(todo)
+```
+
+Will start with an empty list only the first time the function is invoked. Thuslater calls that do not pass an existing list will mutate that same ONE list. 
+
+The alternative is:
+
+```
+def add_todo(todo, todo_list=None):
+    if todo_list = None:
+        todo_list = []
+    return todo_list.append(todo)
+```
+
+## strings
 `'answer all questions?'.translate(None, '?')`  --  rudimentary editorial implementation of translate  
 
 suppose `uri = "10.1.2.3:80"`
@@ -188,6 +212,7 @@ print('%.6f' % test)
 ## lists
 
 Lists are mutable, unlike strings.
+
 
 `examples = ['a',2.0,['b','c']]`  --  format  
 `examples[1]` returns `'2.0'`  --  item by index  
