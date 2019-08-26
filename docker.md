@@ -24,6 +24,12 @@ To run a container and attach to it via interactive terminal:
 docker run -it -v `pwd`:/mount_path image:tag bash
 ```
 
+To directly invoke a script or executable from your volume mounted pwd:
+
+```
+docker run -it -v `pwd`:`pwd` -w `pwd` image:tag sh path/to/script
+``` 
+
 To override the defined entrypoint (should be first argument):
 
 ```
