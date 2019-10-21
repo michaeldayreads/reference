@@ -1,8 +1,8 @@
-### Effective Markdown
+# Effective Markdown
 
 In addition to formatting cribs and usage examples, this document contains conventions used in markdown documents in this repo and within my username space on GitHub.
 
-#### Links, Sources and Footnotes
+## Links, Sources and Footnotes
 
 Its easy to have links to webpages like [this one](https://pinboard.in/u:michaeldayreads).
 
@@ -34,6 +34,27 @@ For example we could reference a particular work using a link format following a
 Similarly, we can create footnotes using the `<sup></sup>` HTML tags as we've done here <sup>[1](#1)</sup> as a footnote.
 ```
 
+## tables
+
+### code
+
+```markdown
+
+| header 0 | header 1 |
+|----------|----------|
+| r0, c0 | r0, c1 |
+| r1, c0 | r1, c1 |
+| r2, c0 | r2, c1 |
+
+```
+### rendered
+
+| header 0 | header 1 |
+|----------|----------|
+| r0, c0 | r0, c1 |
+| r1, c0 | r1, c1 |
+| r2, c0 | r2, c1 |
+
 
 Footnotes
 ----
@@ -43,4 +64,4 @@ Footnotes
 Sources
 -----
 
-##### Carse_1986 -- Finite and Infinite Games
+###### Carse_1986 -- Finite and Infinite Games
