@@ -585,7 +585,7 @@ There are numerous flags that provide the ability to do focused testing or combi
 
 `if [ "$FOO" == "" -o "$BAR" == "" ]; then echo "do something if either one is missing"; fi` OR  
 
-`if [ "$FOO" != "" -a "$BAR" != "" ]; then echo "do something only if both are present"; fi`  AND  
+`if [ "$FOO" != "" -a "$BAR" != "" ]; then echo "do something only if both are present"; fi` AND  
 
 ### options
 
@@ -600,6 +600,24 @@ There are numerous flags that provide the ability to do focused testing or combi
 ### useful patterns
 
 `[ -n "$ENV_VAR_WE_NEED" ] || die "error message"`
+
+### caveats
+
+Do not use:
+
+```bash
+if $var; then
+  echo "All the things."
+fi
+```
+
+As `var` could be `""`, yielding a false positive. Better to check the length in cases of strings, or perform direct comparisons for boolean values:
+
+```bash
+if [ "$var" == true ]; then
+  echo "Do all the things."
+fi 
+```
 
 ## `uname`
 
