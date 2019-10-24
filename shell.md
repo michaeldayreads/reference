@@ -583,6 +583,10 @@ Exits with a 0 (true) or 1 (false) based on the evaluation of an expression.
 
 There are numerous flags that provide the ability to do focused testing or combine expressions in standard logic.
 
+> _It's best to enclose variables in quotes for logical comparisons. Most commonly double quotes are used. This prevents otherwise common errors, such as when the variable expands to multiple tokens, leading test to complain about argument number._ 
+>
+> _More broadly, this highlights the need to test comparisons carefully, with values that will explore the glob expansion variation inherent in the shell._
+
 `if [ "$FOO" == "" -o "$BAR" == "" ]; then echo "do something if either one is missing"; fi` OR  
 
 `if [ "$FOO" != "" -a "$BAR" != "" ]; then echo "do something only if both are present"; fi` AND  
@@ -656,9 +660,9 @@ Find lines with `bar` in files named `foo`.
 
     find . -name foo | xargs grep --color bar
 
-# SCRIPTS
+# SCRIPTING
 
-`#!/bin/bash` is a convention to let `execve` know what interpreter to load to execute a script. The actual path might vary, and can be determined with `which`.
+Use `#!/usr/bin/env bash` in the first line of your scripts to ensure you are using the `bash` known to that host.  
 
 ## Control Flow aka Logic & Conditionals
 
