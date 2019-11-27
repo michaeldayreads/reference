@@ -115,26 +115,7 @@ Multiple can be given, separated by commas.
 
 ## `curl`
 
-Internet transfers for resources specified as URLs using Internet Protocols. 
-
-`curl 10.1.2.3 -m 5`  specify a maximum of 5 seconds to complete the entire operation.
-
-`-v` for verbose output
-
-`-H` to specify a header
-
-`--resolve <host:port:address>` method to prevent the use of the standard resolved address. Use in combination with a `-H 'Host: foo.com'` option to allow a router/switch/lb receiving the request to mimic owning the address in question.
-
-For example:
-
-```
-curl --resolve foo.com:80:10.0.0.1 -H 'Host: foo.com' http://foo.com
-```
-
-### verifying output
-
-use `curl -vs http://www.example.org/ > test.log 2>&1` to silently (no SDTOUT) redirect both the verbose output AND the response to a file to validate what the response was. This will include status code and headers.
-
+see [curl.md](curl.md)
 
 ## `date`
 
