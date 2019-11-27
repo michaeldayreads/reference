@@ -12,7 +12,8 @@ When using IPv6, use square brackets around the numerical address, e.g. `http://
 
 ## Multiple URLs
 
-cURL accepts multiple urls per invocation. If you use these feature, you can separate options for the URL using the `--next` option to specify a boundary:
+cURL accepts multiple urls per invocation. If you use this feature, you can separate options for the URL using 
+the `--next` option to specify a boundary:
 
 ```shell
 curl --location http://example.com/1 --next
@@ -22,7 +23,7 @@ curl --location http://example.com/1 --next
 
 ## URL globbing
 
-Use `[x-y]` for ranges - both numeric and alphabetic - and {0,1,...,n} for lists (arrays):
+Use `[x-y]` for ranges - both numeric and alphabetic - and `{0,1,...,n}` for lists (arrays):
 
 ```shell
 curl -O http://example.com/{web,mail}-log[0-6].txt
@@ -56,6 +57,10 @@ The HTTP verb is typically deduced from the options provided:
 - `-I` `--head` a HEAD.
 - `-T` `--upload -file <path-to-file>` a PUT.
 
+## Headers
+
+To send data with `-d` or `-d @filename` that is JSON, the server may require `-H 'Content-Type: application/json'`.
+
 
 ## basic use & examples
 
@@ -85,27 +90,41 @@ Switch options, such as `--verbose` can be explicitly switched off using the `--
 
 To see all options, use `curl -h` from the command line. It is highly recommended to `| grep <search-term>` as there are 209 at this writing for cURL 7.54.0.
 
-### Common
+### Straight Forward
 
 | Option | Description, Usage and Notes| Long Alias |
 |--------|-----------------------------|------------|
-| `-v` | Verbose output | `--verbose` |
-| `-L` | Follow redirects | `--location` |
 | `-A <string>` | User Agent | |
 | `-d <string>` | Data, results in POST for http/s | `--data` |
 | `-d @file` | Data file, results in POST for http/s | `--data` |
-| `-F <content>` | Form content, results in POST for http/s | `--form` | 
+| `--data-binary @<filename>` | Do not strip out carriage return & newlines | -- |
+| `-F <content>` | Form content, results in POST for http/s | `--form` |
+| `-H <header>`  | Include specified header in request | -- |
+| `-k` | Disable certificate verification | `--insecure` | 
+| `-L` | Follow redirects | `--location` |
 | `-I` | HEAD for http/s | `--head` |
 | `-T <file>` | Transfer file, PUT for http/s | `--upload-file` |
+| `--tlsv1.2` | Require TLS 1.2 or greater | -- |
+| `--raw` | Do not perform transfer decoding | -- |
+| `-v` | Verbose output | `--verbose` |
+| `-X <method>` | Explicitly state method to use | `--request <method>` |
 
-### Less common, but of interest
+### Discussion Required
 
-| Option | Description, Usage and Notes| Long Alias |
-|--------|-----------------------------|------------|
-| `-x <host>` | Proxy. Use HTTPS on the target host to set up an encrypted tunnel. | `--proxy <host>` |
-| `-q` | Disable `.curlrc` | `--disable` | 
+#### curlrc
 
+The `.curlrc` file is a global config file as discussed above. Depending on the system, it may not be possible or advisable to modify or delete this file for dev or debug purposes, but it can be disabled per invocation using `-q` or `--disable`. 
 
-###### Sources
+#### Certificate Bundles
+
+Direct cURL to a PEM format certificate bundle using either the `--cacert <path/to/bundle>` or by setting the environment variable of `CURL_CA_BUNDLE` to that path.
+
+#### Proxies
+
+Use HTTPS on the target host to set up an encrypted tunnel:
+
+`-x <host>` OR `--proxy <host>`
+
+# Sources
 
 Most of the content of this document is an annotation of [everything curl](https://ec.haxx.se/) including many examples. When other sources are directly used, they are referenced inline in the document.
