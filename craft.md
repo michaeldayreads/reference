@@ -1,8 +1,8 @@
-# misc
+# About
 
-Behaviors, checklists, and product/collaboration tool specific practices or hacks.
+This document is a collection of annotations and reflections on general or hard to categorize technologist related behaviors, processes, practices and hacks.
 
-## Behaviors / Mind Set
+# Behaviors / Mind Set
 
 Some behavior may not be automated (at least pre Artificial General Intelligence, and post AGI the meaning of automation must change). 
 
@@ -10,7 +10,7 @@ For behavior that can be automated, sometimes the cost to automate is too high w
 
 This document is intended to consolidate what I have learned that has not yet been automated.
 
-### Debug
+## Debug
 
 Not seeing what you are expecting? Ask yourself:
 - Do you have a baseline?
@@ -22,7 +22,7 @@ Not seeing what you are expecting? Ask yourself:
 - If there have been changes, have you looked at the code that changed?
 
 
-### Speed
+## Speed
 
 Quality cannot be sped up, but large tasks can be broken into smaller ones. Always aim to have usable code as soon as possible, even if what you are shipping is tiny. 
 
@@ -32,9 +32,9 @@ Find the smallest possible thing you can deliver and then _take your time on it_
 >
 > Navy SEAL saying
 
-## Code Reviews
+# Code Reviews
 
-### Requesting
+## Requesting
 
 Before your commit:
 - run any and all linters you can
@@ -45,7 +45,7 @@ After the commit and prior to opening or updating a merge request, take a walk. 
 
 When you get back from your walk, read the code as if reviewing it for another technologist. 
 
-### Providing
+## Providing
 
 Check for:
 - dead code
@@ -55,12 +55,11 @@ Check for:
 - `TODO` comments should not be merged
 - `FIXME` comments should clearly indicate what work would have been included, time permitted
 
-## Product / Customer Interfacing
+# Tools
 
-### JIRA
+## JIRA
 
-#### Queries
+### Queries
 
 JQL is SQL-esq, but can be quirky:
 - Use `EMPTY` rather than `''`, `""` or `null`; as in `assignee is EMPTY`.
-
