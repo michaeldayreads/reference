@@ -64,7 +64,7 @@ Then use `s` to step through at low granularity, i.e. pdb stops when in can, tho
 
 Most often, the first pass is at `n` which is the next line in the function in the file where you placed the pdb.  
 
-> Note: In the event that you place a `set_trace()` in a loop, or otherwise have a large number of break points set in this manner, use `pdb.set_trace = lambda: None` to overload the `set_trace()` function and then you can `continue` through the end of the execution.
+> Note: In the event that you place a `set_trace()` in a loop, or otherwise have a large number of break points set in this manner, use `[pdb|ipdb|bpdb].set_trace = lambda: None` to overload the `set_trace()` function and then you can `continue` through the end of the execution. 
 
 Other commands:  
 
