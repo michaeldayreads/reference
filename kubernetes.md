@@ -112,7 +112,7 @@ Under the name provided, the master scheduled the creation of the container by t
 
 ## scale
 
-`scale RESOUCE_TYPE/RESOURCE_NAME --replicas=COUNT`
+`scale RESOURCE_TYPE/RESOURCE_NAME --replicas=COUNT`
 
 Resource types are Deployment, ReplicaSet, Replication Controller, or Job.
 
@@ -273,7 +273,7 @@ Services also make service discovery within the cluster possible, meaning that t
 
 ## Labels
 
-Used by k8s to identify a resource and/or as part of a query ops personell perform on a cluster.
+Used by k8s to identify a resource and/or as part of a query ops personnel perform on a cluster.
 
 Key/value pairs that may be attached to some objects (i.e. pods) and then used as a selector by another (i.e a service). Selectors are applied at deployment, labels may be added at creation or modified later.
 
@@ -287,11 +287,11 @@ A collection of Kubernetes specific content that is not part of Vanilla Kubernet
 
 ## Brigade
 
-An in-cluster event-based scripting of Kubernetes piplines. Brigade offers an API Gateway that can accept events/triggers (GitHub webhook events are supported out of the box) and then deploy a Build of one or more Jobs to accomplish a result. For example, a git commit could trigger a webhook to the API Gateway that would result in the running of *cluster based* tests.
+An in-cluster event-based scripting of Kubernetes pipelines. Brigade offers an API Gateway that can accept events/triggers (GitHub webhook events are supported out of the box) and then deploy a Build of one or more Jobs to accomplish a result. For example, a git commit could trigger a webhook to the API Gateway that would result in the running of *cluster based* tests.
 
 ## Draft
 
-A tool that uses Docker, Helm and (usually) mini-kube to let a dev poke and prod at thier containers within a cluster. 
+A tool that uses Docker, Helm and (usually) mini-kube to let a dev poke and prod at their containers within a cluster. 
 
 ## Helm
 
@@ -306,13 +306,13 @@ OpenShift adds many things to Kubernetes
 
 ### Build Configuration
 
-Docker builds often run as root. The additional build interface may provide some security beneifits.
+Docker builds often run as root. The additional build interface may provide some security benefits.
 
 Getting from source to image.
 
 ### Deployment Configuration
 
-Partial or complete deploymet/re-deployment based on:
+Partial or complete deployment/re-deployment based on:
 - Image change (tag)
 - Code change (webhook)
 - Config change
@@ -331,21 +331,21 @@ For OpenShift, Logstash is replaced with Fluentd (CNCF).
 
 ### Project
 
-A project wraps a namespace and controlls access to that namespace. This appears to be where RBAC was implemented. It is not clear if Projects offer more than simply an abstraction on top of RBAC (that would be fine, though it would be nice to know for sure).
+A project wraps a namespace and controls access to that namespace. This appears to be where RBAC was implemented. It is not clear if Projects offer more than simply an abstraction on top of RBAC (that would be fine, though it would be nice to know for sure).
 
 ### Routes
 
 Default router is HAProxy.
 
-Route is a construct to define rules applied to incomming connections.
+Route is a construct to define rules applied to incoming connections.
 
-Compare this to k8s, where an Ingress Controller ( F5 CC or NGINX controller) provides the referse proxy and the Ingress Resource defines the connection rules.
+Compare this to k8s, where an Ingress Controller ( F5 CC or NGINX controller) provides the reference proxy and the Ingress Resource defines the connection rules.
 
 ### Software Defined Network
 
 ### Source to Image (S2I)
 
-A pipeline tool for producing images from source in a predicatable, repeatable way.
+A pipeline tool for producing images from source in a predictable, repeatable way.
 
 ### Tools / Tooling
 
