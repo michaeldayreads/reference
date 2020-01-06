@@ -16,13 +16,19 @@ basic information about running cluster
 
 Provides more detail
 
--
-
-    delete < RESOURCE > < NAME >
-
 Resources can be a comma separated (no spaces) list for multiple types with the same name or `-l` labels.
 
 A file can also be specified (yaml or json).
+
+## namespaces
+
+A `namespace` is a "virtual cluster". `kubectl` commands (and thus API calls to k8s) most commonly are scoped to either `--all-namespaces` or to `-n <namespace>`.
+
+The `kube-system`, `default` and `kube-public` namespaces are provided out of the box for system, sane default, and broadcast purposes respectively. Use of `kube-system` is required, the other two are optional.
+
+### Contexts
+
+Use `kubectl config set-context --current --namespace=<desired_default_namespace>` to reduce typing if the vast majority of commands you will issue will target one namespace.
 
 ## describe
 
