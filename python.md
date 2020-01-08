@@ -1,4 +1,16 @@
-# Linting and Style
+# Linting, Style and Format
+
+## Line breaks and Line Continuation 
+
+Rely on tools to determine what is preferred in terms of what is checked in. This section will identify patterns that are syntactically valid, but that may not be best practice.
+
+In addition to parenthesis and the brace types (implicit) lines can also be explicitly continued:
+
+```python
+if foo \
+   and bar \
+   and baz:  # one condition per line simplifies reasoning
+```
 
 ## `flake8` -- shell
 
@@ -111,7 +123,46 @@ _Always recursively read the `__init__.py` files throughout a package._
 
 When packages are imported, the `__init__.py` file is implicitly executed. It is common that `__init__.py` will contain only rudimentary documentation describing the package, though it is only slightly less common that it will contain code that proves central to understanding the behavior of the code in the package.  
 
-# Data types  
+# Data types 
+
+## Type Hierarchy
+
+Numbers:
+- Ingegral
+    - Integers
+    - Booleans
+- Non-Integral
+    - Floats
+    - Complex
+    - Decimals
+    - Fractions
+
+Collections:
+- Sequences
+    - Mutable
+        - Lists
+    - Immutable
+        - Tuples
+        - Strings
+- Sets
+    - Sets (mutable)
+    - Frozen Sets (immutable)
+- Mappings
+    - Dictionaries
+
+Callables:
+- Functions
+- Generators
+- Classes
+- Instance Methods
+- Class Instances
+- Built-in Functions
+- Built-in Methods
+
+Singletons:
+- None
+- NotImplemented
+- Ellipsis
 
 ## Mutable and Immutable
 
@@ -439,8 +490,9 @@ Before writing any new tests, familiarize yourself with the tests that have alre
 ... shows assert statements and patterns already in use. 
 
 
-##### sources  
+# sources  
 
+###### [Baptiste (2018) -- Python Deep Dive](https://github.com/fbaptiste/python-deepdive)
 ###### [Downey (2015) -- Think Python, 2nd Edition](http://www.greenteapress.com/thinkpython/)
 ###### [Goodger, van Rossum (2001) Docstring Conventions (PEP 257)](https://www.python.org/dev/peps/pep-0257/)
 ###### [Lutz (2013) -- Learning Python, 5th Edition](https://www.safaribooksonline.com/library/view/learning-python-5th/9781449355722/)
