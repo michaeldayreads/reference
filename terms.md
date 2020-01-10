@@ -43,6 +43,20 @@ If we create a pointer `p` we can get the address that it points to using the **
 
 We can get the _value_ of the variable that `p` points to by using **pointer indirection** `*p`.
 
+# Proxy
+
+## Forward Proxy
+
+A proxy where the target server in the post proxy request is set by the _client_.
+
+Example use case - Blacklist sites: A company might set up a forward proxy inside its firewall as the _egress_ to the broader internet, and all traffic from _internal clients_ would be handled by the forward proxy _as if it were the client_. Clients on the internal network trying to access a restricted site would not have their requests forwarded.
+
+## Reverse Proxy
+
+A proxy where the target server in the post proxy request is set by the _proxy_.
+
+Example use case - load balancing / internal routing: A company might set up a reverse proxy inside its firewall as the _ingress_ from the broader internet, and all traffic from _external clients_ would be handled by the reverse proxy _as if it were the backend server_. This means traffic could be dynamically allocated among many different servers bases on any number of properties of the request.
+
 # REST
 
 An architectural style. Representational State Transfer. Access a `resource` using a `method`, sometimes discussed as `nouns` and `verbs`, particularly when discussing HTTP based REST.
