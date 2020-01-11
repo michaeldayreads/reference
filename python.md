@@ -190,6 +190,7 @@ def add_todo(todo, todo_list=None):
 ```
 
 ## strings
+
 `'answer all questions?'.translate(None, '?')`  --  rudimentary editorial implementation of translate  
 
 suppose `uri = "10.1.2.3:80"`
@@ -202,6 +203,11 @@ Note the latter is arguably _less_ pythonic, but none the less can be demanded b
 
 
 ### format
+
+```python
+foo = "Interpolation"
+print("This is very basic {}".format(foo))
+```
 
 ```
 foo = "foo"
@@ -495,6 +501,7 @@ Before writing any new tests, familiarize yourself with the tests that have alre
 ###### [Baptiste (2018) -- Python Deep Dive](https://github.com/fbaptiste/python-deepdive)
 ###### [Downey (2015) -- Think Python, 2nd Edition](http://www.greenteapress.com/thinkpython/)
 ###### [Goodger, van Rossum (2001) Docstring Conventions (PEP 257)](https://www.python.org/dev/peps/pep-0257/)
+###### [Hellmann, Dough (2019) PMOTW3 website](https://pymotw.com/3/unittest/index.html)
 ###### [Lutz (2013) -- Learning Python, 5th Edition](https://www.safaribooksonline.com/library/view/learning-python-5th/9781449355722/)
 ###### [Peters (2014) The Zen of Python (PEP 20)](https://www.python.org/dev/peps/pep-0020/)
 ###### [PSF Python Documentation 2.7](https://docs.python.org/2.7/)
@@ -502,3 +509,17 @@ Before writing any new tests, familiarize yourself with the tests that have alre
 ###### [Romano, Phillips, Hattem (2016)](https://www.safaribooksonline.com/library/view/python-journey-from/9781787120761/)
 ###### [Severance (2013) -- Python for Informatics](http://www.pythonlearn.com/html-270/index.html)
 ###### [Stackoverflow 22864221](https://stackoverflow.com/questions/22864221/is-the-list-of-python-reserved-words-and-builtins-available-in-a-library)
+
+# libs
+
+## standard
+
+### unittest
+
+`+` fixtures `+` Code to manage dependencies.
+
+`+` test case `+` Everything else.
+
+`+` test suite `+` Collection of test cases.
+
+`+` test runner `+` Runs tests, shows results, and to some degree interprets the meaning of the results in terms of return code and other machine actionable output.
