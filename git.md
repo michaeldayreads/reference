@@ -99,11 +99,11 @@ git cherry-pick <SHA for fix b>                 # now we have fix b on top of fi
 
 # `config`
 
-`git config --global core.editor "vim"` set default editor to vim  
-`git config --list`  see current config.
-`git config --list --global` to see global config. Note, if none are set, an error is generated.
-`git config user.email "foo@baz.com"  set email (for repo)
-`git config user.email` view email (for repo)
+`git config --global core.editor "vim"` set default editor to vim.  Note that the `--global` flag must _precede_ arguments being set.  
+`git config --list`  see current config.  
+`git config --list --global` to see global config. Note, if none are set, an error is generated.  
+`git config user.email "foo@baz.com"`  set email (for repo).  
+`git config user.email` view email (for repo).  
 
 # `diff`
 
