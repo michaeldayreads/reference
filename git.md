@@ -96,6 +96,7 @@ git cherry-pick <SHA for fix b>                 # now we have fix b on top of fi
 
 `git commit --amend --author "Corrected Name <corrected@email.com>"`
 
+`git commit --date=format:relative:2.days.ago -m "Set _author_ commit time only."` To also have the GIT_COMMITTER_DATE the env variable has to be set for each commit, but often the author date is what you care about (e.g. the activity that shows on github).
 
 # `config`
 
