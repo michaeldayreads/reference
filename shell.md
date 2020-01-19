@@ -10,6 +10,12 @@ Function names in `bash` are less restrictive than names in `sh`; in particular,
 
 Single quotes prevent expansion. For example, if you have a script that consumes an arg token that includes bash special characters, use `'<token>'` not `"<token>"`.
 
+# concepts
+
+## Users, Groups
+
+Each user must belong to ONE _primary user group_, and can also belong to many 
+
 # commands
 
 ## `alias`
@@ -309,6 +315,12 @@ find . -name foo
 vim $(!!)
 ```
 see [`fc`](#fc)
+
+### Contents of History
+
+Use `export HISTCONTROL=ignorespace` to be able to prefix invocations with an additional space and have them be left off the history.
+
+Use `history -d <n>` to remove entry `n` from the history.
 
 ### using search and replace
 
