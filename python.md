@@ -1,3 +1,29 @@
+# Versions, Environments, and Package Management
+
+If possible, use `pyenv` _and_ `pyenv-virtualenv`.
+
+At a minimum, use `virtualenv`.
+
+## pyenv
+
+Use `pyenv local x.y.z` to add a `.python-version` file to the directory you are in. This file's content will simply be `x.y.z`. Note that if you have properly installed `python-virtualenv` you can also use the name of that `virtualenv` in the `.python-version` file and the virtualenv will be activated / deactivated on entry / exit to the directory.
+
+## pyenv-virtualenv aka virtualenv
+
+Though `virtualenv` can be used apart from `pyenv`, you may find it useful to use both. Doing so essentially means that you have a _default_ python environment for `python x.y.z`, meaning that `pip install <package>` within a `pyenv x.y.z` will add to that default, and that _bare_ python executable is used by `pyenv virtualenv x.y.z <name>` but _no packages will be installed in that `virtualenv`, including any in the default x.y.z_.
+
+Basically, `pyenv` and `virtualenv` require that we be explicit about our environments. How very pythonic.
+
+Typical workflow for project `foo`:
+
+```
+pyenv versions                  # Is the executable your project needs available on this host?
+pyenv install x.y.z             # Can skip if version x.y.z already on host.
+pyenv virtualenv x.y.z foo      # Creates the virtual env named foo using pyenv x.y.z
+pyenv activate foo              # Use that env; hackety-hack.
+pyenv deactivate                # When done.
+```
+
 # Linting, Style and Format
 
 ## Line breaks and Line Continuation 
