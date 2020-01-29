@@ -299,6 +299,28 @@ git tag foo <sha>           #  attept to locally tag this sha as "foo"
 git tag -d foo              #  to move the tag, first delete it
 ```
 
+# `worktree`
+
+An alternative to having multiple clones of the same repo on one host. Particularly useful for running tests, since you can have long running tests or multiple versions of tests running in the background or in parallel.
+
+We'll use this as an example; we want to run tests on project `foo` -- lets say in a loop -- while we tinker with the test we think is problematic in another directory of the file structure. We could do this with git clone, but this requires the network, might be expensive, and it does not include the conflict avoidance that `git worktree` provides.
+
+```
+cd foo
+git worktree add ~/.gwt/foo-test-0                  # Any path works. This example uses a `.gwt` directory to house worktrees.
+                                                    # The last part of the slug will be created, the rest must already exist.
+git worktree list                                   # Lists worktrees in a manner that makes cd simple, also shows sha/branch.
+cd ~/.gwt/foo-test-0                                # If branch `foo-test-0` did not exist, it does now and we're on it. 
+./start_tests.sh                                    # Run the tests. Now switch to another terminal and navigate back to foo.
+```
+
+The conflict avoidance is very helpful. In the original directory for `foo`, attempting to `git checkout foo-test-0` will fail. To manipulate that branch, you have to navigate to the directory of the working tree.
+
+Use:
+- `git worktree move <path/to/worktree/dir>` to move the files and keep git aware of them.
+- `git worktree remove <path/to/worktree/dir>` to delete a worktree no longer being used.
+- `git worktree prune` to clean up admin files.
+
 ^^^ refactored ^^^
 
 by concept or use pattern
