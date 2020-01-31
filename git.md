@@ -94,6 +94,9 @@ git cherry-pick <SHA for fix b>                 # now we have fix b on top of fi
 
 # `commit`
 
+The message has two parts: the [title](/terms/tbd?commit-title) which is the message up to the first blank line, and the rest of the message. The [title](/terms/tbd?commit-title) should be short - suggested less than 50 characters - and should summarize the changes in that commit. It is used throughout `log` and other subcommands/functions and should be written with thoughtful precision.
+
+
 `git commit --amend --author "Corrected Name <corrected@email.com>"`
 
 `git commit --date=format:relative:2.days.ago -m "Set _author_ commit time only."` To also have the GIT_COMMITTER_DATE the env variable has to be set for each commit, but often the author date is what you care about (e.g. the activity that shows on github).

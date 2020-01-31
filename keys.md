@@ -6,4 +6,5 @@ iterm |
  MAC OS |
 `cmd` + `tab` | Switch Applications | `+ shift` alt direction |
 `cmd` + `<backtick>` | Switch Windows | `+ shift` alt direction | not full-screen
-| `ctrl` + `cmd` + `f` | Toggle full screen | | iterm uses `cmd` + `return`
+`ctrl` + `cmd` + `f` | Toggle full screen | | iterm uses `cmd` + `return`
+`cmd` + `shift` + `.` | In finder, show hidden files|
