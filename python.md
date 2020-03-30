@@ -1,5 +1,9 @@
 # Versions, Environments, and Package Management
 
+date | rate
+--- | ---
+a | 1
+
 If possible, use `pyenv` _and_ `pyenv-virtualenv`.
 
 At a minimum, use `virtualenv`.
@@ -92,19 +96,21 @@ Most often, the first pass is at `n` which is the next line in the function in t
 
 > Note: In the event that you place a `set_trace()` in a loop, or otherwise have a large number of break points set in this manner, use `[pdb|ipdb|bpdb].set_trace = lambda: None` to overload the `set_trace()` function and then you can `continue` through the end of the execution. 
 
-Other commands:  
+### Help Contents 
 
-?           List help
-h <cmd>     Help on that pdb command
-c           Continue:
-s           Step:
-a           Args: list the arguments of the current file.
-p expr      Print: evaluate expression and print its value.
-pp expr     Pprint: like print, but pretty print. 
-w           Where: prints a stack trace.
-d           Down: move the current frame one level down in the stack trace.
-u           Up: move the current frame one level up in the stack trace.
-q           Quit: The debugger is quit and the program is aborted.
+Command | Description
+--- | ---
+? | List help
+h <cmd> | Help on that pdb command
+c | Continue:
+s | Step:
+a | Args: list the arguments of the current file.
+p expr | Print: evaluate expression and print its value.
+pp expr | Pprint: like print, but pretty print. 
+w | Where: prints a stack trace.
+d | Down: move the current frame one level down in the stack trace.
+u | Up: move the current frame one level up in the stack trace.
+q | Quit: The debugger is quit and the program is aborted.
 
 ## ipdb
 
