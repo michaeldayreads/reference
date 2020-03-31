@@ -112,7 +112,7 @@ d | Down: move the current frame one level down in the stack trace.
 u | Up: move the current frame one level up in the stack trace.
 q | Quit: The debugger is quit and the program is aborted.
 
-## ipdb
+### ipdb
 
 IPython, the engine behind the jupiter notebooks, provides a far richer REPL. This can be used instead of the standard pdb.
 
@@ -129,9 +129,15 @@ This then gets you into a standard IPython interpreter. To return to the debugge
 
 The embeded IPython is easier for building classes, functions and other multiline requirements. The objects you create within IPython are retained and available after you `quit` and return to the debugger.
 
-## reload
+### reload
 
 Use `importlib.reload(module_under_dev)` to have your most recent changes available in the interactive interpreter. 
+
+### pdb / ipdb tricks
+
+If `import ipdb; ipdb.set_trace()` is in a loop, consider wrapping it in an `if` block to get to the case of interest or perhaps a case prior.
+
+Also, to avoid future instances in a loop or otherwise you can `ipdb.set_trace = lambda: None` to overload the reference and continue past the remaining instances of `set_trace`.
 
 ## pprint
 
