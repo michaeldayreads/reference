@@ -1,9 +1,5 @@
 # Versions, Environments, and Package Management
 
-date | rate
---- | ---
-a | 1
-
 If possible, use `pyenv` _and_ `pyenv-virtualenv`.
 
 At a minimum, use `virtualenv`.
