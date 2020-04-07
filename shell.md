@@ -1,16 +1,19 @@
-> Unless otherwise indicated, this document refers to bash shell.  
+# shell
+
+> Bash... but not just.
+
+ Unless otherwise indicated, this document refers to bash shell, or to command line tools installed on top of bash or other shells but common enough in use or application to be included in this document (e.g. `curl`, `jq` etc.)
 
 > Option lists on commands are non-exhaustive. The intention is to explain and highlight command line and scripting usage, not to clone the man pages.
 
-# shell differences
+## shell differences
 
 Function names in `bash` are less restrictive than names in `sh`; in particular, `sh` does not permit `.` or `-` but does permit `_`.
 
-# quotes and escaping
+## quotes and escaping
 
 Single quotes prevent expansion. For example, if you have a script that consumes an arg token that includes bash special characters, use `'<token>'` not `"<token>"`.
 
-# concepts
 
 ## Users, Groups
 
@@ -336,6 +339,10 @@ We can replace a specific string in a prior command easily:
 Configure a network interface.
 
 `-a` Display details of all interfaces.
+
+## `jq`
+
+Presumably JSON Query, though it is described as a JSON processor.
 
 ## `ln`
 
