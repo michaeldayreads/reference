@@ -17,6 +17,12 @@ Plan everything in advance of building anything.
 A method to describe an interface that is independent of any particular implementation language. CORBA is an example.
 
 
+# Cookie
+
+Data of `name`, `value`, and `attribute` fields such as `Expires` and `SameSite` which instructs the client (browser) how to behave in their presence. Cookies are created using the `Set-Cookie` HTTP header, and sent to the host along with requests. Note that _which_ host is determined in part by the use of cross origin resource sharing. Setting the attributes to the correct value are important to ensure secure behavior by browsers.
+
+Though the specification permits up to 4096 bytes per cookie and up to 50 cookies per site, best practice is to use only one session or token cookie and to reference other data on the server.
+
 # DNS
 
 The collection of RFC's and their implementation that grew out of the original `HOSTS.txt` maintained within the ARPANET to map human memorable names to IP addresses.
