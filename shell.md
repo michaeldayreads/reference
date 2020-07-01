@@ -657,6 +657,11 @@ Find lines with `bar` in files named `foo`.
 
 Use `#!/usr/bin/env bash` in the first line of your scripts to ensure you are using the `bash` known to that host.  
 
+Whenever possible, be rigorous about failures. Include `set -eo pipefail` immediately after identifying the interpreter.
+
+Some gotchas with `pipefail`:
+- When using grep, which will exit 1 with no matches, use `grep -c` to count first, and run the pipe if matches > 0.
+
 ## Control Flow aka Logic & Conditionals
 
 ### `if`
