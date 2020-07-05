@@ -209,6 +209,13 @@ set shiftwidth=4
 filetype indent on
 ```
 
+### Makefiles when set up for python
+
+Make requires tabs, not spaces. V. There are options to modify syntax for the filetype either through `.vimrc` or in each file, however, it is also possible to quickly switch per instance on *Nix machines:
+- Ensure you are in `INSERT` mode.
+- Press `CTRL` + `v`.
+- Press `TAB`.
+
 # misc.
 
 `.` repeats!  
