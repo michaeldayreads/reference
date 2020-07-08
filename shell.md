@@ -2,6 +2,10 @@
 
 > Option lists on commands are non-exhaustive. The intention is to explain and highlight command line and scripting usage, not to clone the man pages.
 
+# misc useful hacks
+
+Write quick or one off scripts by combining the multiple instructions to bash into one line using either `&&` or `;` to delimit them. In the first case, the first non-zero RC stops the "script", in the second, the shell continues merrily along.
+
 # shell differences
 
 Function names in `bash` are less restrictive than names in `sh`; in particular, `sh` does not permit `.` or `-` but does permit `_`.
