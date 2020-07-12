@@ -20,6 +20,16 @@ Single quotes prevent expansion. For example, if you have a script that consumes
 
 Each user must belong to ONE _primary user group_, and can also belong to many 
 
+## Expansion, Precedence
+
+Order is:
+- brace
+- tilde
+- variable, arithmetic, command -- all are at the same level of precedence, and expressions are evaluated from the inside out.
+- filename expansion
+
+
+
 # commands
 
 ## `alias`
