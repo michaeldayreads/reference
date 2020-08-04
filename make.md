@@ -8,7 +8,11 @@ In windows environments, a file extension may be required to ensure the OS knows
 
 Note that aside from the __default__ rule or goal - which is the first in the file, as mentioned above - rule/target order within the file does not matter.
 
-`make <rule>` invokes the specified rule, usually referred to as the target.
+`make <rule>` invokes the specified rule. The file(s) that are to be remade is(are) the target(s) of the rule. Rules may have pre-requisites that are other rules, and each rule may have many steps which are the recipe used to update the target.
+
+Each step in the recipe is executed in a sub shell. The shell used is `/bin/sh` unless the `SHELL` variable is specified in the make file.
+
+This means that makefiles actually have two syntaxes; shell in the recipes, and make everywhere else.
 
 `make <rule b> <rule a>` invokes rules in the order specified.
 
