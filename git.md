@@ -158,9 +158,18 @@ git log --grep=coverage
 
 ## comparing branches
 
-`git log foo/master ^bar/master`
+Imagine that branch `foo` has one commit that `master` does not have.
 
-Show what commits are in foo that are not in bar. 
+`git log foo ^master`
+
+Will show that one commit, as we are asking git 'what commits are in foo that are _not_ in master?'.
+
+However, if we instead invoke:
+
+`git log master ^foo`
+
+The result will be empty, as there _are no commits in master that are not in foo_.
+
 
 # `merge`
 
