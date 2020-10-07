@@ -16,6 +16,10 @@ or
 
 `docker exec CONTAINER_NAME ls`
 
+Also, you can use this to invoke a shell and inspect the container while other processes in it are working:
+
+`docker exec -it CONTAINER_NAME bash`
+
 # `run`
 
 To run a container and attach to it via interactive terminal:
