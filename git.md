@@ -1,3 +1,12 @@
+# Useful Hacks and One liners
+
+```bash
+# Push to all remotes.
+# Invoked as `git pushall`.
+# From https://stackoverflow.com/questions/5785549/able-to-push-to-all-git-remotes-with-the-one-command
+#
+git config --global alias.pushall '!git remote | xargs -L1 git push --all'
+```
 
 # Commands
 
