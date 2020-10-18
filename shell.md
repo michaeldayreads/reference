@@ -6,6 +6,13 @@
 
 Write quick or one off scripts by combining the multiple instructions to bash into one line using either `&&` or `;` to delimit them. In the first case, the first non-zero RC stops the "script", in the second, the shell continues merrily along.
 
+## Useful one liners
+
+```bash
+# The number of non blank lines in foo.
+cat foo | sed '/^\s*$/d' | wc -l
+```
+
 # shell differences
 
 Function names in `bash` are less restrictive than names in `sh`; in particular, `sh` does not permit `.` or `-` but does permit `_`.
