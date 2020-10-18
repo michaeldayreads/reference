@@ -1,8 +1,11 @@
-# `add` 
+
+# Commands
+
+## `add` 
 
 Add contents (files) to the index (snapshot of the working tree) staging them for the next commit. Only changes to the time of the add will be part of a commit. Further changes have to be added again.
 
-# `branch`
+## `branch`
 
 `git branch` list branches  
 `git branch -r` list remote branches  
@@ -11,7 +14,7 @@ Add contents (files) to the index (snapshot of the working tree) staging them fo
 `git branch -m <old_name> <new_name>` to rename a branch you are not on  
 `git branch -m <new_name>` to rename current branch  
 
-## Converting a detached head to a branch
+### Converting a detached head to a branch
 
 If you checkout a SHA, you will be in a detached head state. This is useful for looking around, but if you need to make changes or wish to name that SHA for ease of reference without creating a tag, best to create a branch.
 
@@ -21,7 +24,7 @@ git branch foo
 git checkout foo
 ```
 
-# `checkout`
+## `checkout`
 
 Update file(s) in the working tree to match the state of those files in the SHA provided.
 
@@ -31,7 +34,7 @@ Update file(s) in the working tree to match the state of those files in the SHA 
 
 > Use `git branch --set-upstream-to remote/branch` to add or modify the remote branch that your local should track.
 
-## Update / Revert file(s)
+### Update / Revert file(s)
 
 Checkout is useful to revert a file to an earlier state or to copy changes from one branch to another for specific files.
 
@@ -43,7 +46,7 @@ git log -1  # get the SHA
 git checkout target_branch
 git checkout <SHA> path/to/file
 ```
-## Duplicate or Copy an Existing Branch to a New Branch
+### Duplicate or Copy an Existing Branch to a New Branch
 
 ```
 git checkout old
@@ -54,7 +57,7 @@ OR
 
 `git checkout -b new old
 
-# `cherry-pick`
+## `cherry-pick`
 
 Cherry pick is a method to apply a commit - or set of commits - and create a new commit for each. One example is if your team has release branches in addition to a master branch. As each member of the team works on fixes and features, all of those commits are merged to master. Then, depending on timing and completeness relative to releases, the commits associated with a given feature can be "cherry-picked" into the feature branches.
 
@@ -92,7 +95,7 @@ git log -10 fix-b                               # to find SHA for commit that fi
 git cherry-pick <SHA for fix b>                 # now we have fix b on top of fix a; be mindful of time stamps and rebase as needed
 ```
 
-# `commit`
+## `commit`
 
 The message has two parts: the [title](/terms/tbd?commit-title) which is the message up to the first blank line, and the rest of the message. The [title](/terms/tbd?commit-title) should be short - suggested less than 50 characters - and should summarize the changes in that commit. It is used throughout `log` and other subcommands/functions and should be written with thoughtful precision.
 
@@ -101,7 +104,7 @@ The message has two parts: the [title](/terms/tbd?commit-title) which is the mes
 
 `git commit --date=format:relative:2.days.ago -m "Set _author_ commit time only."` To also have the GIT_COMMITTER_DATE the env variable has to be set for each commit, but often the author date is what you care about (e.g. the activity that shows on github).
 
-# `config`
+## `config`
 
 `git config --global core.editor "vim"` set default editor to vim.  Note that the `--global` flag must _precede_ arguments being set.  
 `git config --list`  see current config.  
@@ -109,7 +112,7 @@ The message has two parts: the [title](/terms/tbd?commit-title) which is the mes
 `git config user.email "foo@baz.com"`  set email (for repo).  
 `git config user.email` view email (for repo).  
 
-# `diff`
+## `diff`
 
 `git diff branch_1 branch_2` compare two branches  
 `git diff branch_1 branch_2 path/to/file_of_interest.txt` compare a file between two branches  
@@ -125,19 +128,19 @@ git diff --color-words=. <sha_or_file(s)_as_usual>          # highlights what ch
 ```
 
 
-# `fetch`
+## `fetch`
 
 `git fetch --all --prune` remove deleted branches  
 
-# `init`
+## `init`
 
 Create an empty git repository or re-initialize an existing one. Running in an existing repository is safe, nothing is overwritten, though the command can be used to move to another location. When this is done, a text file with the new path is placed in the current directory as a symbolic link to the new location.
 
-# `ignore`
+## `ignore`
 
 `vim .git/info/exclude`  to ignore items in a local repo where the ignores themselves are not committed to the repo.  
 
-# `log`
+## `log`
 
 Commit history
 
@@ -156,7 +159,7 @@ git log --graph --color --oneline --decorate
 git log --grep=coverage
 ```
 
-## comparing branches
+### comparing branches
 
 Imagine that branch `foo` has one commit that `master` does not have.
 
@@ -171,21 +174,21 @@ However, if we instead invoke:
 The result will be empty, as there _are no commits in master that are not in foo_.
 
 
-# `merge`
+## `merge`
 
 When merging - which is also the basis for `rebase`, `stash pop` and `stash apply` to keep `us` and `them` clear:
 
 `us` = into and `them` = from
 
 
-# `push`
+## `push`
 
 > hack to prevent pushing by accident: `git remote set-url --push origin no_push`
 
 
 `git push <remote> source_branch:target_branch`
 
-# `remote`
+## `remote`
 
 `git remote -v` verbose list of remotes
 `git remote add any_name_you_like` adds a remote
@@ -193,7 +196,7 @@ When merging - which is also the basis for `rebase`, `stash pop` and `stash appl
 `git remote add upstream <url>` to add an upstream
 `git remote set-url origin <new url>` to update an origin (or upstream) following a name change  
 
-# `revert`
+## `revert`
 
 Use `git revert <sha>` to undo an earlier commit.
 
@@ -210,7 +213,7 @@ would be reverted by invoking `git revert <sha_second> <sha_first>`
 
 If there are conflicts, either the order you are specifying is incorrect or the scope of what you are looking to revert needs to be re-evaluated.
 
-# `show`
+## `show`
 
 Details of an object (commit).
 
@@ -221,11 +224,11 @@ Details of an object (commit).
 `git show <sha> --name-only`  Supress the diff, but show the files modified.  
 
 
-# `status`
+## `status`
 
 Displays path differences between index and HEAD commit.
 
-# `stash`
+## `stash`
 
 `git stash <pathspec>` is a quick way to invoke `git stash push <pathspec>`, though using the more complete syntax can expose more options.
 
@@ -276,11 +279,11 @@ In both cases, anything not specifically added is left as changes in the working
 `git stash clear` to remove all items from the stash **caution**.  
 
 
-# `status`
+## `status`
 
 Displays path differences between index and HEAD commit.
 
-# `submodule`
+## `submodule`
 
 `git submodule status`  
 `git submodule sync`  
@@ -295,7 +298,7 @@ to remove: [^so-1260748]
 * `git commit -m "removed submodule <name>"`
 
 
-# `tag`
+## `tag`
 
 Mark a point (sha) in the commit history. 
 
@@ -311,7 +314,7 @@ git tag foo <sha>           #  attept to locally tag this sha as "foo"
 git tag -d foo              #  to move the tag, first delete it
 ```
 
-# `worktree`
+## `worktree`
 
 An alternative to having multiple clones of the same repo on one host. Particularly useful for running tests, since you can have long running tests or multiple versions of tests running in the background or in parallel.
 
