@@ -227,6 +227,11 @@ Make requires tabs, not spaces. V. There are options to modify syntax for the fi
 ## line numbers  
 `:set nu` to invoke -- `nu` short for `number`   
 `:set nonu` to revoke  
+`:set nu!` to toggle
+
+There is also relative line numbers, using `:set rnu!`
+
+Post vim 7.4, if you set both, you get a hybrid of current rather than 0, and relative above and below.
 
 ## visual mode
 
