@@ -762,6 +762,8 @@ Examples from [StackExchange][^1]
 
 #### `$@` or all args
 
+How to pass / reference all arguments from another invocation. 
+
 The example:
 
 ```
