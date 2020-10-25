@@ -406,6 +406,12 @@ Print network connections, routing tables, interfaces stats and more.
 
 `netstat -rn -f inet
 
+## `nohup`
+
+No hang up. Execute a command and continue to run it even if the session that invokes it is disconnected.
+
+Note this may impact the ability to interrupt the command with the keyboard, so you may need an alternate session from which to send a `kill` command.
+
 ## `printenv`
 
 List environment Variables
