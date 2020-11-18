@@ -31,6 +31,14 @@ Communication generally uses UDP on port 53.
 
 > This is why Amazon's DNS is called `Route 53`.
 
+# Egress Load Balancing
+
+Most discussion around load balancing focuses on the selection of a backend server for a client request, or increasingly on mechanisms for microservice communication that is opaque to the end user.
+
+When the application presented to the end user has one or more components that is outsourced, this means that the application -- monolithic and microservice architectures alike -- will have to call out to a third party service when the request needs to leverage them. In these cases, that third party service may present limitations the application needs to take into account. For example, their may be rate limits for the use of the third party service based on originating IP, or the use of that third party service may be tied to the end user's account at that service, and our application needs to ensure the internally stored integration credentials are associated with the correct requests.
+
+What this amounts to is the need to apply traffic management (aka advanced LB) to the egress requests our application makes of that third party, and as with ingress LB it could be advantageous to have a gateway or other architecture component apply the policies needed to this traffic and not have the application know or care about how the request implementation specifics.
+
 # NIC
 
 Network Interface Controller provides access to the physical and data link layers for communication, e.g. ethernet or wifi.
