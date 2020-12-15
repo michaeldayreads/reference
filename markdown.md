@@ -2,15 +2,15 @@
 
 In addition to formatting cribs and usage examples, this document contains conventions used in markdown documents in this repo and within my username space on GitHub.
 
-## Links, Sources and Footnotes
+## Links, Sources and [foot|end]notes
 
-Its easy to have links to webpages like [this one](https://pinboard.in/u:michaeldayreads).
+It is easy to have links to webpages like [this one](https://pinboard.in/u:michaeldayreads).
 
 ```
 [this one](https://pinboard.in/u:michaeldayreads)
 ```
 
-Its also easy to refer to other documents in the same repo, for example we can refer to the [vim](vim.md) doc.
+It is also easy to refer to other documents in the same repo, for example we can refer to the [vim](vim.md) doc.
 
 ```
 [vim](vim.md)
@@ -22,16 +22,10 @@ Similarly we can link to headers within the present document. This means we can 
 [the top of our document](#Effective)
 ```
 
-We can use this as a hack to create a source list.
-
-For example we could reference a particular work using a link format following an Author_Year convention such as [Carse 1986](#carse_1986----finite-and-infinite-games). 
-
-Similarly, we can create footnotes using the `<sup></sup>` HTML tags as we've done here <sup>[1](#1)</sup> as a footnote.
+And this can serve for light weight [foot|end]notes<sup>[1](#1)</sup>.
 
 ```
-For example we could reference a particular work using a link format following an Author_Year convention such as [Carse 1986](#carse_1986----finite-and-infinite-games). 
-
-Similarly, we can create footnotes using the `<sup></sup>` HTML tags as we've done here <sup>[1](#1)</sup> as a footnote.
+notes<sup>[1](#1)</sup>
 ```
 
 ## tables
@@ -59,9 +53,6 @@ Similarly, we can create footnotes using the `<sup></sup>` HTML tags as we've do
 Footnotes
 ----
 
-###### 1. Perhaps not ideal, but it does work.
+###### 1 
 
-Sources
------
-
-###### Carse_1986 -- Finite and Infinite Games
+Perhaps not ideal, but it does work.
